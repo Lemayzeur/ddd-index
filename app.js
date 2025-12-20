@@ -25,11 +25,11 @@ async function loadAllData() {
         
         // Load all data files in parallel
         const [countiesGeo, metadata, modelStats, povertyData, clusters] = await Promise.all([
-            fetch('data/counties.geojson').then(r => r.json()),
-            fetch('data/metadata.json').then(r => r.json()),
-            fetch('data/model-stats.json').then(r => r.json()),
-            fetch('data/poverty-data.json').then(r => r.json()),
-            fetch('data/clusters.json').then(r => r.json())
+            fetch('./data/counties.geojson').then(r => r.json()),
+            fetch('./data/metadata.json').then(r => r.json()),
+            fetch('./data/model-stats.json').then(r => r.json()),
+            fetch('./data/poverty-data.json').then(r => r.json()),
+            fetch('./data/clusters.json').then(r => r.json())
         ]);
         
         // Store in global state
