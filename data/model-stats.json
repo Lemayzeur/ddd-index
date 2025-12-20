@@ -1,0 +1,34 @@
+{
+  "linear_regression": {
+    "r2": 0.7794325075836642,
+    "mae": 0.02212651524329627,
+    "name": "Linear Regression"
+  },
+  "random_forest": {
+    "r2": 0.8243014796385477,
+    "mae": 0.01898792170280599,
+    "name": "Random Forest"
+  },
+  "feature_importance": {
+    "median_income": 0.7136843460043624,
+    "single_mother_rate": 0.11507518560508888,
+    "gini_index": 0.0448881100273934,
+    "per_capita_income": 0.037356888911527365,
+    "employment_rate": 0.033248613623809826,
+    "labor_force_participation": 0.01674727342781221,
+    "single_father_rate": 0.007661026691187464,
+    "no_schooling_rate": 0.007626060514139868,
+    "hs_grad_rate": 0.007591213690372273,
+    "bachelors_plus_rate": 0.006077567029546947,
+    "housing_cost_burden": 0.0053260058518648295,
+    "uninsured_rate": 0.002495462501775189,
+    "unemployment_rate": 0.0022222461211193743
+  },
+  "correlations": {
+    "per_capita_income": -0.67,
+    "bachelors_rate": -0.52,
+    "single_mother_rate": 0.63,
+    "gini_index": 0.53,
+    "unemployment_rate": 0.49
+  }
+}

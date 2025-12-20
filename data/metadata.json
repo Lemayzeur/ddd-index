@@ -1,0 +1,65 @@
+{
+  "project": {
+    "title": "Poverty & Policy Atlas",
+    "description": "Geospatial analysis of poverty and public assistance across 9 Southern U.S. states",
+    "time_period": "2014-2023",
+    "states": 9,
+    "counties": 804,
+    "last_updated": "2025-12-19"
+  },
+  "statistics": {
+    "avg_poverty_rate": 0.15452017295200302,
+    "poverty_decline": 0.025754094301497055,
+    "under_served_pct": 22.361244786653835,
+    "model_accuracy": 0.8243014796385477,
+    "top_factor": "Median Income",
+    "top_factor_importance": 0.7136843460043624
+  },
+  "states": [
+    {
+      "code": "AL",
+      "fips": "01",
+      "name": "Alabama"
+    },
+    {
+      "code": "AR",
+      "fips": "05",
+      "name": "Arkansas"
+    },
+    {
+      "code": "FL",
+      "fips": "12",
+      "name": "Florida"
+    },
+    {
+      "code": "GA",
+      "fips": "13",
+      "name": "Georgia"
+    },
+    {
+      "code": "KY",
+      "fips": "21",
+      "name": "Kentucky"
+    },
+    {
+      "code": "LA",
+      "fips": "22",
+      "name": "Louisiana"
+    },
+    {
+      "code": "MS",
+      "fips": "28",
+      "name": "Mississippi"
+    },
+    {
+      "code": "WV",
+      "fips": "54",
+      "name": "West Virginia"
+    },
+    {
+      "code": "MO",
+      "fips": "29",
+      "name": "Missouri"
+    }
+  ]
+}

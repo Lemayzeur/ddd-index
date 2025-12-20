@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poverty & Policy Atlas | Southern States Analysis 2014-2023</title>
+    
+    <!-- Fonts: Distinctive choices for data visualization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Chart.js for interactive charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    
+    <!-- D3.js for data manipulation -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <style>
+        :root {
+            /* Distinctive color palette: Earthy data journalism aesthetic */
+            --primary-dark: #1a1a2e;
+            --primary-accent: #e94560;
+            --secondary-accent: #0f3460;
+            --tertiary-accent: #16213e;
+            --background: #f8f9fa;
+            --surface: #ffffff;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --border: #e0e0e0;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            
+            /* Typography scale */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'Public Sans', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(233, 69, 96, 0.02) 49%, rgba(233, 69, 96, 0.02) 51%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(15, 52, 96, 0.02) 49%, rgba(15, 52, 96, 0.02) 51%, transparent 52%);
+            background-size: 40px 40px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--tertiary-accent) 100%);
+            color: white;
+            padding: 4rem 2rem 3rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary-accent);
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e94560' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: normal;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .subtitle {
+            font-family: var(--font-mono);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .header-stats {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-style: italic;
+            color: var(--primary-accent);
+        }
+        
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.7;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+        }
+        
+        .nav-item {
+            padding: 1.25rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            color: var(--text-secondary);
+        }
+        
+        .nav-item:hover {
+            color: var(--primary-accent);
+            border-bottom-color: var(--primary-accent);
+        }
+        
+        .nav-item.active {
+            color: var(--primary-dark);
+            border-bottom-color: var(--primary-accent);
+            font-weight: 600;
+        }
+        
+        /* Main container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        /* Section styles */
+        .section {
+            display: none;
+            animation: fadeInSection 0.5s ease-out;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-header {
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-style: italic;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+        }
+        
+        /* Card grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-accent);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.15);
+        }
+        
+        .card:hover::before {
+            transform: scaleY(1);
+        }
+        
+        .card-title {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-style: italic;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-change {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .change-positive {
+            color: var(--success);
+        }
+        
+        .change-negative {
+            color: var(--danger);
+        }
+        
+        /* Map container */
+        .map-container {
+            background: var(--surface);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        
+        .map-controls {
+            padding: 1.5rem;
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .control-label {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+        }
+        
+        select, input[type="range"] {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            background: var(--surface);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        select:hover, select:focus {
+            border-color: var(--primary-accent);
+            outline: none;
+        }
+        
+        #map {
+            height: 600px;
+            width: 100%;
+        }
+        
+        /* Chart containers */
+        .chart-container {
+            background: var(--surface);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        
+        .chart-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+        }
+        
+        /* Legend */
+        .legend {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        /* Table styles */
+        .data-table {
+            width: 100%;
+            background: var(--surface);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+        }
+        
+        .table-wrapper {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: var(--background);
+        }
+        
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        tbody tr {
+            transition: background 0.2s ease;
+        }
+        
+        tbody tr:hover {
+            background: var(--background);
+        }
+        
+        /* Cluster badges */
+        .cluster-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .cluster-low-low {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .cluster-low-high {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+        
+        .cluster-high-under {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .cluster-high-high {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        /* Loading state */
+        .loading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            gap: 1rem;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid var(--border);
+            border-top-color: var(--primary-accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-section h3 {
+            font-family: var(--font-display);
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-section p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-stats {
+                gap: 1.5rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .nav-content {
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            #map {
+                height: 400px;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+            height: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--background);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 6px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1>Poverty & Policy Atlas</h1>
+            <div class="subtitle">Southern States Analysis • 2014–2023</div>
+            
+            <div class="header-stats">
+                <div class="stat-item">
+                    <div class="stat-value">9</div>
+                    <div class="stat-label">States Analyzed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">804</div>
+                    <div class="stat-label">Counties</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10</div>
+                    <div class="stat-label">Years of Data</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">15.5%</div>
+                    <div class="stat-label">Avg Poverty Rate</div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="nav-item active" onclick="showSection('overview')">Overview</div>
+            <div class="nav-item" onclick="showSection('maps')">Interactive Maps</div>
+            <div class="nav-item" onclick="showSection('trends')">Trends</div>
+            <div class="nav-item" onclick="showSection('clusters')">County Clusters</div>
+            <div class="nav-item" onclick="showSection('analysis')">Analysis</div>
+            <div class="nav-item" onclick="showSection('data')">Data Explorer</div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Overview Section -->
+        <section id="overview" class="section active">
+            <div class="section-header">
+                <h2 class="section-title">Executive Overview</h2>
+                <p class="section-description">
+                    A comprehensive geospatial analysis of poverty patterns and public assistance 
+                    distribution across nine Southern U.S. states, examining the relationship between 
+                    socioeconomic conditions and government support from 2014 to 2023.
+                </p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">Average Poverty Rate</div>
+                    <div class="card-value">15.5%</div>
+                    <div class="card-change change-positive">
+                        ↓ 2.5 points since 2014
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Model Accuracy (R²)</div>
+                    <div class="card-value">0.82</div>
+                    <div class="card-change">
+                        Random Forest outperforms linear models
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Under-Served Counties</div>
+                    <div class="card-value">22%</div>
+                    <div class="card-change change-negative">
+                        High need, insufficient assistance
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Key Findings</h3>
+                <div style="padding: 1rem 0;">
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="font-family: var(--font-mono); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--text-secondary);">
+                            Primary Poverty Drivers
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Median Income</span>
+                                    <span style="font-family: var(--font-mono); font-weight: 600;">71%</span>
+                                </div>
+                                <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 71%; height: 100%; background: var(--primary-accent);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Single Mother Rate</span>
+                                    <span style="font-family: var(--font-mono); font-weight: 600;">12%</span>
+                                </div>
+                                <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 12%; height: 100%; background: var(--secondary-accent);"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                                    <span>Income Inequality (Gini)</span>
+                                    <span style="font-family: var(--font-mono); font-weight: 600;">6%</span>
+                                </div>
+                                <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 6%; height: 100%; background: var(--tertiary-accent);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="padding: 1.5rem; background: var(--background); border-radius: 8px; border-left: 4px solid var(--primary-accent);">
+                        <p style="font-size: 1.05rem; line-height: 1.8;">
+                            <strong>Key Insight:</strong> Income is overwhelmingly the dominant factor in poverty rates (71% feature importance), 
+                            followed by household structure and inequality. This suggests policy interventions should prioritize income 
+                            generation and support for single-parent households.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Interactive Maps Section -->
+        <section id="maps" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Interactive Geospatial Analysis</h2>
+                <p class="section-description">
+                    Explore county-level poverty patterns, public assistance distribution, and policy 
+                    misalignment across the region. Use the controls to switch between different metrics.
+                </p>
+            </div>
+            
+            <div class="map-container">
+                <div class="map-controls">
+                    <div class="control-group">
+                        <label class="control-label">Metric</label>
+                        <select id="metricSelect" onchange="updateMap()">
+                            <option value="poverty">Expected Poverty Rate</option>
+                            <option value="assistance">Public Assistance Rate</option>
+                            <option value="misalignment">Policy Misalignment</option>
+                            <option value="cluster">County Clusters</option>
+                        </select>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label">Year</label>
+                        <select id="yearSelect" onchange="updateMap()">
+                            <option value="avg">Average (2014-2023)</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                            <option value="2016">2016</option>
+                            <option value="2015">2015</option>
+                            <option value="2014">2014</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="map"></div>
+            </div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ffffcc;"></div>
+                    <span>Low</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #feb24c;"></div>
+                    <span>Medium</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f03b20;"></div>
+                    <span>High</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #bd0026;"></div>
+                    <span>Very High</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trends Section -->
+        <section id="trends" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Temporal Trends</h2>
+                <p class="section-description">
+                    Track how poverty rates have evolved over the decade and compare performance across states.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Poverty Rate Over Time (2014-2023)</h3>
+                <div class="chart-wrapper">
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">State Comparison</h3>
+                <div class="chart-wrapper">
+                    <canvas id="stateChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Clusters Section -->
+        <section id="clusters" class="section">
+            <div class="section-header">
+                <h2 class="section-title">County Policy Clusters</h2>
+                <p class="section-description">
+                    Counties grouped by poverty level and assistance distribution reveal four distinct 
+                    policy-need profiles requiring tailored interventions.
+                </p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-title">Cluster 1</div>
+                    <div class="card-value">37.7%</div>
+                    <span class="cluster-badge cluster-low-low">Low Need / Low Assistance</span>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        Wealthy counties with appropriate low support levels
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Cluster 2</div>
+                    <div class="card-value">29.5%</div>
+                    <span class="cluster-badge cluster-low-high">Low-Mod Need / High Assistance</span>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        Moderate need with strong support systems
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Cluster 3 ⚠️</div>
+                    <div class="card-value">22.4%</div>
+                    <span class="cluster-badge cluster-high-under">High Need / Under-Served</span>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        <strong>Priority intervention areas</strong> - High poverty, insufficient help
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Cluster 4</div>
+                    <div class="card-value">10.5%</div>
+                    <span class="cluster-badge cluster-high-high">High Need / High Assistance</span>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                        Very high poverty with appropriate support
+                    </p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Cluster Characteristics</h3>
+                <div class="chart-wrapper">
+                    <canvas id="clusterChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Analysis Section -->
+        <section id="analysis" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Statistical Analysis</h2>
+                <p class="section-description">
+                    Machine learning reveals the complex relationships between socioeconomic factors and poverty.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Model Performance Comparison</h3>
+                <div class="chart-wrapper">
+                    <canvas id="modelChart"></canvas>
+                </div>
+                <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--background); border-radius: 8px;">
+                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                        <strong>Random Forest Model:</strong> Achieves R² = 0.82 with MAE = 0.019 (1.9 percentage points), 
+                        substantially outperforming linear regression. This indicates significant non-linear relationships 
+                        between predictors and poverty outcomes.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 class="chart-title">Correlation Analysis: Key Socioeconomic Factors</h3>
+                <div class="chart-wrapper">
+                    <canvas id="corrChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Data Explorer Section -->
+        <section id="data" class="section">
+            <div class="section-header">
+                <h2 class="section-title">Data Explorer</h2>
+                <p class="section-description">
+                    Browse county-level data and filter by various criteria. Click column headers to sort.
+                </p>
+            </div>
+            
+            <div class="map-controls" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                <div class="control-group">
+                    <label class="control-label">Filter by State</label>
+                    <select id="stateFilter" onchange="filterTable()">
+                        <option value="all">All States</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="WV">West Virginia</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label">Filter by Cluster</label>
+                    <select id="clusterFilter" onchange="filterTable()">
+                        <option value="all">All Clusters</option>
+                        <option value="low-low">Low Need / Low Assistance</option>
+                        <option value="low-high">Low-Mod Need / High Assistance</option>
+                        <option value="high-under">High Need / Under-Served</option>
+                        <option value="high-high">High Need / High Assistance</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="data-table">
+                <div class="table-wrapper">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">County</th>
+                                <th onclick="sortTable(1)">State</th>
+                                <th onclick="sortTable(2)">Poverty Rate</th>
+                                <th onclick="sortTable(3)">Assistance Rate</th>
+                                <th onclick="sortTable(4)">Misalignment</th>
+                                <th onclick="sortTable(5)">Cluster</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About This Project</h3>
+                <p>
+                    A comprehensive geospatial analysis examining poverty patterns and policy alignment 
+                    across nine Southern U.S. states using machine learning and spatial analytics.
+                </p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Data Sources</h3>
+                <ul class="footer-links">
+                    <li><a href="#">U.S. Census Bureau ACS</a></li>
+                    <li><a href="#">County Shapefiles</a></li>
+                    <li><a href="#">Public Assistance Data</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Methodology</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showSection('analysis'); return false;">Statistical Analysis</a></li>
+                    <li><a href="#">GitHub Repository</a></li>
+                    <li><a href="#">Technical Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
