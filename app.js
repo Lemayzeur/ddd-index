@@ -1,9 +1,9 @@
 // ============================================================================
-// POVERTY DASHBOARD - INTERACTIVE WEB APPLICATION
+// POVERTY DASHBOARD - Clean Version 2.0
 // ============================================================================
 
-// Global data storage
-let appData = {
+// Global state
+const appData = {
     counties: null,
     geoJson: null,
     metadata: null,
@@ -12,8 +12,16 @@ let appData = {
     clusters: null
 };
 
-// Loading state
 let dataLoaded = false;
+let map = null;
+let geoJsonLayer = null;
+let charts = {
+    trend: null,
+    state: null,
+    cluster: null,
+    model: null,
+    corr: null
+};
 
 // ============================================================================
 // DATA LOADING
@@ -21,9 +29,8 @@ let dataLoaded = false;
 
 async function loadAllData() {
     try {
-        console.log('Loading data files...');
+        console.log('📥 Loading data files...');
         
-        // Load all data files in parallel
         const [countiesGeo, metadata, modelStats, povertyData, clusters] = await Promise.all([
             fetch('./data/counties.geojson').then(r => r.json()),
             fetch('./data/metadata.json').then(r => r.json()),
@@ -32,14 +39,12 @@ async function loadAllData() {
             fetch('./data/clusters.json').then(r => r.json())
         ]);
         
-        // Store in global state
         appData.geoJson = countiesGeo;
         appData.metadata = metadata;
         appData.modelStats = modelStats;
         appData.povertyData = povertyData;
         appData.clusters = clusters;
         
-        // Extract county data from GeoJSON for table
         appData.counties = countiesGeo.features.map(f => ({
             geoid: f.properties.GEOID,
             name: f.properties.name,
@@ -54,35 +59,26 @@ async function loadAllData() {
         }));
         
         dataLoaded = true;
-        console.log('All data loaded successfully');
-        console.log(`Loaded ${appData.counties.length} counties`);
+        console.log(`✅ Loaded ${appData.counties.length} counties`);
         
-        // Update overview statistics
         updateOverviewStats();
-        
         return true;
     } catch (error) {
-        console.error('Error loading data:', error);
-        alert('Failed to load data files. Please ensure all data files are in the /data directory.');
+        console.error('❌ Error:', error);
+        alert('Failed to load data. Check console for details.');
         return false;
     }
 }
 
 function updateOverviewStats() {
     const stats = appData.metadata.statistics;
+    const statCards = document.querySelectorAll('.stat-card .stat-value');
     
-    // Update stat cards in overview
-    document.querySelector('.stat-card:nth-child(1) .stat-value').textContent = 
-        `${(stats.avg_poverty_rate * 100).toFixed(1)}%`;
-    
-    document.querySelector('.stat-card:nth-child(2) .stat-value').textContent = 
-        `${(stats.poverty_decline * 100).toFixed(1)}%`;
-    
-    document.querySelector('.stat-card:nth-child(3) .stat-value').textContent = 
-        `${stats.under_served_pct.toFixed(1)}%`;
-    
-    document.querySelector('.stat-card:nth-child(4) .stat-value').textContent = 
-        `${(stats.model_accuracy * 100).toFixed(1)}%`;
+    if (statCards.length >= 3) {
+        statCards[0].textContent = `${(stats.avg_poverty_rate * 100).toFixed(1)}%`;
+        statCards[1].textContent = stats.model_accuracy.toFixed(2);
+        statCards[2].textContent = `${stats.under_served_pct.toFixed(0)}%`;
+    }
 }
 
 // ============================================================================
@@ -90,245 +86,102 @@ function updateOverviewStats() {
 // ============================================================================
 
 function showSection(sectionId) {
-    // Hide all sections
-    document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-    });
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
     
-    // Remove active class from all nav items
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.remove('active');
-    });
+    const section = document.getElementById(sectionId);
+    if (section) section.classList.add('active');
     
-    // Show selected section
-    document.getElementById(sectionId).classList.add('active');
-    
-    // Add active class to clicked nav item
-    event.target.classList.add('active');
-    
-    // Initialize section-specific content
-    if (sectionId === 'maps') {
-        initializeMap();
-    } else if (sectionId === 'trends') {
-        initializeTrendCharts();
-    } else if (sectionId === 'clusters') {
-        initializeClusterChart();
-    } else if (sectionId === 'analysis') {
-        initializeAnalysisCharts();
-    } else if (sectionId === 'data') {
-        initializeDataTable();
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
     }
     
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Initialize section content
+    setTimeout(() => {
+        if (sectionId === 'maps' && !map) initializeMap();
+        else if (sectionId === 'trends' && !charts.trend) initializeTrendCharts();
+        else if (sectionId === 'clusters' && !charts.cluster) initializeClusterChart();
+        else if (sectionId === 'analysis' && !charts.model) initializeAnalysisCharts();
+        else if (sectionId === 'data') initializeDataTable();
+    }, 100);
 }
 
 // ============================================================================
-// MAP FUNCTIONALITY
+// MAP FUNCTIONS
 // ============================================================================
 
-let map;
-let geoJsonLayer;
-
 function initializeMap() {
-    if (map) return; // Already initialized
+    if (map || !dataLoaded) return;
     
-    // Initialize Leaflet map centered on 9 southern states
     map = L.map('map').setView([32.5, -86.5], 6);
-    
-    // Add base tile layer
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
+        attribution: '© OpenStreetMap, © CARTO',
         maxZoom: 20
     }).addTo(map);
     
-    // Load initial data
     updateMap();
 }
 
 function updateMap() {
     if (!map || !dataLoaded) return;
     
+    if (geoJsonLayer) map.removeLayer(geoJsonLayer);
+    
     const metric = document.getElementById('metricSelect').value;
     
-    // Remove existing layer
-    if (geoJsonLayer) {
-        map.removeLayer(geoJsonLayer);
-    }
-    
-    // Add GeoJSON layer with styling
     geoJsonLayer = L.geoJSON(appData.geoJson, {
-        style: function(feature) {
-            return {
-                fillColor: getFeatureColor(feature, metric),
-                weight: 1,
-                opacity: 1,
-                color: '#ffffff',
-                fillOpacity: 0.7
-            };
-        },
-        onEachFeature: function(feature, layer) {
-            const props = feature.properties;
-            const popupContent = `
-                <div style="font-family: 'Public Sans', sans-serif;">
-                    <h4 style="margin: 0 0 8px 0; color: #1a1a2e;">${props.name} County, ${props.state}</h4>
-                    <table style="font-size: 13px;">
-                        <tr><td><strong>Poverty Rate:</strong></td><td>${(props.poverty_rate * 100).toFixed(1)}%</td></tr>
-                        <tr><td><strong>Actual Poverty:</strong></td><td>${(props.actual_poverty * 100).toFixed(1)}%</td></tr>
-                        <tr><td><strong>Assistance Rate:</strong></td><td>${(props.assistance_rate * 100).toFixed(1)}%</td></tr>
-                        <tr><td><strong>Misalignment:</strong></td><td style="color: ${props.misalignment > 0 ? '#e74c3c' : '#2ecc71'}">${props.misalignment > 0 ? '+' : ''}${props.misalignment.toFixed(2)}</td></tr>
-                        <tr><td><strong>Cluster:</strong></td><td>${props.cluster_label}</td></tr>
-                    </table>
-                </div>
-            `;
-            layer.bindPopup(popupContent);
-            
-            // Hover effect
-            layer.on({
-                mouseover: function(e) {
-                    const layer = e.target;
-                    layer.setStyle({
-                        weight: 3,
-                        color: '#1a1a2e',
-                        fillOpacity: 0.9
-                    });
-                },
-                mouseout: function(e) {
-                    geoJsonLayer.resetStyle(e.target);
-                }
-            });
+        style: f => ({
+            fillColor: getFeatureColor(f, metric),
+            weight: 1,
+            opacity: 1,
+            color: '#fff',
+            fillOpacity: 0.7
+        }),
+        onEachFeature: (feature, layer) => {
+            const p = feature.properties;
+            layer.bindPopup(`
+                <strong>${p.name}, ${p.state}</strong><br>
+                Poverty: ${(p.poverty_rate * 100).toFixed(1)}%<br>
+                Assistance: ${(p.assistance_rate * 100).toFixed(1)}%<br>
+                Misalignment: ${p.misalignment.toFixed(2)}
+            `);
         }
     }).addTo(map);
-    
-    // Add legend
-    addMapLegend(metric);
 }
 
 function getFeatureColor(feature, metric) {
-    const props = feature.properties;
+    const p = feature.properties;
     
     if (metric === 'poverty') {
-        return getPovertyColor(props.poverty_rate);
+        const r = p.poverty_rate;
+        return r > 0.25 ? '#67000d' : r > 0.20 ? '#a50f15' : r > 0.15 ? '#ef3b2c' : r > 0.10 ? '#fc9272' : '#fee5d9';
     } else if (metric === 'assistance') {
-        return getAssistanceColor(props.assistance_rate);
+        const r = p.assistance_rate;
+        return r > 0.25 ? '#08306b' : r > 0.20 ? '#08519c' : r > 0.15 ? '#2171b5' : r > 0.10 ? '#6baed6' : '#c6dbef';
     } else if (metric === 'misalignment') {
-        return getMisalignmentColor(props.misalignment);
-    } else if (metric === 'clusters') {
-        return getClusterColorByCode(props.cluster_code);
+        const s = p.misalignment;
+        return s > 0.5 ? '#d73027' : s > 0.25 ? '#fc8d59' : s > -0.25 ? '#ffffbf' : s > -0.5 ? '#91bfdb' : '#4575b4';
+    } else {
+        const colors = { 'low-low': '#2ecc71', 'low-high': '#3498db', 'high-under': '#e74c3c', 'high-high': '#f39c12' };
+        return colors[p.cluster_code] || '#95a5a6';
     }
-    return '#cccccc';
-}
-
-function getPovertyColor(rate) {
-    return rate > 0.25 ? '#67000d' :
-           rate > 0.20 ? '#a50f15' :
-           rate > 0.15 ? '#ef3b2c' :
-           rate > 0.10 ? '#fc9272' :
-                         '#fee5d9';
-}
-
-function getAssistanceColor(rate) {
-    return rate > 0.25 ? '#08306b' :
-           rate > 0.20 ? '#08519c' :
-           rate > 0.15 ? '#2171b5' :
-           rate > 0.10 ? '#6baed6' :
-                         '#c6dbef';
-}
-
-function getMisalignmentColor(score) {
-    if (score > 0.5) return '#d73027';
-    if (score > 0.25) return '#fc8d59';
-    if (score > -0.25) return '#ffffbf';
-    if (score > -0.5) return '#91bfdb';
-    return '#4575b4';
-}
-
-function getClusterColorByCode(code) {
-    const colors = {
-        'low-low': '#2ecc71',
-        'low-high': '#3498db',
-        'high-under': '#e74c3c',
-        'high-high': '#f39c12'
-    };
-    return colors[code] || '#95a5a6';
-}
-
-function addMapLegend(metric) {
-    // Remove existing legend
-    const existingLegend = document.querySelector('.map-legend');
-    if (existingLegend) existingLegend.remove();
-    
-    const legend = L.control({position: 'bottomright'});
-    
-    legend.onAdd = function(map) {
-        const div = L.DomUtil.create('div', 'map-legend');
-        div.style.cssText = 'background: white; padding: 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);';
-        
-        if (metric === 'poverty') {
-            div.innerHTML = `
-                <h4 style="margin: 0 0 8px 0; font-size: 14px;">Poverty Rate</h4>
-                <div><span style="background: #67000d; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> > 25%</div>
-                <div><span style="background: #a50f15; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> 20-25%</div>
-                <div><span style="background: #ef3b2c; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> 15-20%</div>
-                <div><span style="background: #fc9272; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> 10-15%</div>
-                <div><span style="background: #fee5d9; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> < 10%</div>
-            `;
-        } else if (metric === 'assistance') {
-            div.innerHTML = `
-                <h4 style="margin: 0 0 8px 0; font-size: 14px;">Assistance Rate</h4>
-                <div><span style="background: #08306b; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> > 25%</div>
-                <div><span style="background: #08519c; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> 20-25%</div>
-                <div><span style="background: #2171b5; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> 15-20%</div>
-                <div><span style="background: #6baed6; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> 10-15%</div>
-                <div><span style="background: #c6dbef; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> < 10%</div>
-            `;
-        } else if (metric === 'misalignment') {
-            div.innerHTML = `
-                <h4 style="margin: 0 0 8px 0; font-size: 14px;">Misalignment Score</h4>
-                <div><span style="background: #d73027; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> High Under-Served</div>
-                <div><span style="background: #fc8d59; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> Under-Served</div>
-                <div><span style="background: #ffffbf; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> Aligned</div>
-                <div><span style="background: #91bfdb; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> Over-Served</div>
-                <div><span style="background: #4575b4; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> High Over-Served</div>
-            `;
-        } else if (metric === 'clusters') {
-            div.innerHTML = `
-                <h4 style="margin: 0 0 8px 0; font-size: 14px;">Policy Clusters</h4>
-                <div><span style="background: #2ecc71; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> Low Need / Low Assist</div>
-                <div><span style="background: #3498db; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> Low-Mod / High Assist</div>
-                <div><span style="background: #e74c3c; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> High Need / Under-Served</div>
-                <div><span style="background: #f39c12; width: 20px; height: 15px; display: inline-block; margin-right: 5px;"></span> High Need / High Assist</div>
-            `;
-        }
-        
-        div.style.fontSize = '12px';
-        div.style.lineHeight = '18px';
-        return div;
-    };
-    
-    legend.addTo(map);
 }
 
 // ============================================================================
-// CHART FUNCTIONALITY
+// CHARTS
 // ============================================================================
-
-let trendChart, stateChart, clusterChart, modelChart, corrChart;
 
 function initializeTrendCharts() {
-    if (trendChart || !dataLoaded) return;
+    if (charts.trend || !dataLoaded) return;
     
     const data = appData.povertyData;
     
-    // Overall poverty trend
-    const trendCtx = document.getElementById('trendChart').getContext('2d');
-    trendChart = new Chart(trendCtx, {
+    charts.trend = new Chart(document.getElementById('trendChart'), {
         type: 'line',
         data: {
             labels: data.years,
             datasets: [{
-                label: 'Average Poverty Rate',
+                label: 'Poverty Rate',
                 data: data.overall.map(v => v * 100),
                 borderColor: '#e94560',
                 backgroundColor: 'rgba(233, 69, 96, 0.1)',
@@ -340,57 +193,26 @@ function initializeTrendCharts() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
-                    titleFont: { family: 'IBM Plex Mono', size: 12 },
-                    bodyFont: { family: 'Public Sans', size: 14 },
-                    padding: 12,
-                    displayColors: false,
-                    callbacks: {
-                        label: function(context) {
-                            return `Poverty Rate: ${context.parsed.y.toFixed(1)}%`;
-                        }
-                    }
-                }
-            },
+            plugins: { legend: { display: false } },
             scales: {
-                y: {
-                    beginAtZero: false,
-                    ticks: {
-                        callback: value => value + '%',
-                        font: { family: 'IBM Plex Mono', size: 11 }
-                    },
-                    grid: { color: 'rgba(0, 0, 0, 0.05)' }
-                },
-                x: {
-                    ticks: { font: { family: 'IBM Plex Mono', size: 11 } },
-                    grid: { display: false }
-                }
+                y: { ticks: { callback: v => v + '%' } },
+                x: { grid: { display: false } }
             }
         }
     });
     
-    // State comparison (2023 data - last year)
-    const stateCtx = document.getElementById('stateChart').getContext('2d');
-    const stateMapping = {
-        'AL': '01', 'AR': '05', 'FL': '12', 'GA': '13',
-        'KY': '21', 'LA': '22', 'MS': '28', 'MO': '29', 'WV': '54'
-    };
-    
     const stateLabels = Object.keys(data.states);
     const stateValues = stateLabels.map(state => {
-        const stateData = data.states[state];
-        return (stateData[stateData.length - 1] * 100).toFixed(1);
+        const arr = data.states[state];
+        return (arr[arr.length - 1] * 100).toFixed(1);
     });
     
-    stateChart = new Chart(stateCtx, {
+    charts.state = new Chart(document.getElementById('stateChart'), {
         type: 'bar',
         data: {
             labels: stateLabels,
             datasets: [{
-                label: '2023 Poverty Rate',
+                label: '2023 Poverty',
                 data: stateValues,
                 backgroundColor: '#0f3460',
                 borderRadius: 4
@@ -399,120 +221,76 @@ function initializeTrendCharts() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
-                    padding: 12,
-                    displayColors: false,
-                    callbacks: {
-                        label: context => `Poverty Rate: ${context.parsed.y}%`
-                    }
-                }
-            },
+            plugins: { legend: { display: false } },
             scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: {
-                        callback: value => value + '%',
-                        font: { family: 'IBM Plex Mono', size: 11 }
-                    },
-                    grid: { color: 'rgba(0, 0, 0, 0.05)' }
-                },
-                x: {
-                    ticks: { font: { family: 'IBM Plex Mono', size: 12 } },
-                    grid: { display: false }
-                }
+                y: { ticks: { callback: v => v + '%' } },
+                x: { grid: { display: false } }
             }
         }
     });
 }
 
 function initializeClusterChart() {
-    if (clusterChart || !dataLoaded) return;
+    if (charts.cluster || !dataLoaded) return;
     
     const clusters = appData.clusters.clusters;
+    const colors = {
+        'low-low': { border: '#2ecc71', bg: 'rgba(46, 204, 113, 0.2)' },
+        'low-high': { border: '#3498db', bg: 'rgba(52, 152, 219, 0.2)' },
+        'high-under': { border: '#e74c3c', bg: 'rgba(231, 76, 60, 0.2)' },
+        'high-high': { border: '#f39c12', bg: 'rgba(243, 156, 18, 0.2)' }
+    };
     
-    const clusterCtx = document.getElementById('clusterChart').getContext('2d');
+    const datasets = clusters.map(c => ({
+        label: c.name,
+        data: [
+            (c.avg_poverty * 100).toFixed(1),
+            (c.avg_assistance * 100).toFixed(1),
+            c.avg_misalignment.toFixed(1)
+        ],
+        borderColor: colors[c.id].border,
+        backgroundColor: colors[c.id].bg,
+        borderWidth: 2
+    }));
     
-    const datasets = clusters.map(cluster => {
-        const colors = {
-            'low-low': { border: '#2ecc71', bg: 'rgba(46, 204, 113, 0.2)' },
-            'low-high': { border: '#3498db', bg: 'rgba(52, 152, 219, 0.2)' },
-            'high-under': { border: '#e74c3c', bg: 'rgba(231, 76, 60, 0.2)' },
-            'high-high': { border: '#f39c12', bg: 'rgba(243, 156, 18, 0.2)' }
-        };
-        
-        const color = colors[cluster.id] || { border: '#95a5a6', bg: 'rgba(149, 165, 166, 0.2)' };
-        
-        return {
-            label: cluster.name,
-            data: [
-                (cluster.avg_poverty * 100).toFixed(1),
-                (cluster.avg_assistance * 100).toFixed(1),
-                cluster.avg_misalignment.toFixed(1)
-            ],
-            borderColor: color.border,
-            backgroundColor: color.bg,
-            borderWidth: 2
-        };
-    });
-    
-    clusterChart = new Chart(clusterCtx, {
+    charts.cluster = new Chart(document.getElementById('clusterChart'), {
         type: 'radar',
         data: {
-            labels: ['Expected Poverty (%)', 'Assistance Rate (%)', 'Misalignment Score'],
+            labels: ['Poverty %', 'Assistance %', 'Misalignment'],
             datasets: datasets
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: {
-                        font: { family: 'IBM Plex Mono', size: 11 },
-                        padding: 15,
-                        usePointStyle: true,
-                        pointStyle: 'circle'
-                    }
-                }
+                legend: { position: 'bottom' }
             },
             scales: {
-                r: {
-                    beginAtZero: true,
-                    ticks: { font: { family: 'IBM Plex Mono', size: 10 } },
-                    pointLabels: { font: { family: 'Public Sans', size: 12, weight: '600' } }
-                }
+                r: { beginAtZero: true }
             }
         }
     });
 }
 
 function initializeAnalysisCharts() {
-    if (modelChart || !dataLoaded) return;
+    if (charts.model || !dataLoaded) return;
     
-    const modelStats = appData.modelStats;
+    const stats = appData.modelStats;
     
-    // Model comparison
-    const modelCtx = document.getElementById('modelChart').getContext('2d');
-    modelChart = new Chart(modelCtx, {
+    charts.model = new Chart(document.getElementById('modelChart'), {
         type: 'bar',
         data: {
             labels: ['Linear Regression', 'Random Forest'],
             datasets: [
                 {
-                    label: 'R² Score',
-                    data: [modelStats.linear_regression.r2, modelStats.random_forest.r2],
+                    label: 'R²',
+                    data: [stats.linear_regression.r2, stats.random_forest.r2],
                     backgroundColor: '#e94560',
                     borderRadius: 4
                 },
                 {
                     label: 'MAE (×100)',
-                    data: [
-                        modelStats.linear_regression.mae * 100,
-                        modelStats.random_forest.mae * 100
-                    ],
+                    data: [stats.linear_regression.mae * 100, stats.random_forest.mae * 100],
                     backgroundColor: '#0f3460',
                     borderRadius: 4
                 }
@@ -521,51 +299,21 @@ function initializeAnalysisCharts() {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        font: { family: 'IBM Plex Mono', size: 11 },
-                        padding: 15,
-                        usePointStyle: true,
-                        pointStyle: 'circle'
-                    }
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    ticks: { font: { family: 'IBM Plex Mono', size: 11 } }
-                },
-                x: {
-                    ticks: { font: { family: 'Public Sans', size: 12 } },
-                    grid: { display: false }
-                }
-            }
+            plugins: { legend: { position: 'top' } },
+            scales: { y: { beginAtZero: true } }
         }
     });
     
-    // Feature importance
-    const corrCtx = document.getElementById('corrChart').getContext('2d');
-    const importance = modelStats.feature_importance;
+    const importance = stats.feature_importance;
+    const features = Object.entries(importance).sort((a, b) => b[1] - a[1]).slice(0, 10);
     
-    // Get top 10 features
-    const features = Object.entries(importance)
-        .sort((a, b) => b[1] - a[1])
-        .slice(0, 10);
-    
-    const featureLabels = features.map(f => {
-        return f[0].split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-    });
-    const featureValues = features.map(f => f[1]);
-    
-    corrChart = new Chart(corrCtx, {
+    charts.corr = new Chart(document.getElementById('corrChart'), {
         type: 'bar',
         data: {
-            labels: featureLabels,
+            labels: features.map(f => f[0].split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')),
             datasets: [{
-                label: 'Feature Importance',
-                data: featureValues,
+                label: 'Importance',
+                data: features.map(f => f[1]),
                 backgroundColor: '#0f3460',
                 borderRadius: 4
             }]
@@ -574,29 +322,16 @@ function initializeAnalysisCharts() {
             responsive: true,
             maintainAspectRatio: false,
             indexAxis: 'y',
-            plugins: {
-                legend: { display: false }
-            },
+            plugins: { legend: { display: false } },
             scales: {
-                x: {
-                    beginAtZero: true,
-                    max: 1,
-                    ticks: {
-                        callback: value => (value * 100).toFixed(0) + '%',
-                        font: { family: 'IBM Plex Mono', size: 11 }
-                    }
-                },
-                y: {
-                    ticks: { font: { family: 'Public Sans', size: 11 } },
-                    grid: { display: false }
-                }
+                x: { max: 1, ticks: { callback: v => (v * 100).toFixed(0) + '%' } }
             }
         }
     });
 }
 
 // ============================================================================
-// DATA TABLE FUNCTIONALITY
+// DATA TABLE
 // ============================================================================
 
 function initializeDataTable() {
@@ -605,21 +340,17 @@ function initializeDataTable() {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '';
     
-    appData.counties.forEach(county => {
+    appData.counties.forEach(c => {
         const row = tbody.insertRow();
         row.innerHTML = `
-            <td>${county.name}</td>
-            <td>${county.state}</td>
-            <td>${(county.poverty * 100).toFixed(1)}%</td>
-            <td>${(county.assistance * 100).toFixed(1)}%</td>
-            <td style="color: ${county.misalignment > 0 ? '#e74c3c' : '#2ecc71'}">
-                ${county.misalignment > 0 ? '+' : ''}${county.misalignment.toFixed(2)}
+            <td>${c.name}</td>
+            <td>${c.state}</td>
+            <td>${(c.poverty * 100).toFixed(1)}%</td>
+            <td>${(c.assistance * 100).toFixed(1)}%</td>
+            <td style="color: ${c.misalignment > 0 ? '#e74c3c' : '#2ecc71'}">
+                ${c.misalignment > 0 ? '+' : ''}${c.misalignment.toFixed(2)}
             </td>
-            <td>
-                <span class="cluster-badge cluster-${county.clusterCode}">
-                    ${county.clusterLabel}
-                </span>
-            </td>
+            <td><span class="cluster-badge cluster-${c.clusterCode}">${c.clusterLabel}</span></td>
         `;
     });
 }
@@ -630,61 +361,46 @@ function filterTable() {
     const stateFilter = document.getElementById('stateFilter').value;
     const clusterFilter = document.getElementById('clusterFilter').value;
     
-    const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-    
-    const filtered = appData.counties.filter(county => {
-        const stateMatch = stateFilter === 'all' || county.state === stateFilter;
-        const clusterMatch = clusterFilter === 'all' || county.clusterCode === clusterFilter;
+    const filtered = appData.counties.filter(c => {
+        const stateMatch = stateFilter === 'all' || c.state === stateFilter;
+        const clusterMatch = clusterFilter === 'all' || c.clusterCode === clusterFilter;
         return stateMatch && clusterMatch;
     });
     
-    filtered.forEach(county => {
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    
+    filtered.forEach(c => {
         const row = tbody.insertRow();
         row.innerHTML = `
-            <td>${county.name}</td>
-            <td>${county.state}</td>
-            <td>${(county.poverty * 100).toFixed(1)}%</td>
-            <td>${(county.assistance * 100).toFixed(1)}%</td>
-            <td style="color: ${county.misalignment > 0 ? '#e74c3c' : '#2ecc71'}">
-                ${county.misalignment > 0 ? '+' : ''}${county.misalignment.toFixed(2)}
+            <td>${c.name}</td>
+            <td>${c.state}</td>
+            <td>${(c.poverty * 100).toFixed(1)}%</td>
+            <td>${(c.assistance * 100).toFixed(1)}%</td>
+            <td style="color: ${c.misalignment > 0 ? '#e74c3c' : '#2ecc71'}">
+                ${c.misalignment > 0 ? '+' : ''}${c.misalignment.toFixed(2)}
             </td>
-            <td>
-                <span class="cluster-badge cluster-${county.clusterCode}">
-                    ${county.clusterLabel}
-                </span>
-            </td>
+            <td><span class="cluster-badge cluster-${c.clusterCode}">${c.clusterLabel}</span></td>
         `;
     });
-    
-    // Update count display
-    document.querySelector('.filter-info').textContent = 
-        `Showing ${filtered.length} of ${appData.counties.length} counties`;
 }
 
 function sortTable(columnIndex) {
-    if (!dataLoaded) return;
-    
     const tbody = document.getElementById('tableBody');
     const rows = Array.from(tbody.querySelectorAll('tr'));
     
-    const sortedRows = rows.sort((a, b) => {
-        const aValue = a.cells[columnIndex].textContent;
-        const bValue = b.cells[columnIndex].textContent;
+    rows.sort((a, b) => {
+        const aVal = a.cells[columnIndex].textContent;
+        const bVal = b.cells[columnIndex].textContent;
+        const aNum = parseFloat(aVal);
+        const bNum = parseFloat(bVal);
         
-        // Check if numeric
-        const aNum = parseFloat(aValue);
-        const bNum = parseFloat(bValue);
-        
-        if (!isNaN(aNum) && !isNaN(bNum)) {
-            return aNum - bNum;
-        }
-        
-        return aValue.localeCompare(bValue);
+        if (!isNaN(aNum) && !isNaN(bNum)) return aNum - bNum;
+        return aVal.localeCompare(bVal);
     });
     
     tbody.innerHTML = '';
-    sortedRows.forEach(row => tbody.appendChild(row));
+    rows.forEach(row => tbody.appendChild(row));
 }
 
 // ============================================================================
@@ -692,42 +408,25 @@ function sortTable(columnIndex) {
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', async function() {
-    console.log('Poverty Dashboard initializing...');
+    console.log('📱 DOM loaded, starting initialization...');
     
-    // Set up Chart.js defaults
     Chart.defaults.font.family = "'Public Sans', sans-serif";
     Chart.defaults.color = '#2c3e50';
     
-    // Load all data
     const loaded = await loadAllData();
     
     if (loaded) {
-        console.log('Dashboard ready');
+        console.log('✅ Dashboard ready!');
     } else {
-        console.error('Dashboard failed to initialize');
+        console.error('Failed to initialize');
     }
 });
 
-// Handle window resize
-window.addEventListener('resize', function() {
-    if (map) {
-        map.invalidateSize();
-    }
+window.addEventListener('resize', () => {
+    if (map) map.invalidateSize();
 });
 
-// ============================================================================
-// UTILITY FUNCTIONS
-// ============================================================================
-
-function formatPercent(value) {
-    return (value * 100).toFixed(1) + '%';
-}
-
-function formatNumber(value, decimals = 2) {
-    return value.toFixed(decimals);
-}
-
-// Export functions for HTML
+// Export functions
 window.showSection = showSection;
 window.updateMap = updateMap;
 window.filterTable = filterTable;
