@@ -334,12 +334,12 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 1 — Poverty map -->
   <div id="map-poverty" class="map-panel active">
     <div class="map-image-wrap">
-      <!-- <img src="images/poverty_choropleth.png" alt="Poverty distribution map"
-           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>poverty_choropleth.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
-      <div class="map-image-caption"> -->
+      <!-- delete the commented <img> tag, replace with this -->
+      <div id="leaflet-poverty" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
+      <div class="map-image-caption">
         <strong>Average county poverty rate 2015–2022.</strong>
-        Dark red = above 25% poverty. The Mississippi Delta corridor (MS, LA, AR) shows the highest concentration.
-        Dashed pink border = Western Appalachia. Dashed green = Mississippi Delta.
+        Dark red = above 25% poverty. The Mississippi Delta corridor shows the highest concentration.
+        Click any county for details.
       </div>
     </div>
     <div class="map-insight-row">
@@ -353,12 +353,11 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 2 — Spending map -->
   <div id="map-spending" class="map-panel">
     <div class="map-image-wrap">
-      <!-- <img src="images/sector_spending_map.png" alt="Federal spending map"
-           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>sector_spending_map.png</strong> in an <strong>images/</strong> folder next to index.html</div>'"> -->
+      <div id="leaflet-spending" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
       <div class="map-image-caption">
-        <strong>Average annual federal obligation per county — quintile bands (each = 20% of counties).</strong>
-        Dark crimson = highest spending quintile. Dark navy = lowest.
-        Color bands are computed from actual dollar quintiles so the full ramp always renders.
+        <strong>Average annual federal obligation per county — quintile bands.</strong>
+        Dark navy = highest spending. Dark crimson = lowest.
+        Click any county for details.
       </div>
     </div>
     <div class="map-insight-row">
@@ -372,13 +371,11 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 3 — Misalignment map -->
   <div id="map-misalign" class="map-panel">
     <div class="map-image-wrap">
-      <!-- <img src="images/misalignment_map_callouts.png" alt="Misalignment map"
-           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>misalignment_map_callouts.png</strong> in an <strong>images/</strong> folder next to index.html</div>'"> -->
+      <div id="leaflet-misalign" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
       <div class="map-image-caption">
-        <strong>Spending misalignment score = Poverty Z − Spending Z.</strong>
-        Red = underfunded (poverty rank exceeds spending rank).
-        Blue = overfunded (spending exceeds need).
-        White = aligned. Callout boxes show the three extreme cases.
+        <strong>Misalignment score = Poverty Z − Spending Z.</strong>
+        Red = underfunded. Blue = overfunded. White = aligned.
+        Click any county for details.
       </div>
     </div>
     <div class="map-insight-row">
@@ -387,13 +384,6 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
       <div class="map-insight" style="border-top:3px solid var(--app-blue);"><div class="map-insight-label">Most overfunded</div><div class="map-insight-val" style="color:var(--app-blue);">−2.96</div><div class="map-insight-note">GEOID 51735 · VA · 4.5% poverty</div></div>
       <div class="map-insight"><div class="map-insight-label">Delta overall score</div><div class="map-insight-val">+0.65</div><div class="map-insight-note">Consistently underfunded 2014–2023</div></div>
     </div>
-  </div>
-
-  <!-- NEW: instruction callout for image files -->
-  <div class="callout" style="margin-top:2rem;">
-    <strong>To display your maps:</strong> Export the three PNG files from your Python notebook and place them in an
-    <code>images/</code> folder next to <code>index.html</code>.
-    Expected names: <code>poverty_choropleth.png</code> · <code>sector_spending_map.png</code> · <code>misalignment_map_callouts.png</code>.
   </div>
 </section>
 <!-- END NEW MAPS SECTION -->

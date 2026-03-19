@@ -230,11 +230,15 @@ let leafletMaps={}, leafletGeo=null, countyDataMap={};
 
 async function renderMaps() {
   if (D.map_counties) {
-    D.map_counties.forEach(row => { countyDataMap[row.geoid]=row; });
+    D.map_counties.forEach(row => { countyDataMap[row.geoid] = row; });
   }
-  // Render first visible panel (poverty)
-  chartsBuilt['map-poverty']=true;
-  await renderCountyMap('poverty','map-poverty');
+  // Only render if the container is actually visible
+  const container = document.getElementById('leaflet-poverty');
+  if (container && container.offsetParent !== null) {
+    chartsBuilt['map-poverty'] = true;
+    await renderCountyMap('poverty', 'map-poverty');
+  }
+  // Otherwise showMapTab() will trigger it when the user clicks
 }
 
 async function renderCountyMap(mode, panelId) {
