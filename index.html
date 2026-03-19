@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poverty & Policy Atlas | Western Appalachia & Mississippi Delta 2014–2023</title>
+<title>Poverty & Policy Atlas | Central Appalachia & Mississippi Delta 2014–2023</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -169,6 +169,30 @@ select.filter-select:focus{outline:none;border-color:var(--app-amber);}
 .cluster-stat strong{color:var(--ink);}
 /* ── END CLUSTER STYLES ─────────────────────────────────────────── */
 
+/* ── TEAM SECTION ─────────────────────────────────────────────── */
+.team-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+@media(max-width:700px){.team-meta{flex-direction:column;gap:1rem;}}
+.team-project-title{font-family:var(--font-head);font-size:1.5rem;font-style:italic;margin-bottom:4px;}
+.team-project-sub{font-size:0.88rem;color:var(--muted);line-height:1.6;max-width:420px;}
+.team-meta-right{text-align:right;}
+.team-meta-right p{font-size:0.82rem;color:var(--muted);margin:0 0 2px;line-height:1.7;}
+.team-meta-right span{font-family:var(--font-mono);font-size:0.7rem;color:var(--muted);letter-spacing:0.08em;}
+.team-section-label{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--app-amber);margin-bottom:1rem;}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1.25rem;margin-bottom:2rem;}
+.member-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem 1.2rem;display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform 0.2s,box-shadow 0.2s;}
+.member-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,0.08);}
+.member-avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1.1rem;font-style:italic;margin-bottom:14px;flex-shrink:0;overflow:hidden;}
+.member-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.member-avatar-placeholder{width:64px;height:64px;border-radius:50%;border:1.5px dashed var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:0.62rem;color:var(--muted);margin-bottom:14px;text-align:center;line-height:1.4;flex-shrink:0;}
+.member-name{font-family:var(--font-head);font-size:1rem;font-style:italic;color:var(--ink);margin-bottom:3px;}
+.member-role{font-family:var(--font-mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);line-height:1.5;}
+.advisor-bar{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem 1.4rem;border-left:3px solid var(--app-amber);border-radius:0 12px 12px 0;}
+.advisor-initials{width:40px;height:40px;border-radius:50%;background:rgba(255,181,70,0.12);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:0.9rem;font-style:italic;color:#854F0B;flex-shrink:0;}
+.advisor-label{font-family:var(--font-mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:2px;}
+.advisor-name{font-size:0.92rem;color:var(--ink);}
+.advisor-dept{font-size:0.8rem;color:var(--muted);}
+/* ── END TEAM SECTION ─────────────────────────────────────────── */
+
 footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
 .footer-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
 @media(max-width:768px){.footer-inner{grid-template-columns:1fr;}}
@@ -191,7 +215,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <div class="header-inner">
     <div class="eyebrow">Poverty &amp; Policy Atlas — University of Missouri-Columbia</div>
     <h1>Dollars, Decisions, and Disparities</h1>
-    <p class="header-sub">A decade of federal spending, poverty dynamics, and fiscal misalignment across 624 counties in Western Appalachia and the Mississippi Delta.</p>
+    <p class="header-sub">A decade of federal spending, poverty dynamics, and fiscal misalignment across 624 counties in Central Appalachia and the Mississippi Delta.</p>
     <div class="kpi-row">
       <div class="kpi"><span class="kpi-val">7</span><span class="kpi-lab">Target States</span></div>
       <div class="kpi"><span class="kpi-val">624</span><span class="kpi-lab">Counties</span></div>
@@ -207,13 +231,12 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
     <button class="nav-btn active" onclick="show('overview',this)">Overview</button>
     <button class="nav-btn" onclick="show('spending',this)">Spending</button>
     <button class="nav-btn" onclick="show('misalignment',this)">Misalignment</button>
-    <!-- NEW: Maps tab added to nav -->
     <button class="nav-btn" onclick="show('maps',this)">Maps</button>
-    <!-- NEW: Clusters tab added to nav -->
     <button class="nav-btn" onclick="show('clusters',this)">Clusters</button>
     <button class="nav-btn" onclick="show('models',this)">Models</button>
     <button class="nav-btn" onclick="show('predict',this)">Predict</button>
     <button class="nav-btn" onclick="show('conclusions',this)">Conclusions</button>
+    <button class="nav-btn" onclick="show('team',this)">Team</button>
   </div>
 </nav>
 
@@ -255,10 +278,10 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   </div>
   <div class="chart-block">
     <div class="chart-block-title" id="spendChartTitle">Total Assistance by Region ($B) — 2014–2023</div>
-    <div class="chart-block-sub" id="spendChartSub">Western Appalachia peaked at $533B in 2020. Mississippi Delta at $144B in 2021.</div>
+    <div class="chart-block-sub" id="spendChartSub">Central Appalachia peaked at $533B in 2020. Mississippi Delta at $144B in 2021.</div>
     <div class="chart-wrap"><canvas id="spendChart" height="380"></canvas></div>
     <div class="legend-row" id="spendLegend">
-      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Western Appalachia</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Central Appalachia</div>
       <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Mississippi Delta</div>
     </div>
   </div>
@@ -284,7 +307,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
     <div class="chart-wrap"><canvas id="misalignTimeChart" height="320"></canvas></div>
     <div class="legend-row">
       <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Mississippi Delta</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Western Appalachia</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Central Appalachia</div>
     </div>
   </div>
   <div class="chart-block">
@@ -334,12 +357,12 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 1 — Poverty map -->
   <div id="map-poverty" class="map-panel active">
     <div class="map-image-wrap">
-      <!-- delete the commented <img> tag, replace with this -->
-      <div id="leaflet-poverty" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
+      <img src="images/poverty_choropleth.png" alt="Poverty distribution map"
+           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>poverty_choropleth.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
       <div class="map-image-caption">
         <strong>Average county poverty rate 2015–2022.</strong>
-        Dark red = above 25% poverty. The Mississippi Delta corridor shows the highest concentration.
-        Click any county for details.
+        Dark red = above 25% poverty. The Mississippi Delta corridor (MS, LA, AR) shows the highest concentration.
+        Dashed pink border = Central Appalachia. Dashed green = Mississippi Delta.
       </div>
     </div>
     <div class="map-insight-row">
@@ -353,11 +376,12 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 2 — Spending map -->
   <div id="map-spending" class="map-panel">
     <div class="map-image-wrap">
-      <div id="leaflet-spending" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
+      <img src="images/sector_spending_map.png" alt="Federal spending map"
+           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>sector_spending_map.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
       <div class="map-image-caption">
-        <strong>Average annual federal obligation per county — quintile bands.</strong>
-        Dark navy = highest spending. Dark crimson = lowest.
-        Click any county for details.
+        <strong>Average annual federal obligation per county — quintile bands (each = 20% of counties).</strong>
+        Dark crimson = highest spending quintile. Dark navy = lowest.
+        Color bands are computed from actual dollar quintiles so the full ramp always renders.
       </div>
     </div>
     <div class="map-insight-row">
@@ -371,11 +395,13 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 3 — Misalignment map -->
   <div id="map-misalign" class="map-panel">
     <div class="map-image-wrap">
-      <div id="leaflet-misalign" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
+      <img src="images/misalignment_map_callouts.png" alt="Misalignment map"
+           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>misalignment_map_callouts.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
       <div class="map-image-caption">
-        <strong>Misalignment score = Poverty Z − Spending Z.</strong>
-        Red = underfunded. Blue = overfunded. White = aligned.
-        Click any county for details.
+        <strong>Spending misalignment score = Poverty Z − Spending Z.</strong>
+        Red = underfunded (poverty rank exceeds spending rank).
+        Blue = overfunded (spending exceeds need).
+        White = aligned. Callout boxes show the three extreme cases.
       </div>
     </div>
     <div class="map-insight-row">
@@ -384,6 +410,13 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
       <div class="map-insight" style="border-top:3px solid var(--app-blue);"><div class="map-insight-label">Most overfunded</div><div class="map-insight-val" style="color:var(--app-blue);">−2.96</div><div class="map-insight-note">GEOID 51735 · VA · 4.5% poverty</div></div>
       <div class="map-insight"><div class="map-insight-label">Delta overall score</div><div class="map-insight-val">+0.65</div><div class="map-insight-note">Consistently underfunded 2014–2023</div></div>
     </div>
+  </div>
+
+  <!-- NEW: instruction callout for image files -->
+  <div class="callout" style="margin-top:2rem;">
+    <strong>To display your maps:</strong> Export the three PNG files from your Python notebook and place them in an
+    <code>images/</code> folder next to <code>index.html</code>.
+    Expected names: <code>poverty_choropleth.png</code> · <code>sector_spending_map.png</code> · <code>misalignment_map_callouts.png</code>.
   </div>
 </section>
 <!-- END NEW MAPS SECTION -->
@@ -563,7 +596,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
       <div class="slider-group"><div class="slider-header"><span class="slider-label">Single Mother Rate</span><span class="slider-val" id="val-singlemom">18%</span></div><input type="range" id="sl-singlemom" min="0" max="40" step="1" value="18" oninput="updateSlider('singlemom',this.value,'','%',1,'')"><div class="slider-range"><span>0%</span><span>40%</span></div></div>
       <div class="slider-group"><div class="slider-header"><span class="slider-label">Married Couple Rate</span><span class="slider-val" id="val-married">46%</span></div><input type="range" id="sl-married" min="20" max="75" step="1" value="46" oninput="updateSlider('married',this.value,'','%',1,'')"><div class="slider-range"><span>20%</span><span>75%</span></div></div>
       <div class="sliders-section-title">Context</div>
-      <div class="slider-group"><div class="slider-header"><span class="slider-label">Region</span></div><select class="region-select" id="sl-region" onchange="runPrediction()"><option value="delta">Mississippi Delta</option><option value="appalachia">Western Appalachia</option></select></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Region</span></div><select class="region-select" id="sl-region" onchange="runPrediction()"><option value="delta">Mississippi Delta</option><option value="appalachia">Central Appalachia</option></select></div>
       <!-- NEW: year extended to 2030 + forecast warning badge -->
       <div class="slider-group">
         <div class="slider-header"><span class="slider-label">Year</span><span class="slider-val" id="val-year">2023</span></div>
@@ -597,8 +630,10 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
         <div class="comp-row"><span class="comp-name">Appalachia avg</span><span class="comp-val" id="cmp-app"></span></div>
         <div class="comp-row"><span class="comp-name">Region avg (selected)</span><span class="comp-val" id="cmp-region"></span></div>
       </div>
-      <button class="predict-btn" id="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
+      <button class="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
       <div style="margin-top:1.5rem;font-size:0.72rem;color:rgba(255,255,255,0.3);line-height:1.6;font-family:var(--font-mono);">
+        <!-- NEW: updated disclaimer mentioning ONNX -->
+        Uses ONNX Gradient Boosting model when available, simulated weights as fallback. Future years apply −0.2–0.3% annual drift adjustment.
       </div>
     </div>
   </div>
@@ -627,13 +662,82 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   </div>
 </section>
 
+<!-- ══════════════════════════════════════════════════════════
+     TEAM SECTION
+     Replace placeholder names, roles, and initials with real data.
+     To add photos: swap .member-avatar-placeholder with
+     <div class="member-avatar"><img src="photos/name.jpg" alt="Name"></div>
+═══════════════════════════════════════════════════════════ -->
+<section id="team" class="section">
+  <div class="section-label">Capstone Research Team</div>
+  <div class="section-title">The people behind<br>the atlas.</div>
+
+  <div class="team-meta">
+    <div>
+      <div class="team-project-title">Analyzing Fiscal Impacts on Communities</div>
+      <div class="team-project-sub">Dollars, Decisions, and Disparities — Central Appalachia &amp; Mississippi Delta, 2014–2023</div>
+    </div>
+    <div class="team-meta-right">
+      <p>University of Missouri–Columbia</p>
+      <p>Data Science &amp; Analytics Program</p>
+      <span>Capstone · Spring 2026</span>
+    </div>
+  </div>
+
+  <div class="team-section-label">Research team</div>
+  <div class="team-grid">
+
+    <div class="member-card">
+      <div class="member-avatar-placeholder">Kent<br>here</div>
+      <div class="member-name">Kent Barnes</div>
+      <div class="member-role">Geospatial analysis / Data engineering &amp; pipeline</div>
+    </div>
+
+    <div class="member-card">
+      <div class="member-avatar-placeholder">Nomi<br>here</div>
+      <div class="member-name">Nomuundalai Baterdene</div>
+      <div class="member-role">Policy analysis<br>&amp; findings</div>
+    </div>
+
+<!--     <div class="member-card">
+      <div class="member-avatar-placeholder">Photo<br>here</div>
+      <div class="member-name">David Osei</div>
+      <div class="member-role">Geospatial analysis<br>&amp; mapping / </div>
+    </div> -->
+
+    <div class="member-card">
+      <div class="member-avatar-placeholder">Lub<br>here</div>
+      <div class="member-name">Lub Lorry Lamysere</div>
+      <div class="member-role">Geospatial analysis / Dashboard<br>&amp; visualization</div>
+    </div>
+
+    <div class="member-card">
+      <div class="member-avatar-placeholder">Suyog<br>here</div>
+      <div class="member-name">Suyog Pawar</div>
+      <div class="member-role">Machine learning<br>&amp; modeling</div>
+    </div>
+
+  </div>
+
+  <div class="advisor-bar">
+    <div class="advisor-initials">RT</div>
+    <div>
+      <div class="advisor-label">Faculty advisor</div>
+      <div class="advisor-name">Dr. Timothy Haithcoat</div>
+      <div class="advisor-dept">University of Missouri &amp; Data Science</div>
+    </div>
+  </div>
+
+</section>
+<!-- END TEAM SECTION -->
+
 </div>
 
 <footer>
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Poverty &amp; Policy Atlas</div>
-      <p class="footer-desc">A data science case study examining federal spending patterns and poverty dynamics across Western Appalachia and the Mississippi Delta, 2014–2023. Built with USASpending.gov data and Census ACS.</p>
+      <p class="footer-desc">A data science case study examining federal spending patterns and poverty dynamics across Central Appalachia and the Mississippi Delta, 2014–2023. Built with USASpending.gov data and Census ACS.</p>
     </div>
     <div>
       <div class="footer-head">Data Sources</div>
