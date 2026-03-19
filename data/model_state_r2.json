@@ -1,0 +1,60 @@
+{
+  "gb": [
+    {
+      "state": "mississippi",
+      "region": "Mississippi Delta",
+      "r2": 0.846139,
+      "rmse": 0.022446,
+      "mae": 0.016835,
+      "avg_poverty": 20.0011
+    },
+    {
+      "state": "virginia",
+      "region": "Western Appalachia",
+      "r2": 0.841455,
+      "rmse": 0.019333,
+      "mae": 0.013826,
+      "avg_poverty": 11.271812
+    },
+    {
+      "state": "louisiana",
+      "region": "Mississippi Delta",
+      "r2": 0.794866,
+      "rmse": 0.020452,
+      "mae": 0.015213,
+      "avg_poverty": 17.802913
+    },
+    {
+      "state": "tennessee",
+      "region": "Western Appalachia",
+      "r2": 0.782324,
+      "rmse": 0.014763,
+      "mae": 0.011316,
+      "avg_poverty": 14.347385
+    },
+    {
+      "state": "west virginia",
+      "region": "Western Appalachia",
+      "r2": 0.761879,
+      "rmse": 0.016033,
+      "mae": 0.011734,
+      "avg_poverty": 13.837202
+    },
+    {
+      "state": "kentucky",
+      "region": "Western Appalachia",
+      "r2": 0.758651,
+      "rmse": 0.023438,
+      "mae": 0.01782,
+      "avg_poverty": 16.572727
+    },
+    {
+      "state": "arkansas",
+      "region": "Mississippi Delta",
+      "r2": 0.728354,
+      "rmse": 0.019515,
+      "mae": 0.01476,
+      "avg_poverty": 16.293634
+    }
+  ]
+}
