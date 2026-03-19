@@ -649,7 +649,8 @@ function scaleFV(raw) {
 // then replaces with ONNX result if model is ready
 async function runPrediction() {
   const inputs = collectInputs();
-
+  console.log('modelReady:', modelReady);       // true = ONNX, false = simPred
+  console.log('ortSession:', !!ortSession);
   // Show/hide future year warning
   const fw = $('future-warning');
   if (fw) fw.style.display = inputs.year > 2023 ? 'block' : 'none';
