@@ -1,1047 +1,665 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poverty & Policy Atlas | Southern States Analysis 2014-2023</title>
-    
-    <!-- Fonts: Distinctive choices for data visualization -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Leaflet for interactive maps -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <!-- Chart.js for interactive charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
-    
-    <!-- D3.js for data manipulation -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    
-    <style>
-        :root {
-            /* Distinctive color palette: Earthy data journalism aesthetic */
-            --primary-dark: #1a1a2e;
-            --primary-accent: #e94560;
-            --secondary-accent: #0f3460;
-            --tertiary-accent: #16213e;
-            --background: #f8f9fa;
-            --surface: #ffffff;
-            --text-primary: #2c3e50;
-            --text-secondary: #7f8c8d;
-            --border: #e0e0e0;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --danger: #e74c3c;
-            
-            /* Typography scale */
-            --font-display: 'DM Serif Display', serif;
-            --font-body: 'Public Sans', sans-serif;
-            --font-mono: 'IBM Plex Mono', monospace;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--font-body);
-            background: var(--background);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        /* Animated background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(45deg, transparent 48%, rgba(233, 69, 96, 0.02) 49%, rgba(233, 69, 96, 0.02) 51%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(15, 52, 96, 0.02) 49%, rgba(15, 52, 96, 0.02) 51%, transparent 52%);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 0.5s forwards;
-        }
-        
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--tertiary-accent) 100%);
-            color: white;
-            padding: 4rem 2rem 3rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid var(--primary-accent);
-        }
-        
-        header::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e94560' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-            pointer-events: none;
-        }
-        
-        .header-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: normal;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-            animation: slideInLeft 0.8s ease-out;
-        }
-        
-        .subtitle {
-            font-family: var(--font-mono);
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 1.5rem;
-            animation: slideInLeft 0.8s ease-out 0.2s both;
-        }
-        
-        .header-stats {
-            display: flex;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-            animation: slideInUp 0.8s ease-out 0.4s both;
-        }
-        
-        .stat-item {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .stat-value {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-style: italic;
-            color: var(--primary-accent);
-        }
-        
-        .stat-label {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            opacity: 0.7;
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Navigation */
-        nav {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        .nav-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            gap: 2rem;
-            overflow-x: auto;
-        }
-        
-        .nav-item {
-            padding: 1.25rem 0;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            cursor: pointer;
-            white-space: nowrap;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-            color: var(--text-secondary);
-        }
-        
-        .nav-item:hover {
-            color: var(--primary-accent);
-            border-bottom-color: var(--primary-accent);
-        }
-        
-        .nav-item.active {
-            color: var(--primary-dark);
-            border-bottom-color: var(--primary-accent);
-            font-weight: 600;
-        }
-        
-        /* Main container */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-        
-        /* Section styles */
-        .section {
-            display: none;
-            animation: fadeInSection 0.5s ease-out;
-        }
-        
-        .section.active {
-            display: block;
-        }
-        
-        @keyframes fadeInSection {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .section-header {
-            margin-bottom: 2rem;
-        }
-        
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-style: italic;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-        }
-        
-        .section-description {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 800px;
-        }
-        
-        /* Card grid */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-        
-        .card {
-            background: var(--surface);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--primary-accent);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1), 0 2px 6px rgba(0,0,0,0.15);
-        }
-        
-        .card:hover::before {
-            transform: scaleY(1);
-        }
-        
-        .card-title {
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .card-value {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-style: italic;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-        }
-        
-        .card-change {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .change-positive {
-            color: var(--success);
-        }
-        
-        .change-negative {
-            color: var(--danger);
-        }
-        
-        /* Map container */
-        .map-container {
-            background: var(--surface);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-        
-        .map-controls {
-            padding: 1.5rem;
-            background: var(--background);
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        .control-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        
-        .control-label {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-        }
-        
-        select, input[type="range"] {
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            background: var(--surface);
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        
-        select:hover, select:focus {
-            border-color: var(--primary-accent);
-            outline: none;
-        }
-        
-        #map {
-            height: 600px;
-            width: 100%;
-        }
-        
-        /* Chart containers */
-        .chart-container {
-            background: var(--surface);
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-        
-        .chart-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-style: italic;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-        
-        .chart-wrapper {
-            position: relative;
-            height: 400px;
-        }
-        
-        /* Legend */
-        .legend {
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border);
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-        }
-        
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 3px;
-        }
-        
-        /* Table styles */
-        .data-table {
-            width: 100%;
-            background: var(--surface);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
-            border: 1px solid var(--border);
-        }
-        
-        .table-wrapper {
-            overflow-x: auto;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        thead {
-            background: var(--background);
-        }
-        
-        th {
-            padding: 1rem;
-            text-align: left;
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-secondary);
-            font-weight: 600;
-        }
-        
-        td {
-            padding: 1rem;
-            border-top: 1px solid var(--border);
-        }
-        
-        tbody tr {
-            transition: background 0.2s ease;
-        }
-        
-        tbody tr:hover {
-            background: var(--background);
-        }
-        
-        /* Cluster badges */
-        .cluster-badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .cluster-low-low {
-            background: #d4edda;
-            color: #155724;
-        }
-        
-        .cluster-low-high {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-        
-        .cluster-high-under {
-            background: #f8d7da;
-            color: #721c24;
-        }
-        
-        .cluster-high-high {
-            background: #fff3cd;
-            color: #856404;
-        }
-        
-        /* Loading state */
-        .loading {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 400px;
-            gap: 1rem;
-        }
-        
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid var(--border);
-            border-top-color: var(--primary-accent);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-        }
-        
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .loading-text {
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 3rem 2rem;
-            margin-top: 4rem;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-        
-        .footer-section h3 {
-            font-family: var(--font-display);
-            font-style: italic;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .footer-section p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            line-height: 1.8;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.2s ease;
-            font-family: var(--font-mono);
-            font-size: 0.85rem;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-stats {
-                gap: 1.5rem;
-            }
-            
-            .stat-value {
-                font-size: 2rem;
-            }
-            
-            .nav-content {
-                gap: 1rem;
-            }
-            
-            .container {
-                padding: 2rem 1rem;
-            }
-            
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            #map {
-                height: 400px;
-            }
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 12px;
-            height: 12px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: var(--background);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 6px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-secondary);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poverty & Policy Atlas | Western Appalachia & Mississippi Delta 2014–2023</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+<style>
+:root {
+  --ink:       #0d0d14;
+  --paper:     #f5f2ed;
+  --surface:   #ffffff;
+  --app-amber: #ffb546;
+  --app-blue:  #0c7bff;
+  --app-green: #1db954;
+  --muted:     #6b6b7a;
+  --border:    rgba(0,0,0,0.10);
+  --font-head: 'DM Serif Display', serif;
+  --font-body: 'Public Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+header{background:var(--ink);color:white;padding:5rem 2rem 4rem;position:relative;overflow:hidden;border-bottom:4px solid var(--app-amber);}
+header::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(255,181,70,0.12) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(12,123,255,0.10) 0%,transparent 50%);pointer-events:none;}
+.header-inner{max-width:1320px;margin:0 auto;position:relative;z-index:1;}
+.eyebrow{font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--app-amber);margin-bottom:1rem;}
+h1{font-family:var(--font-head);font-size:clamp(2rem,3vw,4.6rem);line-height:1.0;letter-spacing:-0.03em;margin-bottom:1.5rem;font-style:italic;animation:slideInLeft 0.8s ease-out;}
+h1 em{font-style:normal;color:var(--app-amber);}
+.header-sub{font-size:1.15rem;color:rgba(255,255,255,0.65);max-width:680px;margin-bottom:1.2rem;font-weight:300;animation:slideInLeft 0.8s ease-out 0.2s both;}
+.kpi-row{display:flex;gap:3rem;flex-wrap:wrap;}
+.kpi{display:flex;flex-direction:column;gap:4px;}
+.kpi-val{font-family:var(--font-head);font-size:2.4rem;color:var(--app-amber);}
+.kpi-lab{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.5);}
+nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:900;}
+.nav-inner{max-width:1320px;margin:0 auto;padding:0 2rem;display:flex;gap:0;overflow-x:auto;}
+.nav-btn{padding:1.1rem 1.4rem;font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;border:none;background:none;color:var(--muted);transition:all 0.2s;}
+.nav-btn:hover{color:var(--ink);}
+.nav-btn.active{color:var(--ink);border-bottom:2px solid var(--app-amber);font-weight:600;}
+.container{max-width:1320px;margin:0 auto;padding:3.5rem 2rem;}
+.section{display:none;animation:fadeUp 0.4s ease;}
+.section.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-50px);}to{opacity:1;transform:translateX(0);}}
+.section-label{font-family:var(--font-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--app-amber);margin-bottom:0.6rem;}
+.section-title{font-family:var(--font-head);font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-0.02em;margin-bottom:0.75rem;line-height:1.1;font-style:italic;}
+.section-desc{font-size:1rem;color:var(--muted);max-width:720px;margin-bottom:2.5rem;}
+.card-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-bottom:2.5rem;}
+.card{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:1.6rem;transition:transform 0.2s,box-shadow 0.2s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.08);}
+.card-label{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;}
+.card-val{font-family:var(--font-head);font-size:2.2rem;line-height:1;font-style:italic;}
+.card-note{font-size:0.82rem;color:var(--muted);margin-top:0.4rem;}
+.card.accent-amber{border-top:3px solid var(--app-amber);}
+.card.accent-blue{border-top:3px solid var(--app-blue);}
+.card.accent-red{border-top:3px solid #e24b4a;}
+.card.accent-green{border-top:3px solid var(--app-green);}
+.chart-block{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:2rem;margin-bottom:2rem;}
+.chart-block-title{font-family:var(--font-head);font-size:1.3rem;margin-bottom:0.3rem;font-style:italic;}
+.chart-block-sub{font-size:0.85rem;color:var(--muted);margin-bottom:1.5rem;}
+.chart-wrap{position:relative;}
+.chart-wrap canvas{width:100%!important;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
+@media(max-width:860px){.grid2{grid-template-columns:1fr;}}
+.finding-list{display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem;}
+.finding{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start;background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:1.2rem 1.4rem;}
+.finding-num{width:36px;height:36px;border-radius:50%;background:var(--ink);color:white;font-family:var(--font-head);font-size:0.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.finding-title{font-size:0.78rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:3px;}
+.finding-text{font-size:0.95rem;line-height:1.65;color:var(--ink);}
+.callout{border-left:3px solid var(--app-amber);padding:1rem 1.4rem;background:rgba(255,181,70,0.07);border-radius:0 8px 8px 0;margin-bottom:2rem;font-size:0.95rem;line-height:1.7;}
+.callout strong{color:var(--ink);}
+.metric-table{width:100%;border-collapse:collapse;}
+.metric-table th{font-family:var(--font-mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;padding:0.6rem 1rem;background:rgba(0,0,0,0.03);text-align:left;color:var(--muted);}
+.metric-table td{padding:0.65rem 1rem;font-size:0.88rem;border-top:1px solid var(--border);}
+.metric-table tbody tr:hover{background:rgba(0,0,0,0.02);}
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-family:var(--font-mono);font-size:0.68rem;font-weight:600;letter-spacing:0.05em;}
+.badge-gb{background:#FFF8EC;color:#854F0B;}
+.badge-rn{background:#EAF2FB;color:#0C447C;}
+.predict-grid{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:start;}
+@media(max-width:1000px){.predict-grid{grid-template-columns:1fr;}}
+.slider-group{margin-bottom:1.4rem;}
+.slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.slider-label{font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);}
+.slider-val{font-family:var(--font-head);font-size:1.1rem;color:var(--ink);background:rgba(0,0,0,0.04);padding:2px 10px;border-radius:6px;min-width:64px;text-align:right;}
+input[type=range]{width:100%;height:4px;-webkit-appearance:none;appearance:none;background:var(--border);border-radius:2px;outline:none;cursor:pointer;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--app-amber);border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.2);transition:transform 0.15s;}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2);}
+.slider-range{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.62rem;color:var(--muted);margin-top:3px;}
+select.region-select{width:100%;padding:0.7rem 1rem;border:1px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;background:var(--surface);cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b7a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:2.5rem;}
+select.region-select:focus{outline:none;border-color:var(--app-amber);}
+.predict-result-card{background:var(--ink);color:white;border-radius:16px;padding:2.5rem 2rem;position:sticky;top:80px;}
+.result-label{font-family:var(--font-mono);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.75rem;}
+.result-number{font-family:var(--font-head);font-size:4.5rem;line-height:1;margin-bottom:0.4rem;color:var(--app-amber);font-style:italic;}
+.result-band{font-family:var(--font-mono);font-size:0.8rem;padding:4px 12px;border-radius:20px;display:inline-block;margin-bottom:1.5rem;}
+.band-critical{background:rgba(226,75,74,0.25);color:#f09595;}
+.band-high{background:rgba(239,159,39,0.25);color:#FAC775;}
+.band-moderate{background:rgba(255,181,70,0.20);color:#ffb546;}
+.band-low{background:rgba(29,185,84,0.20);color:#1db954;}
+.gauge-wrap{margin:1.5rem 0;position:relative;height:8px;background:rgba(255,255,255,0.15);border-radius:4px;overflow:hidden;}
+.gauge-fill{height:100%;border-radius:4px;transition:width 0.8s cubic-bezier(0.34,1.56,0.64,1);}
+.comparisons{margin-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;}
+.comp-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.7rem;font-size:0.82rem;}
+.comp-name{color:rgba(255,255,255,0.6);}
+.comp-val{font-family:var(--font-mono);font-weight:600;}
+.comp-diff-pos{color:#f09595;}
+.comp-diff-neg{color:#1db954;}
+.predict-btn{width:100%;margin-top:1.5rem;padding:0.9rem;border-radius:10px;background:var(--app-amber);color:var(--ink);border:none;cursor:pointer;font-family:var(--font-head);font-size:1rem;font-style:italic;transition:all 0.2s;}
+.predict-btn:hover{background:#ffc562;transform:translateY(-1px);}
+.sliders-panel{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:2rem;}
+.sliders-section-title{font-family:var(--font-mono);font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin:1.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border);color:var(--muted);}
+.sliders-section-title:first-child{margin-top:0;}
+.spending-filter-row{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;align-items:flex-end;}
+.filter-group{display:flex;flex-direction:column;gap:6px;}
+.filter-label{font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);}
+select.filter-select{padding:0.5rem 0.9rem;border:1px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.85rem;background:var(--surface);cursor:pointer;}
+select.filter-select:focus{outline:none;border-color:var(--app-amber);}
+.legend-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:0.75rem;}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:0.78rem;color:var(--muted);}
+.legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+
+/* ── NEW: MAP TAB STYLES ───────────────────────────────────────── */
+.map-tab-row{display:flex;gap:0;margin-bottom:1.5rem;border-bottom:1px solid var(--border);overflow-x:auto;}
+.map-tab-btn{padding:0.75rem 1.2rem;font-family:var(--font-mono);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;cursor:pointer;border:none;background:none;color:var(--muted);white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;}
+.map-tab-btn:hover{color:var(--ink);}
+.map-tab-btn.active{color:var(--ink);border-bottom:2px solid var(--app-amber);font-weight:600;}
+.map-panel{display:none;}
+.map-panel.active{display:block;}
+.map-image-wrap{background:var(--surface);border-radius:12px;border:1px solid var(--border);overflow:hidden;margin-bottom:1.5rem;}
+.map-image-wrap img{width:100%;display:block;max-height:640px;object-fit:contain;background:#f8f8f8;}
+.map-image-caption{padding:1rem 1.5rem;font-size:0.82rem;color:var(--muted);border-top:1px solid var(--border);line-height:1.6;}
+.map-image-caption strong{color:var(--ink);}
+.map-insight-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:1rem;}
+.map-insight{background:var(--surface);border-radius:10px;border:1px solid var(--border);padding:1.2rem;}
+.map-insight-label{font-family:var(--font-mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);margin-bottom:4px;}
+.map-insight-val{font-family:var(--font-head);font-size:1.8rem;font-style:italic;line-height:1;}
+.map-insight-note{font-size:0.78rem;color:var(--muted);margin-top:3px;}
+/* ── END MAP TAB STYLES ─────────────────────────────────────────── */
+
+/* ── NEW: CLUSTER STYLES ───────────────────────────────────────── */
+.cluster-card{background:var(--surface);border-radius:12px;border:1px solid var(--border);padding:1.8rem;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}
+.cluster-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,0.08);}
+.cluster-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.cluster-card.high-under::before{background:#e24b4a;}
+.cluster-card.high-high::before{background:var(--app-amber);}
+.cluster-card.low-high::before{background:var(--app-blue);}
+.cluster-card.low-low::before{background:var(--app-green);}
+.cluster-badge{display:inline-block;padding:3px 12px;border-radius:20px;font-family:var(--font-mono);font-size:0.68rem;font-weight:600;letter-spacing:0.06em;margin-bottom:0.75rem;}
+.badge-high-under{background:rgba(226,75,74,0.12);color:#791F1F;}
+.badge-high-high{background:rgba(255,181,70,0.15);color:#854F0B;}
+.badge-low-high{background:rgba(12,123,255,0.12);color:#0C447C;}
+.badge-low-low{background:rgba(29,185,84,0.12);color:#0F6E56;}
+.cluster-name{font-family:var(--font-head);font-size:1.3rem;font-style:italic;margin-bottom:0.4rem;}
+.cluster-pct{font-family:var(--font-head);font-size:2.8rem;font-style:italic;line-height:1;margin-bottom:0.5rem;}
+.cluster-desc{font-size:0.88rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;}
+.cluster-bar-wrap{margin-top:0.75rem;}
+.cluster-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:0.8rem;}
+.cluster-bar-label{width:110px;color:var(--muted);font-family:var(--font-mono);font-size:0.65rem;text-transform:uppercase;flex-shrink:0;}
+.cluster-bar-track{flex:1;height:5px;background:rgba(0,0,0,0.06);border-radius:3px;overflow:hidden;}
+.cluster-bar-fill{height:100%;border-radius:3px;transition:width 0.6s ease;}
+.cluster-bar-val{width:44px;text-align:right;font-family:var(--font-mono);font-size:0.72rem;color:var(--ink);}
+.cluster-stats{display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);}
+.cluster-stat{background:rgba(0,0,0,0.03);border-radius:6px;padding:4px 10px;font-family:var(--font-mono);font-size:0.68rem;color:var(--muted);}
+.cluster-stat strong{color:var(--ink);}
+/* ── END CLUSTER STYLES ─────────────────────────────────────────── */
+
+footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
+.footer-inner{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr;}}
+.footer-brand{font-family:var(--font-head);font-size:1.6rem;margin-bottom:0.75rem;color:var(--app-amber);font-style:italic;}
+.footer-desc{font-size:0.85rem;color:rgba(255,255,255,0.5);line-height:1.8;}
+.footer-head{font-family:var(--font-mono);font-size:0.7rem;text-transform:uppercase;letter-spacing:0.15em;color:rgba(255,255,255,0.4);margin-bottom:1rem;}
+.footer-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+.footer-list a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.85rem;transition:color 0.2s;}
+.footer-list a:hover{color:var(--app-amber);}
+.footer-bottom{max-width:1320px;margin:2.5rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.78rem;color:rgba(255,255,255,0.3);font-family:var(--font-mono);}
+::-webkit-scrollbar{width:8px;height:8px;}
+::-webkit-scrollbar-track{background:var(--paper);}
+::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.15);border-radius:4px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,0.3);}
+</style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <h1>Dollars, Decisions, and Disparities:</h1>
-            <div class="subtitle">Analyzing Policy Impacts on U.S. Communities • 2014–2023</div>
-            
-            <div class="header-stats">
-                <div class="stat-item">
-                    <div class="stat-value">9</div>
-                    <div class="stat-label">States Analyzed</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">804</div>
-                    <div class="stat-label">Counties</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">10</div>
-                    <div class="stat-label">Years of Data</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">15.5%</div>
-                    <div class="stat-label">Avg Poverty Rate</div>
-                </div>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-content">
-            <div class="nav-item active" onclick="showSection('overview')">Overview</div>
-            <div class="nav-item" onclick="showSection('maps')">Interactive Maps</div>
-            <div class="nav-item" onclick="showSection('trends')">Trends</div>
-            <div class="nav-item" onclick="showSection('clusters')">County Clusters</div>
-            <div class="nav-item" onclick="showSection('analysis')">Analysis</div>
-            <div class="nav-item" onclick="showSection('data')">Data Explorer</div>
-        </div>
-    </nav>
-    
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Overview Section -->
-        <section id="overview" class="section active">
-            <div class="section-header">
-                <h2 class="section-title">Executive Overview</h2>
-                <p class="section-description">
-                    A comprehensive geospatial analysis of poverty patterns and public assistance 
-                    distribution across nine Southern U.S. states, examining the relationship between 
-                    socioeconomic conditions and government support from 2014 to 2023.
-                </p>
-            </div>
-            
-            <div class="card-grid">
-                <div class="stat-card">
-                    <div class="card-title">Average Poverty Rate</div>
-                    <div class="stat-value">15.5%</div>
-                    <div class="card-change change-positive">
-                        ↓ 2.5 points since 2014
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="card-title">Model Accuracy (R²)</div>
-                    <div class="stat-value">0.82</div>
-                    <div class="card-change">
-                        Random Forest outperforms linear models
-                    </div>
-                </div>
-                
-                <div class="stat-card">
-                    <div class="card-title">Under-Served Counties</div>
-                    <div class="stat-value">22%</div>
-                    <div class="card-change change-negative">
-                        High need, insufficient assistance
-                    </div>
-                </div>
-            </div>
-            
-            <div class="chart-container">
-                <h3 class="chart-title">Key Findings</h3>
-                <div style="padding: 1rem 0;">
-                    <div style="margin-bottom: 2rem;">
-                        <h4 style="font-family: var(--font-mono); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 0.5rem; color: var(--text-secondary);">
-                            Primary Poverty Drivers
-                        </h4>
-                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                            <div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                    <span>Median Income</span>
-                                    <span style="font-family: var(--font-mono); font-weight: 600;">71%</span>
-                                </div>
-                                <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
-                                    <div style="width: 71%; height: 100%; background: var(--primary-accent);"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                    <span>Single Mother Rate</span>
-                                    <span style="font-family: var(--font-mono); font-weight: 600;">12%</span>
-                                </div>
-                                <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
-                                    <div style="width: 12%; height: 100%; background: var(--secondary-accent);"></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
-                                    <span>Income Inequality (Gini)</span>
-                                    <span style="font-family: var(--font-mono); font-weight: 600;">6%</span>
-                                </div>
-                                <div style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
-                                    <div style="width: 6%; height: 100%; background: var(--tertiary-accent);"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div style="padding: 1.5rem; background: var(--background); border-radius: 8px; border-left: 4px solid var(--primary-accent);">
-                        <p style="font-size: 1.05rem; line-height: 1.8;">
-                            <strong>Key Insight:</strong> Income is overwhelmingly the dominant factor in poverty rates (71% feature importance), 
-                            followed by household structure and inequality. This suggests policy interventions should prioritize income 
-                            generation and support for single-parent households.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Interactive Maps Section -->
-        <section id="maps" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Interactive Geospatial Analysis</h2>
-                <p class="section-description">
-                    Explore county-level poverty patterns, public assistance distribution, and policy 
-                    misalignment across the region. Use the controls to switch between different metrics.
-                </p>
-            </div>
-            
-            <div class="map-container">
-                <div class="map-controls">
-                    <div class="control-group">
-                        <label class="control-label">Metric</label>
-                        <select id="metricSelect" onchange="updateMap()">
-                            <option value="poverty">Expected Poverty Rate</option>
-                            <option value="assistance">Public Assistance Rate</option>
-                            <option value="misalignment">Policy Misalignment</option>
-                            <option value="cluster">County Clusters</option>
-                        </select>
-                    </div>
-                    
-                    <div class="control-group">
-                        <label class="control-label">Year</label>
-                        <select id="yearSelect" onchange="updateMap()">
-                            <option value="avg">Average (2014-2023)</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                            <option value="2019">2019</option>
-                            <option value="2018">2018</option>
-                            <option value="2017">2017</option>
-                            <option value="2016">2016</option>
-                            <option value="2015">2015</option>
-                            <option value="2014">2014</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div id="map"></div>
-            </div>
-            
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #ffffcc;"></div>
-                    <span>Low</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #feb24c;"></div>
-                    <span>Medium</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #f03b20;"></div>
-                    <span>High</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color" style="background: #bd0026;"></div>
-                    <span>Very High</span>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Trends Section -->
-        <section id="trends" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Temporal Trends</h2>
-                <p class="section-description">
-                    Track how poverty rates have evolved over the decade and compare performance across states.
-                </p>
-            </div>
-            
-            <div class="chart-container">
-                <h3 class="chart-title">Poverty Rate Over Time (2014-2023)</h3>
-                <div class="chart-wrapper">
-                    <canvas id="trendChart"></canvas>
-                </div>
-            </div>
-            
-            <div class="chart-container">
-                <h3 class="chart-title">State Comparison</h3>
-                <div class="chart-wrapper">
-                    <canvas id="stateChart"></canvas>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Clusters Section -->
-        <section id="clusters" class="section">
-            <div class="section-header">
-                <h2 class="section-title">County Policy Clusters</h2>
-                <p class="section-description">
-                    Counties grouped by poverty level and assistance distribution reveal four distinct 
-                    policy-need profiles requiring tailored interventions.
-                </p>
-            </div>
-            
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-title">Cluster 1</div>
-                    <div class="card-value">37.7%</div>
-                    <span class="cluster-badge cluster-low-low">Low Need / Low Assistance</span>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-                        Wealthy counties with appropriate low support levels
-                    </p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-title">Cluster 2</div>
-                    <div class="card-value">29.5%</div>
-                    <span class="cluster-badge cluster-low-high">Low-Mod Need / High Assistance</span>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-                        Moderate need with strong support systems
-                    </p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-title">Cluster 3 ⚠️</div>
-                    <div class="card-value">22.4%</div>
-                    <span class="cluster-badge cluster-high-under">High Need / Under-Served</span>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-                        <strong>Priority intervention areas</strong> - High poverty, insufficient help
-                    </p>
-                </div>
-                
-                <div class="card">
-                    <div class="card-title">Cluster 4</div>
-                    <div class="card-value">10.5%</div>
-                    <span class="cluster-badge cluster-high-high">High Need / High Assistance</span>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">
-                        Very high poverty with appropriate support
-                    </p>
-                </div>
-            </div>
-            
-            <div class="chart-container">
-                <h3 class="chart-title">Cluster Characteristics</h3>
-                <div class="chart-wrapper">
-                    <canvas id="clusterChart"></canvas>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Analysis Section -->
-        <section id="analysis" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Statistical Analysis</h2>
-                <p class="section-description">
-                    Machine learning reveals the complex relationships between socioeconomic factors and poverty.
-                </p>
-            </div>
-            
-            <div class="chart-container">
-                <h3 class="chart-title">Model Performance Comparison</h3>
-                <div class="chart-wrapper">
-                    <canvas id="modelChart"></canvas>
-                </div>
-                <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--background); border-radius: 8px;">
-                    <p style="font-size: 1.05rem; line-height: 1.8;">
-                        <strong>Random Forest Model:</strong> Achieves R² = 0.82 with MAE = 0.019 (1.9 percentage points), 
-                        substantially outperforming linear regression. This indicates significant non-linear relationships 
-                        between predictors and poverty outcomes.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="chart-container">
-                <h3 class="chart-title">Correlation Analysis: Key Socioeconomic Factors</h3>
-                <div class="chart-wrapper">
-                    <canvas id="corrChart"></canvas>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Data Explorer Section -->
-        <section id="data" class="section">
-            <div class="section-header">
-                <h2 class="section-title">Data Explorer</h2>
-                <p class="section-description">
-                    Browse county-level data and filter by various criteria. Click column headers to sort.
-                </p>
-            </div>
-            
-            <div class="map-controls" style="background: var(--surface); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                <div class="control-group">
-                    <label class="control-label">Filter by State</label>
-                    <select id="stateFilter" onchange="filterTable()">
-                        <option value="all">All States</option>
-                        <option value="AL">Alabama</option>
-                        <option value="AR">Arkansas</option>
-                        <option value="FL">Florida</option>
-                        <option value="GA">Georgia</option>
-                        <option value="KY">Kentucky</option>
-                        <option value="LA">Louisiana</option>
-                        <option value="MS">Mississippi</option>
-                        <option value="MO">Missouri</option>
-                        <option value="WV">West Virginia</option>
-                    </select>
-                </div>
-                
-                <div class="control-group">
-                    <label class="control-label">Filter by Cluster</label>
-                    <select id="clusterFilter" onchange="filterTable()">
-                        <option value="all">All Clusters</option>
-                        <option value="low-low">Low Need / Low Assistance</option>
-                        <option value="low-high">Low-Mod Need / High Assistance</option>
-                        <option value="high-under">High Need / Under-Served</option>
-                        <option value="high-high">High Need / High Assistance</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="data-table">
-                <div class="table-wrapper">
-                    <table id="dataTable">
-                        <thead>
-                            <tr>
-                                <th onclick="sortTable(0)">County</th>
-                                <th onclick="sortTable(1)">State</th>
-                                <th onclick="sortTable(2)">Poverty Rate</th>
-                                <th onclick="sortTable(3)">Assistance Rate</th>
-                                <th onclick="sortTable(4)">Misalignment</th>
-                                <th onclick="sortTable(5)">Cluster</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                            <!-- Will be populated by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">Poverty &amp; Policy Atlas — University of Missouri-Columbia</div>
+    <h1>Dollars, Decisions, and Disparities</h1>
+    <p class="header-sub">A decade of federal spending, poverty dynamics, and fiscal misalignment across 624 counties in Western Appalachia and the Mississippi Delta.</p>
+    <div class="kpi-row">
+      <div class="kpi"><span class="kpi-val">7</span><span class="kpi-lab">Target States</span></div>
+      <div class="kpi"><span class="kpi-val">624</span><span class="kpi-lab">Counties</span></div>
+      <div class="kpi"><span class="kpi-val">10</span><span class="kpi-lab">Years of Data</span></div>
+      <div class="kpi"><span class="kpi-val">14M+</span><span class="kpi-lab">Transactions</span></div>
+      <div class="kpi"><span class="kpi-val">R²=0.84</span><span class="kpi-lab">Model Accuracy</span></div>
     </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About This Project</h3>
-                <p>
-                    A comprehensive geospatial analysis examining poverty patterns and policy alignment 
-                    across nine Southern U.S. states using machine learning and spatial analytics.
-                </p>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Data Sources</h3>
-                <ul class="footer-links">
-                    <li><a href="#">U.S. Census Bureau ACS</a></li>
-                    <li><a href="#">County Shapefiles</a></li>
-                    <li><a href="#">Public Assistance Data</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h3>Methodology</h3>
-                <ul class="footer-links">
-                    <li><a href="#" onclick="showSection('analysis'); return false;">Statistical Analysis</a></li>
-                    <li><a href="#">GitHub Repository</a></li>
-                    <li><a href="#">Technical Documentation</a></li>
-                </ul>
-            </div>
+  </div>
+</header>
+
+<nav>
+  <div class="nav-inner">
+    <button class="nav-btn active" onclick="show('overview',this)">Overview</button>
+    <button class="nav-btn" onclick="show('spending',this)">Spending</button>
+    <button class="nav-btn" onclick="show('misalignment',this)">Misalignment</button>
+    <!-- NEW: Maps tab added to nav -->
+    <button class="nav-btn" onclick="show('maps',this)">Maps</button>
+    <!-- NEW: Clusters tab added to nav -->
+    <button class="nav-btn" onclick="show('clusters',this)">Clusters</button>
+    <button class="nav-btn" onclick="show('models',this)">Models</button>
+    <button class="nav-btn" onclick="show('predict',this)">Predict</button>
+    <button class="nav-btn" onclick="show('conclusions',this)">Conclusions</button>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- OVERVIEW (unchanged) -->
+<section id="overview" class="section active">
+  <div class="section-label">Study Overview</div>
+  <div class="section-title">Where poverty persists —<br>and where money flows</div>
+  <p class="section-desc">We linked 14M+ USASpending transactions with Census ACS indicators to build the first county-year panel comparing poverty need against federal dollars received across two of America's most persistently poor regions.</p>
+  <div class="card-row">
+    <div class="card accent-amber"><div class="card-label">Avg poverty rate</div><div class="card-val">15.5%</div><div class="card-note">Miss. Delta avg 18.5% · Appalachia 14.1%</div></div>
+    <div class="card accent-blue"><div class="card-label">Total obligations 2014–23</div><div class="card-val">$3.8T</div><div class="card-note">84% direct payments · 8% grants</div></div>
+    <div class="card accent-red"><div class="card-label">COVID spending surge</div><div class="card-val">+113%</div><div class="card-note">2020 vs pre-COVID avg — did not close gaps</div></div>
+    <div class="card accent-green"><div class="card-label">Most underfunded county</div><div class="card-val">+3.20</div><div class="card-note">GEOID 28143 · MS · 27.7% poverty</div></div>
+  </div>
+  <div class="finding-list">
+    <div class="finding"><div class="finding-num">1</div><div><div class="finding-title">Spatial poverty structure</div><div class="finding-text">Poverty is spatially persistent. Mississippi Delta counties consistently rank highest (17–28%). COVID temporarily masked trends but poverty resumed its pre-2020 trajectory by 2022.</div></div></div>
+    <div class="finding"><div class="finding-num">2</div><div><div class="finding-title">Federal dollars vs poverty need</div><div class="finding-text">HHS ($1,498B) and Social Security dominate — but these are entitlement transfers, not targeted investment. HUD and Agriculture remain underweight relative to regional need, particularly in the Delta.</div></div></div>
+    <div class="finding"><div class="finding-num">3</div><div><div class="finding-title">Fiscal neglect is measurable</div><div class="finding-text">Using Poverty Z − Spending Z, the entire Mississippi Delta region shows positive misalignment (underfunded), while most of Virginia shows negative scores (overfunded relative to need).</div></div></div>
+    <div class="finding"><div class="finding-num">4</div><div><div class="finding-title">Model accuracy</div><div class="finding-text">Gradient Boosting achieves mean R²=0.838 across rolling windows. Median income and public assistance rate are the strongest predictors. GB outperforms ResNet and GNN on 7 of 11 metrics.</div></div></div>
+  </div>
+  <div class="callout"><strong>Policy implication:</strong> A reallocation of even 5% from direct payments toward competitive grants in underfunded Delta counties would represent a structural shift toward reducing persistent poverty rather than maintaining it.</div>
+</section>
+
+<!-- SPENDING (unchanged) -->
+<section id="spending" class="section">
+  <div class="section-label">Federal Spending Analysis</div>
+  <div class="section-title">$3.8 trillion over<br>a decade — where did it go?</div>
+  <p class="section-desc">Total federal obligations by region, year, and agency sector.</p>
+  <div class="spending-filter-row">
+    <div class="filter-group">
+      <span class="filter-label">View</span>
+      <select class="filter-select" id="spendView" onchange="renderSpendingCharts()">
+        <option value="region">By Region Over Time</option>
+        <option value="sector">By Sector</option>
+      </select>
+    </div>
+  </div>
+  <div class="chart-block">
+    <div class="chart-block-title" id="spendChartTitle">Total Assistance by Region ($B) — 2014–2023</div>
+    <div class="chart-block-sub" id="spendChartSub">Western Appalachia peaked at $533B in 2020. Mississippi Delta at $144B in 2021.</div>
+    <div class="chart-wrap"><canvas id="spendChart" height="380"></canvas></div>
+    <div class="legend-row" id="spendLegend">
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Western Appalachia</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Mississippi Delta</div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="chart-block"><div class="chart-block-title">Spending Mix — Both Regions</div><div class="chart-block-sub">Direct payments dominate at 84%.</div><div class="chart-wrap"><canvas id="mixChart" height="280"></canvas></div></div>
+    <div class="chart-block"><div class="chart-block-title">Year-over-Year Change (%)</div><div class="chart-block-sub">COVID 2020 spike clearly visible.</div><div class="chart-wrap"><canvas id="yoyChart" height="280"></canvas></div></div>
+  </div>
+</section>
+
+<!-- MISALIGNMENT (unchanged) -->
+<section id="misalignment" class="section">
+  <div class="section-label">Fiscal Misalignment</div>
+  <div class="section-title">Are the neediest counties<br>being reached?</div>
+  <p class="section-desc">Misalignment Score = Poverty Z-score − Spending Z-score. Positive = underfunded. Negative = overfunded. Normalized within each year.</p>
+  <div class="card-row">
+    <div class="card accent-red"><div class="card-label">Most underfunded</div><div class="card-val" style="font-size:1.8rem;">+3.20</div><div class="card-note">GEOID 28143 · Tunica Co., MS · 27.7% poverty</div></div>
+    <div class="card accent-green"><div class="card-label">Best aligned</div><div class="card-val" style="font-size:1.8rem;">0.00</div><div class="card-note">GEOID 28067 · Mississippi · 19.2% poverty</div></div>
+    <div class="card accent-blue"><div class="card-label">Most overfunded</div><div class="card-val" style="font-size:1.8rem;">−2.96</div><div class="card-note">GEOID 51735 · Virginia · 4.5% poverty</div></div>
+  </div>
+  <div class="chart-block">
+    <div class="chart-block-title">Misalignment Over Time by Region</div>
+    <div class="chart-block-sub">Mississippi Delta consistently underfunded. Appalachia crosses below zero after 2018.</div>
+    <div class="chart-wrap"><canvas id="misalignTimeChart" height="320"></canvas></div>
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Mississippi Delta</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Western Appalachia</div>
+    </div>
+  </div>
+  <div class="chart-block">
+    <div class="chart-block-title">Per-Agency Misalignment Heatmap — State × Agency</div>
+    <div class="chart-block-sub">Red = underfunded. Blue = overfunded. Avg scores 2014–2023.</div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;margin-top:1rem;min-width:560px;">
+        <thead><tr>
+          <th style="text-align:left;padding:8px 12px;font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);"></th>
+          <th style="padding:8px 12px;font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;color:var(--muted);text-align:center;">HHS</th>
+          <th style="padding:8px 12px;font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;color:var(--muted);text-align:center;">USDA</th>
+          <th style="padding:8px 12px;font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;color:var(--muted);text-align:center;">SSA</th>
+          <th style="padding:8px 12px;font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;color:var(--muted);text-align:center;">HUD</th>
+          <th style="padding:8px 12px;font-family:var(--font-mono);font-size:0.68rem;text-transform:uppercase;color:var(--muted);text-align:center;">Education</th>
+        </tr></thead>
+        <tbody id="heatmapBody"></tbody>
+      </table>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-top:1rem;font-family:var(--font-mono);font-size:0.68rem;color:var(--muted);">
+      <span>Overfunded ←</span>
+      <div style="flex:1;height:8px;border-radius:4px;background:linear-gradient(to right,#002255,#4499DD,#FFFFFF,#FF7744,#8B0000);"></div>
+      <span>→ Underfunded</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     NEW: MAPS SECTION
+     Three sub-tabs: Poverty · Spending · Misalignment
+     Place your exported PNG files in an /images/ folder.
+     File names: poverty_choropleth.png,
+                 sector_spending_map.png,
+                 misalignment_map_callouts.png
+════════════════════════════════════════════════ -->
+<section id="maps" class="section">
+  <div class="section-label">Geospatial Analysis</div>
+  <div class="section-title">Where on the map?</div>
+  <p class="section-desc">County-level choropleth maps showing poverty concentration, federal spending distribution, and fiscal misalignment. Switch between views using the tabs below.</p>
+
+  <!-- NEW: sub-tab switcher -->
+  <div class="map-tab-row">
+    <button class="map-tab-btn active" onclick="showMapTab('map-poverty',this)">Poverty Distribution</button>
+    <button class="map-tab-btn" onclick="showMapTab('map-spending',this)">Federal Spending</button>
+    <button class="map-tab-btn" onclick="showMapTab('map-misalign',this)">Misalignment</button>
+  </div>
+
+  <!-- NEW: Panel 1 — Poverty map -->
+  <div id="map-poverty" class="map-panel active">
+    <div class="map-image-wrap">
+      <!-- <img src="images/poverty_choropleth.png" alt="Poverty distribution map"
+           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>poverty_choropleth.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
+      <div class="map-image-caption"> -->
+        <strong>Average county poverty rate 2015–2022.</strong>
+        Dark red = above 25% poverty. The Mississippi Delta corridor (MS, LA, AR) shows the highest concentration.
+        Dashed pink border = Western Appalachia. Dashed green = Mississippi Delta.
+      </div>
+    </div>
+    <div class="map-insight-row">
+      <div class="map-insight"><div class="map-insight-label">Highest poverty county</div><div class="map-insight-val">27.7%</div><div class="map-insight-note">Tunica Co., MS (GEOID 28143)</div></div>
+      <div class="map-insight"><div class="map-insight-label">Delta avg poverty</div><div class="map-insight-val">18.5%</div><div class="map-insight-note">vs 14.1% in Appalachia</div></div>
+      <div class="map-insight"><div class="map-insight-label">Counties above 20%</div><div class="map-insight-val">~180</div><div class="map-insight-note">Mostly MS, LA, and KY</div></div>
+      <div class="map-insight"><div class="map-insight-label">Persistence</div><div class="map-insight-val">10 yrs</div><div class="map-insight-note">Same high-poverty counties every year</div></div>
+    </div>
+  </div>
+
+  <!-- NEW: Panel 2 — Spending map -->
+  <div id="map-spending" class="map-panel">
+    <div class="map-image-wrap">
+      <!-- <img src="images/sector_spending_map.png" alt="Federal spending map"
+           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>sector_spending_map.png</strong> in an <strong>images/</strong> folder next to index.html</div>'"> -->
+      <div class="map-image-caption">
+        <strong>Average annual federal obligation per county — quintile bands (each = 20% of counties).</strong>
+        Dark crimson = highest spending quintile. Dark navy = lowest.
+        Color bands are computed from actual dollar quintiles so the full ramp always renders.
+      </div>
+    </div>
+    <div class="map-insight-row">
+      <div class="map-insight"><div class="map-insight-label">Total 2014–2023</div><div class="map-insight-val">$3.8T</div><div class="map-insight-note">Both regions combined</div></div>
+      <div class="map-insight"><div class="map-insight-label">Appalachia total</div><div class="map-insight-val">$2.6T</div><div class="map-insight-note">Larger due to population size</div></div>
+      <div class="map-insight"><div class="map-insight-label">Delta total</div><div class="map-insight-val">$1.2T</div><div class="map-insight-note">Lower absolute, higher need per capita</div></div>
+      <div class="map-insight"><div class="map-insight-label">Direct payment share</div><div class="map-insight-val">84%</div><div class="map-insight-note">Entitlement transfers dominate</div></div>
+    </div>
+  </div>
+
+  <!-- NEW: Panel 3 — Misalignment map -->
+  <div id="map-misalign" class="map-panel">
+    <div class="map-image-wrap">
+      <!-- <img src="images/misalignment_map_callouts.png" alt="Misalignment map"
+           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>misalignment_map_callouts.png</strong> in an <strong>images/</strong> folder next to index.html</div>'"> -->
+      <div class="map-image-caption">
+        <strong>Spending misalignment score = Poverty Z − Spending Z.</strong>
+        Red = underfunded (poverty rank exceeds spending rank).
+        Blue = overfunded (spending exceeds need).
+        White = aligned. Callout boxes show the three extreme cases.
+      </div>
+    </div>
+    <div class="map-insight-row">
+      <div class="map-insight" style="border-top:3px solid #e24b4a;"><div class="map-insight-label">Most underfunded</div><div class="map-insight-val" style="color:#e24b4a;">+3.20</div><div class="map-insight-note">Tunica Co., MS · 27.7% poverty</div></div>
+      <div class="map-insight" style="border-top:3px solid var(--app-green);"><div class="map-insight-label">Best aligned</div><div class="map-insight-val" style="color:var(--app-green);">0.00</div><div class="map-insight-note">GEOID 28067 · MS · 19.2% poverty</div></div>
+      <div class="map-insight" style="border-top:3px solid var(--app-blue);"><div class="map-insight-label">Most overfunded</div><div class="map-insight-val" style="color:var(--app-blue);">−2.96</div><div class="map-insight-note">GEOID 51735 · VA · 4.5% poverty</div></div>
+      <div class="map-insight"><div class="map-insight-label">Delta overall score</div><div class="map-insight-val">+0.65</div><div class="map-insight-note">Consistently underfunded 2014–2023</div></div>
+    </div>
+  </div>
+
+  <!-- NEW: instruction callout for image files -->
+  <div class="callout" style="margin-top:2rem;">
+    <strong>To display your maps:</strong> Export the three PNG files from your Python notebook and place them in an
+    <code>images/</code> folder next to <code>index.html</code>.
+    Expected names: <code>poverty_choropleth.png</code> · <code>sector_spending_map.png</code> · <code>misalignment_map_callouts.png</code>.
+  </div>
+</section>
+<!-- END NEW MAPS SECTION -->
+
+<!-- ═══════════════════════════════════════════════
+     NEW: CLUSTERS SECTION
+     Four county cluster profiles with metrics,
+     mini bar charts, and a comparison chart.
+════════════════════════════════════════════════ -->
+<section id="clusters" class="section">
+  <div class="section-label">County Profiles</div>
+  <div class="section-title">Four types of county,<br>four different problems.</div>
+  <p class="section-desc">Counties are grouped by their poverty level and federal spending alignment. Each profile requires a different policy response — a uniform national approach fails all of them.</p>
+
+  <!-- NEW: Summary count cards -->
+  <div class="card-row" style="margin-bottom:2.5rem;">
+    <div class="card accent-red"><div class="card-label">High need · under-served</div><div class="card-val">22%</div><div class="card-note">Priority intervention · mostly Delta corridor</div></div>
+    <div class="card accent-amber"><div class="card-label">High need · well-served</div><div class="card-val">11%</div><div class="card-note">Transfers active but poverty persists</div></div>
+    <div class="card accent-blue"><div class="card-label">Low need · over-served</div><div class="card-val">30%</div><div class="card-note">Spending exceeds need — leakage risk</div></div>
+    <div class="card accent-green"><div class="card-label">Low need · aligned</div><div class="card-val">37%</div><div class="card-note">Proportional spending · no urgent action</div></div>
+  </div>
+
+  <!-- NEW: Cluster detail cards (2×2 grid) -->
+  <div class="grid2" style="margin-bottom:2rem;">
+
+    <!-- Cluster 1: High Need / Under-served -->
+    <div class="cluster-card high-under">
+      <span class="cluster-badge badge-high-under">⚠ High need · under-served</span>
+      <div class="cluster-name">The Neglected Core</div>
+      <div class="cluster-pct" style="color:#e24b4a;">22%</div>
+      <div class="cluster-desc">Counties with poverty rates consistently above 20% that receive below-average federal spending relative to their need. The programs simply do not reach them at sufficient scale.</div>
+      <div class="cluster-bar-wrap">
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Avg poverty</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:70%;background:#e24b4a;"></div></div><span class="cluster-bar-val">22.4%</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Misalignment</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:65%;background:#e24b4a;"></div></div><span class="cluster-bar-val">+1.80</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Grant share</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:18%;background:#ffb546;"></div></div><span class="cluster-bar-val">4.2%</span></div>
+      </div>
+      <div class="cluster-stats">
+        <div class="cluster-stat"><strong>Concentration:</strong> MS, LA, AR</div>
+        <div class="cluster-stat"><strong>Top gap agency:</strong> HUD</div>
+        <div class="cluster-stat"><strong>Action:</strong> Targeted grants</div>
+      </div>
+    </div>
+
+    <!-- Cluster 2: High Need / Well-served -->
+    <div class="cluster-card high-high">
+      <span class="cluster-badge badge-high-high">High need · well-served</span>
+      <div class="cluster-name">Transfer-Dependent</div>
+      <div class="cluster-pct" style="color:#854F0B;">11%</div>
+      <div class="cluster-desc">Very high poverty counties that do receive proportional federal transfers — mostly Social Security and SNAP. Spending is aligned but poverty is not falling. Transfers maintain but do not reduce poverty.</div>
+      <div class="cluster-bar-wrap">
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Avg poverty</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:65%;background:#ffb546;"></div></div><span class="cluster-bar-val">21.0%</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Misalignment</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:20%;background:var(--app-green);"></div></div><span class="cluster-bar-val">+0.10</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Direct pmts</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:92%;background:#ffb546;"></div></div><span class="cluster-bar-val">91%</span></div>
+      </div>
+      <div class="cluster-stats">
+        <div class="cluster-stat"><strong>Concentration:</strong> Eastern KY, WV</div>
+        <div class="cluster-stat"><strong>Key finding:</strong> Transfers ≠ mobility</div>
+        <div class="cluster-stat"><strong>Action:</strong> Workforce investment</div>
+      </div>
+    </div>
+
+    <!-- Cluster 3: Low Need / Over-served -->
+    <div class="cluster-card low-high">
+      <span class="cluster-badge badge-low-high">Low need · over-served</span>
+      <div class="cluster-name">Overfunded Relative to Need</div>
+      <div class="cluster-pct" style="color:#0C447C;">30%</div>
+      <div class="cluster-desc">Counties with moderate or low poverty that capture a disproportionate share of federal spending — often due to university presence, military bases, or strong grant-writing capacity.</div>
+      <div class="cluster-bar-wrap">
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Avg poverty</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:30%;background:var(--app-blue);"></div></div><span class="cluster-bar-val">9.8%</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Misalignment</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:55%;background:var(--app-blue);"></div></div><span class="cluster-bar-val">−1.40</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Contract share</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:40%;background:var(--app-blue);"></div></div><span class="cluster-bar-val">12.1%</span></div>
+      </div>
+      <div class="cluster-stats">
+        <div class="cluster-stat"><strong>Concentration:</strong> VA, TN metros</div>
+        <div class="cluster-stat"><strong>Driver:</strong> Contracts + HHS</div>
+        <div class="cluster-stat"><strong>Action:</strong> Rebalance targeting</div>
+      </div>
+    </div>
+
+    <!-- Cluster 4: Low Need / Aligned -->
+    <div class="cluster-card low-low">
+      <span class="cluster-badge badge-low-low">Low need · aligned</span>
+      <div class="cluster-name">Proportionally Served</div>
+      <div class="cluster-pct" style="color:#0F6E56;">37%</div>
+      <div class="cluster-desc">Counties where federal spending is roughly proportional to poverty level. These serve as the baseline for what aligned spending looks like. No urgent reallocation needed — they are the model to replicate.</div>
+      <div class="cluster-bar-wrap">
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Avg poverty</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:25%;background:var(--app-green);"></div></div><span class="cluster-bar-val">8.2%</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Misalignment</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:8%;background:var(--app-green);"></div></div><span class="cluster-bar-val">−0.10</span></div>
+        <div class="cluster-bar-row"><span class="cluster-bar-label">Model R²</span><div class="cluster-bar-track"><div class="cluster-bar-fill" style="width:88%;background:var(--app-green);"></div></div><span class="cluster-bar-val">0.88</span></div>
+      </div>
+      <div class="cluster-stats">
+        <div class="cluster-stat"><strong>Concentration:</strong> Suburban VA, TN</div>
+        <div class="cluster-stat"><strong>Stability:</strong> Consistent 2014–2023</div>
+        <div class="cluster-stat"><strong>Action:</strong> Maintain</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEW: Cluster comparison chart -->
+  <div class="chart-block">
+    <div class="chart-block-title">Cluster Profile Comparison</div>
+    <div class="chart-block-sub">Avg poverty rate and avg misalignment score across the four cluster types. High Need / Under-served is the clearest policy gap.</div>
+    <div class="chart-wrap"><canvas id="clusterCompareChart" height="300"></canvas></div>
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot" style="background:#e24b4a"></div>High need · under-served</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>High need · well-served</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Low need · over-served</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#1db954"></div>Low need · aligned</div>
+    </div>
+  </div>
+
+  <!-- NEW: Cluster policy callout -->
+  <div class="callout">
+    <strong>The most urgent cluster:</strong> The 22% of county-years in "High need / under-served" —
+    concentrated in the Delta corridor — have the highest poverty, the lowest grant capture rates (4.2%),
+    and the largest misalignment scores. A targeted grant program directed at this cluster alone
+    would reach the 50 most neglected counties in the study region.
+  </div>
+</section>
+<!-- END NEW CLUSTERS SECTION -->
+
+<!-- MODELS (unchanged) -->
+<section id="models" class="section">
+  <div class="section-label">Model Evaluation</div>
+  <div class="section-title">Three models.<br>One winner.</div>
+  <p class="section-desc">Gradient Boosting, ResNet, and GNN compared across rolling window, CV, and per-state R². GB wins 7 of 11 metrics.</p>
+  <div class="card-row">
+    <div class="card accent-amber"><div class="card-label">GB Rolling Mean R²</div><div class="card-val">0.838</div><div class="card-note">Best overall · wins 7/11 metrics</div></div>
+    <div class="card accent-blue"><div class="card-label">ResNet Rolling Mean R²</div><div class="card-val">0.819</div><div class="card-note">Most stable CV variance (0.044 std)</div></div>
+    <div class="card accent-green"><div class="card-label">GNN Rolling Mean R²</div><div class="card-val">0.821</div><div class="card-note">Best 2023 performance · 0.792</div></div>
+  </div>
+  <div class="chart-block">
+    <div class="chart-block-title">R² Over Time — Rolling Window</div>
+    <div class="chart-block-sub">GB starts strongest. All models degrade post-COVID. GNN recovers better in 2022–2023.</div>
+    <div class="chart-wrap"><canvas id="r2Chart" height="340"></canvas></div>
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Gradient Boosting</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>ResNet</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#1db954"></div>GNN</div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="chart-block"><div class="chart-block-title">RMSE per Test Year</div><div class="chart-block-sub">Lower is better. GB consistently lowest.</div><div class="chart-wrap"><canvas id="rmseChart" height="280"></canvas></div></div>
+    <div class="chart-block"><div class="chart-block-title">CV R² per Fold</div><div class="chart-block-sub">ResNet most stable. GB highest average.</div><div class="chart-wrap"><canvas id="cvChart" height="280"></canvas></div></div>
+  </div>
+  <div class="chart-block">
+    <div class="chart-block-title">Full Metric Comparison</div>
+    <div class="chart-block-sub">Winner highlighted for each metric.</div>
+    <div style="overflow-x:auto;">
+      <table class="metric-table" style="min-width:520px;">
+        <thead><tr><th>Metric</th><th>Gradient Boosting</th><th>ResNet</th><th>Winner</th></tr></thead>
+        <tbody id="metricTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PREDICT — year slider updated to 2030, new elements added -->
+<section id="predict" class="section">
+  <div class="section-label">Poverty Prediction Tool</div>
+  <div class="section-title">What if? Adjust the<br>county profile.</div>
+  <p class="section-desc">Simulate county-level poverty rates by adjusting socioeconomic features. Years beyond 2023 enter forecast mode with a confidence indicator.</p>
+  <div class="predict-grid">
+    <div class="sliders-panel">
+      <div class="sliders-section-title">Economic</div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Median Household Income</span><span class="slider-val" id="val-income">$42K</span></div><input type="range" id="sl-income" min="20000" max="90000" step="1000" value="42000" oninput="updateSlider('income',this.value,'$','',1000,'K')"><div class="slider-range"><span>$20K</span><span>$90K</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Per Capita Income</span><span class="slider-val" id="val-pci">$24K</span></div><input type="range" id="sl-pci" min="10000" max="60000" step="500" value="24000" oninput="updateSlider('pci',this.value,'$','',500,'K')"><div class="slider-range"><span>$10K</span><span>$60K</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Gini Index (Inequality)</span><span class="slider-val" id="val-gini">0.46</span></div><input type="range" id="sl-gini" min="0.30" max="0.65" step="0.01" value="0.46" oninput="updateSlider('gini',this.value,'','',0.01,'')"><div class="slider-range"><span>0.30 (equal)</span><span>0.65 (unequal)</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Public Assistance Rate</span><span class="slider-val" id="val-assist">22%</span></div><input type="range" id="sl-assist" min="0" max="60" step="1" value="22" oninput="updateSlider('assist',this.value,'','%',1,'')"><div class="slider-range"><span>0%</span><span>60%</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">No Health Insurance Rate</span><span class="slider-val" id="val-ins">14%</span></div><input type="range" id="sl-ins" min="0" max="40" step="1" value="14" oninput="updateSlider('ins',this.value,'','%',1,'')"><div class="slider-range"><span>0%</span><span>40%</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Housing Cost Burden</span><span class="slider-val" id="val-housing">31%</span></div><input type="range" id="sl-housing" min="5" max="60" step="1" value="31" oninput="updateSlider('housing',this.value,'','%',1,'')"><div class="slider-range"><span>5%</span><span>60%</span></div></div>
+      <div class="sliders-section-title">Labor &amp; Education</div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Unemployment Rate</span><span class="slider-val" id="val-unemp">8%</span></div><input type="range" id="sl-unemp" min="0" max="30" step="0.5" value="8" oninput="updateSlider('unemp',this.value,'','%',0.5,'')"><div class="slider-range"><span>0%</span><span>30%</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Bachelor's Degree Rate</span><span class="slider-val" id="val-bach">12%</span></div><input type="range" id="sl-bach" min="0" max="50" step="1" value="12" oninput="updateSlider('bach',this.value,'','%',1,'')"><div class="slider-range"><span>0%</span><span>50%</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Labor Force Participation</span><span class="slider-val" id="val-lfp">55%</span></div><input type="range" id="sl-lfp" min="30" max="80" step="1" value="55" oninput="updateSlider('lfp',this.value,'','%',1,'')"><div class="slider-range"><span>30%</span><span>80%</span></div></div>
+      <div class="sliders-section-title">Household Structure</div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Single Mother Rate</span><span class="slider-val" id="val-singlemom">18%</span></div><input type="range" id="sl-singlemom" min="0" max="40" step="1" value="18" oninput="updateSlider('singlemom',this.value,'','%',1,'')"><div class="slider-range"><span>0%</span><span>40%</span></div></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Married Couple Rate</span><span class="slider-val" id="val-married">46%</span></div><input type="range" id="sl-married" min="20" max="75" step="1" value="46" oninput="updateSlider('married',this.value,'','%',1,'')"><div class="slider-range"><span>20%</span><span>75%</span></div></div>
+      <div class="sliders-section-title">Context</div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Region</span></div><select class="region-select" id="sl-region" onchange="runPrediction()"><option value="delta">Mississippi Delta</option><option value="appalachia">Western Appalachia</option></select></div>
+      <!-- NEW: year extended to 2030 + forecast warning badge -->
+      <div class="slider-group">
+        <div class="slider-header"><span class="slider-label">Year</span><span class="slider-val" id="val-year">2023</span></div>
+        <input type="range" id="sl-year" min="2014" max="2030" step="1" value="2023" oninput="updateSlider('year',this.value,'','',1,'')">
+        <div class="slider-range"><span>2014 (historical)</span><span>2030 (forecast)</span></div>
+        <div id="future-warning" style="display:none;margin-top:6px;background:rgba(226,75,74,0.10);border-radius:6px;padding:6px 10px;font-family:var(--font-mono);font-size:0.68rem;color:#a32d2d;letter-spacing:0.05em;">
+          ⚠ Forecast mode — extrapolating beyond training data (2014–2023)
         </div>
-    </footer>
-    
-    <!-- JavaScript -->
-    <script src="app.js"></script>
+      </div>
+    </div>
+
+    <div class="predict-result-card">
+      <div class="result-label">Predicted Poverty Rate</div>
+      <div class="result-number" id="pred-number">18.4%</div>
+      <div class="result-band band-high" id="pred-band">High poverty</div>
+      <div class="gauge-wrap"><div class="gauge-fill" id="pred-gauge" style="width:36.8%;background:linear-gradient(90deg,#ffb546,#e24b4a);"></div></div>
+      <!-- NEW: year context label -->
+      <div id="pred-year-label" style="font-family:var(--font-mono);font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:4px;">↑ 2023 (historical range)</div>
+      <!-- NEW: ONNX model status indicator -->
+      <div style="margin-top:1rem;display:flex;align-items:center;gap:8px;">
+        <div style="width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;"></div>
+        <div id="model-status" style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.08em;color:#ffb546;">Loading ONNX model…</div>
+      </div>
+      <!-- NEW: confidence indicator (visible only for future years) -->
+      <div id="pred-confidence" style="font-family:var(--font-mono);font-size:0.65rem;color:rgba(255,255,255,0.35);margin-top:4px;min-height:16px;"></div>
+      <div style="display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:0.6rem;color:rgba(255,255,255,0.4);margin-top:4px;"><span>0%</span><span>50%</span></div>
+      <div class="comparisons">
+        <div style="font-family:var(--font-mono);font-size:0.65rem;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.4);margin-bottom:0.75rem;">Compare to benchmarks</div>
+        <div class="comp-row"><span class="comp-name">National avg (2023)</span><span class="comp-val" id="cmp-national"></span></div>
+        <div class="comp-row"><span class="comp-name">Mississippi avg</span><span class="comp-val" id="cmp-ms"></span></div>
+        <div class="comp-row"><span class="comp-name">Appalachia avg</span><span class="comp-val" id="cmp-app"></span></div>
+        <div class="comp-row"><span class="comp-name">Region avg (selected)</span><span class="comp-val" id="cmp-region"></span></div>
+      </div>
+      <button class="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
+      <div style="margin-top:1.5rem;font-size:0.72rem;color:rgba(255,255,255,0.3);line-height:1.6;font-family:var(--font-mono);">
+        <!-- NEW: updated disclaimer mentioning ONNX -->
+        Uses ONNX Gradient Boosting model when available, simulated weights as fallback. Future years apply −0.2–0.3% annual drift adjustment.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSIONS (unchanged) -->
+<section id="conclusions" class="section">
+  <div class="section-label">Key Findings &amp; Conclusions</div>
+  <div class="section-title">What the data<br>tells policymakers</div>
+  <p class="section-desc">Five study objectives. Five clear answers.</p>
+  <div class="card-row">
+    <div class="card accent-amber"><div class="card-label">Model winner</div><div class="card-val" style="font-size:1.4rem;">Gradient Boosting</div><div class="card-note">7/11 metrics · R²=0.838 · Interpretable</div></div>
+    <div class="card accent-red"><div class="card-label">COVID spending effect</div><div class="card-val" style="font-size:1.4rem;">No lasting fix</div><div class="card-note">+113% surge · gaps returned by 2022</div></div>
+    <div class="card accent-blue"><div class="card-label">Spending alignment</div><div class="card-val" style="font-size:1.4rem;">Misaligned</div><div class="card-note">Delta underfunded · VA overfunded</div></div>
+    <div class="card accent-green"><div class="card-label">Top predictor</div><div class="card-val" style="font-size:1.4rem;">Median Income</div><div class="card-note">55% feature importance in GB model</div></div>
+  </div>
+  <div class="finding-list">
+    <div class="finding"><div class="finding-num">1</div><div><div class="finding-title">Objective 1 — Map spatiotemporal poverty structure</div><div class="finding-text">Poverty is geographically concentrated and temporally persistent. Delta counties cluster above 20% consistently. Within Appalachia, Eastern Kentucky and southern West Virginia form a sub-cluster of extreme poverty that aggregate state averages obscure.</div></div></div>
+    <div class="finding"><div class="finding-num">2</div><div><div class="finding-title">Objective 2 — Measure whether federal dollars flow to highest-need counties</div><div class="finding-text">They do not — consistently. Every Delta state averages positive misalignment scores across all five agencies. SSA shows the most severe negative trend (−0.96 in Tennessee), suggesting Social Security flows increasingly to non-poor counties.</div></div></div>
+    <div class="finding"><div class="finding-num">3</div><div><div class="finding-title">Objective 3 — Pinpoint fiscally neglected counties</div><div class="finding-text">Tunica County, MS (+3.20 score, 27.7% poverty) is the most underfunded. The entire Delta corridor contains the highest density of underfunded counties. These are not data gaps — they are policy gaps.</div></div></div>
+    <div class="finding"><div class="finding-num">4</div><div><div class="finding-title">Objective 4 — Build a county-year panel dataset</div><div class="finding-text">Successfully constructed a 9,245-row panel linking 23 ACS indicators with 14M+ transaction records across 624 counties and 10 years — the first dataset to combine USASpending agency-level breakdowns with Census indicators at this granularity.</div></div></div>
+    <div class="finding"><div class="finding-num">5</div><div><div class="finding-title">Objective 5 — Forecast county-level poverty trajectories</div><div class="finding-text">Gradient Boosting achieves R²=0.838 (rolling) and 0.821 (CV). Post-2020 degradation (R² to 0.767) confirms COVID was a structural break — the model's declining performance is itself a finding, not a failure.</div></div></div>
+  </div>
+  <div class="callout">
+    <strong>The single most actionable finding:</strong> 84.2% of federal assistance is direct payments. Only 7.9% is competitive grants. Shifting 5% of the portfolio — roughly $19B over 10 years — from transfers to targeted grants in the 50 most underfunded Delta counties would represent the largest structural investment in these communities since the Great Society programs of the 1960s.
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Poverty &amp; Policy Atlas</div>
+      <p class="footer-desc">A data science case study examining federal spending patterns and poverty dynamics across Western Appalachia and the Mississippi Delta, 2014–2023. Built with USASpending.gov data and Census ACS.</p>
+    </div>
+    <div>
+      <div class="footer-head">Data Sources</div>
+      <ul class="footer-list"><li><a href="#">USASpending.gov</a></li><li><a href="#">U.S. Census Bureau ACS</a></li><li><a href="#">TIGER/Line Shapefiles</a></li></ul>
+    </div>
+    <div>
+      <div class="footer-head">Methods</div>
+      <ul class="footer-list"><li><a href="#">Gradient Boosting Model</a></li><li><a href="#">Misalignment Formula</a></li><li><a href="#">GitHub Repository</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">Capstone · DSA Program 2026 · Data from USASpending.gov &amp; U.S. Census Bureau</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.17.1/dist/ort.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

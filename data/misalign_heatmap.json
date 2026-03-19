@@ -1,0 +1,95 @@
+{
+  "agencies": [
+    "HHS",
+    "USDA",
+    "SSA",
+    "HUD",
+    "Education"
+  ],
+  "rows": [
+    {
+      "state": "mississippi",
+      "region": "delta",
+      "values": {
+        "HHS": 0.648736,
+        "USDA": 0.122395,
+        "SSA": 0.193244,
+        "HUD": 0.667781,
+        "Education": 0.545454
+      },
+      "total": 0.479945
+    },
+    {
+      "state": "louisiana",
+      "region": "delta",
+      "values": {
+        "HHS": -0.085213,
+        "USDA": -0.277963,
+        "SSA": -0.419751,
+        "HUD": -0.277256,
+        "Education": 0.261146
+      },
+      "total": -0.298007
+    },
+    {
+      "state": "arkansas",
+      "region": "delta",
+      "values": {
+        "HHS": -0.247035,
+        "USDA": -0.925208,
+        "SSA": -0.953016,
+        "HUD": -0.520512,
+        "Education": -0.392433
+      },
+      "total": -0.646106
+    },
+    {
+      "state": "west virginia",
+      "region": "appalachia",
+      "values": {
+        "HHS": -0.670276,
+        "USDA": -0.382622,
+        "SSA": -0.937478,
+        "HUD": -0.430948,
+        "Education": -0.34763
+      },
+      "total": -0.64652
+    },
+    {
+      "state": "kentucky",
+      "region": "appalachia",
+      "values": {
+        "HHS": 0.039641,
+        "USDA": -0.338391,
+        "SSA": -0.737264,
+        "HUD": -0.248805,
+        "Education": 0.059809
+      },
+      "total": -0.399689
+    },
+    {
+      "state": "tennessee",
+      "region": "appalachia",
+      "values": {
+        "HHS": -0.248315,
+        "USDA": -0.541865,
+        "SSA": -0.990472,
+        "HUD": -0.487747,
+        "Education": -0.587018
+      },
+      "total": -0.669819
+    },
+    {
+      "state": "virginia",
+      "region": "appalachia",
+      "values": {
+        "HHS": -1.008215,
+        "USDA": -0.952466,
+        "SSA": -1.695949,
+        "HUD": -0.793694,
+        "Education": -1.069893
+      },
+      "total": -1.330593
+    }
+  ]
+}

@@ -1,0 +1,8738 @@
+[
+  {
+    "geoid": "05001",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.13531,
+    "poverty_rate": 15.720961,
+    "agencies": {
+      "HHS": 0.527218,
+      "USDA": -2.119863,
+      "SSA": -1.019693,
+      "HUD": -1.087137,
+      "Education": 0.396487
+    }
+  },
+  {
+    "geoid": "05003",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.662434,
+    "poverty_rate": 16.846768,
+    "agencies": {
+      "HHS": -0.510271,
+      "USDA": -1.298014,
+      "SSA": -0.756778,
+      "HUD": -0.543706,
+      "Education": 0.697482
+    }
+  },
+  {
+    "geoid": "05005",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.435842,
+    "poverty_rate": 10.602618,
+    "agencies": {
+      "HHS": -0.739984,
+      "USDA": -1.781377,
+      "SSA": -2.045129,
+      "HUD": -0.780345,
+      "Education": -1.917342
+    }
+  },
+  {
+    "geoid": "05007",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.574359,
+    "poverty_rate": 9.34354,
+    "agencies": {
+      "HHS": -1.655746,
+      "USDA": -1.168995,
+      "SSA": -2.221791,
+      "HUD": -1.178304,
+      "Education": -2.11821
+    }
+  },
+  {
+    "geoid": "05009",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.491916,
+    "poverty_rate": 12.994379,
+    "agencies": {
+      "HHS": -0.955695,
+      "USDA": -1.317643,
+      "SSA": -1.612349,
+      "HUD": -1.725795,
+      "Education": -1.838589
+    }
+  },
+  {
+    "geoid": "05011",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.092266,
+    "poverty_rate": 18.997811,
+    "agencies": {
+      "HHS": 0.848408,
+      "USDA": -0.292873,
+      "SSA": -0.764543,
+      "HUD": 0.202526,
+      "Education": 0.333422
+    }
+  },
+  {
+    "geoid": "05013",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.619379,
+    "poverty_rate": 11.931938,
+    "agencies": {
+      "HHS": -1.349588,
+      "USDA": -1.271357,
+      "SSA": -1.829596,
+      "HUD": -0.968351,
+      "Education": -2.139235
+    }
+  },
+  {
+    "geoid": "05015",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.68234,
+    "poverty_rate": 13.580235,
+    "agencies": {
+      "HHS": -0.268377,
+      "USDA": -1.243292,
+      "SSA": -1.476261,
+      "HUD": 0.076918,
+      "Education": -0.163548
+    }
+  },
+  {
+    "geoid": "05017",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.152139,
+    "poverty_rate": 22.163226,
+    "agencies": {
+      "HHS": -0.931976,
+      "USDA": -1.037083,
+      "SSA": 0.111645,
+      "HUD": 0.269384,
+      "Education": 1.536571
+    }
+  },
+  {
+    "geoid": "05019",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.753148,
+    "poverty_rate": 15.952918,
+    "agencies": {
+      "HHS": -0.349205,
+      "USDA": -0.550175,
+      "SSA": -0.955439,
+      "HUD": -0.667744,
+      "Education": -1.629088
+    }
+  },
+  {
+    "geoid": "05021",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.531372,
+    "poverty_rate": 17.391853,
+    "agencies": {
+      "HHS": -0.885536,
+      "USDA": -1.63111,
+      "SSA": -0.667131,
+      "HUD": -0.337104,
+      "Education": 0.518452
+    }
+  },
+  {
+    "geoid": "05023",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.203729,
+    "poverty_rate": 11.607297,
+    "agencies": {
+      "HHS": -1.165789,
+      "USDA": -1.626361,
+      "SSA": -1.810655,
+      "HUD": -0.683216,
+      "Education": -1.246602
+    }
+  },
+  {
+    "geoid": "05025",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.821478,
+    "poverty_rate": 14.302239,
+    "agencies": {
+      "HHS": -0.54721,
+      "USDA": -0.573561,
+      "SSA": -1.390296,
+      "HUD": -0.554082,
+      "Education": -0.496376
+    }
+  },
+  {
+    "geoid": "05027",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.071458,
+    "poverty_rate": 19.09813,
+    "agencies": {
+      "HHS": 0.677456,
+      "USDA": 0.343235,
+      "SSA": -0.40767,
+      "HUD": 0.194803,
+      "Education": -1.022721
+    }
+  },
+  {
+    "geoid": "05029",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.515662,
+    "poverty_rate": 17.512715,
+    "agencies": {
+      "HHS": -0.87804,
+      "USDA": -1.015902,
+      "SSA": -0.701263,
+      "HUD": -0.595272,
+      "Education": -0.859992
+    }
+  },
+  {
+    "geoid": "05031",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.703414,
+    "poverty_rate": 16.94675,
+    "agencies": {
+      "HHS": -1.415492,
+      "USDA": -1.246527,
+      "SSA": -0.711449,
+      "HUD": -0.886922,
+      "Education": -0.92479
+    }
+  },
+  {
+    "geoid": "05033",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.708645,
+    "poverty_rate": 15.503433,
+    "agencies": {
+      "HHS": -0.618606,
+      "USDA": -0.145878,
+      "SSA": -1.051114,
+      "HUD": -0.696044,
+      "Education": 0.296909
+    }
+  },
+  {
+    "geoid": "05035",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.187695,
+    "poverty_rate": 21.101452,
+    "agencies": {
+      "HHS": 0.509427,
+      "USDA": -0.320661,
+      "SSA": -0.067152,
+      "HUD": -0.004123,
+      "Education": -0.011296
+    }
+  },
+  {
+    "geoid": "05037",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.862402,
+    "poverty_rate": 16.226557,
+    "agencies": {
+      "HHS": 0.217817,
+      "USDA": -1.620166,
+      "SSA": -0.884042,
+      "HUD": -0.941987,
+      "Education": -0.424807
+    }
+  },
+  {
+    "geoid": "05039",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.64673,
+    "poverty_rate": 10.414069,
+    "agencies": {
+      "HHS": -0.826274,
+      "USDA": -1.100968,
+      "SSA": -2.092753,
+      "HUD": -1.454865,
+      "Education": -0.649649
+    }
+  },
+  {
+    "geoid": "05041",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.681209,
+    "poverty_rate": 25.675557,
+    "agencies": {
+      "HHS": 1.967111,
+      "USDA": -0.366609,
+      "SSA": 0.785941,
+      "HUD": 0.389136,
+      "Education": 2.207078
+    }
+  },
+  {
+    "geoid": "05043",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.301618,
+    "poverty_rate": 18.89375,
+    "agencies": {
+      "HHS": 0.413266,
+      "USDA": -1.026537,
+      "SSA": -0.630871,
+      "HUD": -0.379955,
+      "Education": -1.177898
+    }
+  },
+  {
+    "geoid": "05045",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.942275,
+    "poverty_rate": 13.945209,
+    "agencies": {
+      "HHS": -0.462785,
+      "USDA": -0.498306,
+      "SSA": -1.188659,
+      "HUD": -0.856965,
+      "Education": -1.394841
+    }
+  },
+  {
+    "geoid": "05047",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.126278,
+    "poverty_rate": 17.759307,
+    "agencies": {
+      "HHS": 0.734149,
+      "USDA": -0.47851,
+      "SSA": -0.536595,
+      "HUD": 0.580469,
+      "Education": 0.880057
+    }
+  },
+  {
+    "geoid": "05049",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.634179,
+    "poverty_rate": 15.449719,
+    "agencies": {
+      "HHS": -0.685194,
+      "USDA": -1.331106,
+      "SSA": -1.116536,
+      "HUD": -0.313065,
+      "Education": 0.026346
+    }
+  },
+  {
+    "geoid": "05051",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.862897,
+    "poverty_rate": 15.301492,
+    "agencies": {
+      "HHS": -0.775571,
+      "USDA": 0.253945,
+      "SSA": -1.224621,
+      "HUD": -0.862625,
+      "Education": -1.109953
+    }
+  },
+  {
+    "geoid": "05053",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.112577,
+    "poverty_rate": 11.588186,
+    "agencies": {
+      "HHS": -0.169246,
+      "USDA": -0.343507,
+      "SSA": -1.649116,
+      "HUD": -0.170767,
+      "Education": -0.630798
+    }
+  },
+  {
+    "geoid": "05055",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.977306,
+    "poverty_rate": 14.948353,
+    "agencies": {
+      "HHS": -0.896094,
+      "USDA": -1.591572,
+      "SSA": -1.094034,
+      "HUD": -0.978997,
+      "Education": -1.018344
+    }
+  },
+  {
+    "geoid": "05057",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.338207,
+    "poverty_rate": 21.365272,
+    "agencies": {
+      "HHS": 1.331191,
+      "USDA": 0.212627,
+      "SSA": -0.042133,
+      "HUD": 0.849352,
+      "Education": -0.371584
+    }
+  },
+  {
+    "geoid": "05059",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.866087,
+    "poverty_rate": 13.405503,
+    "agencies": {
+      "HHS": -0.150202,
+      "USDA": -0.685133,
+      "SSA": -1.352593,
+      "HUD": -0.889373,
+      "Education": -1.227179
+    }
+  },
+  {
+    "geoid": "05061",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.180226,
+    "poverty_rate": 18.06022,
+    "agencies": {
+      "HHS": 0.583048,
+      "USDA": 0.029242,
+      "SSA": -0.549529,
+      "HUD": -0.355259,
+      "Education": 0.410191
+    }
+  },
+  {
+    "geoid": "05063",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.443427,
+    "poverty_rate": 16.204279,
+    "agencies": {
+      "HHS": -0.321186,
+      "USDA": -1.272474,
+      "SSA": -0.978558,
+      "HUD": -0.087781,
+      "Education": -1.116457
+    }
+  },
+  {
+    "geoid": "05065",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.789514,
+    "poverty_rate": 12.971659,
+    "agencies": {
+      "HHS": -0.170928,
+      "USDA": -1.423122,
+      "SSA": -1.61848,
+      "HUD": -2.367294,
+      "Education": -1.836586
+    }
+  },
+  {
+    "geoid": "05067",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.825573,
+    "poverty_rate": 15.493154,
+    "agencies": {
+      "HHS": 0.483734,
+      "USDA": -1.693166,
+      "SSA": -1.043358,
+      "HUD": -0.827493,
+      "Education": -1.466852
+    }
+  },
+  {
+    "geoid": "05069",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.633907,
+    "poverty_rate": 17.42681,
+    "agencies": {
+      "HHS": -0.161448,
+      "USDA": -1.213971,
+      "SSA": -0.788457,
+      "HUD": -0.766582,
+      "Education": -1.31581
+    }
+  },
+  {
+    "geoid": "05071",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.270559,
+    "poverty_rate": 17.859842,
+    "agencies": {
+      "HHS": 0.134008,
+      "USDA": 0.245838,
+      "SSA": -0.524393,
+      "HUD": -0.28693,
+      "Education": -0.630109
+    }
+  },
+  {
+    "geoid": "05073",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.201543,
+    "poverty_rate": 18.781834,
+    "agencies": {
+      "HHS": 1.213981,
+      "USDA": -0.826477,
+      "SSA": -0.418941,
+      "HUD": -0.04606,
+      "Education": 1.009992
+    }
+  },
+  {
+    "geoid": "05075",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.089127,
+    "poverty_rate": 15.335927,
+    "agencies": {
+      "HHS": -0.407754,
+      "USDA": -2.061597,
+      "SSA": -1.292127,
+      "HUD": -1.056921,
+      "Education": -1.288508
+    }
+  },
+  {
+    "geoid": "05077",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.860639,
+    "poverty_rate": 17.08068,
+    "agencies": {
+      "HHS": -1.272261,
+      "USDA": -2.035756,
+      "SSA": -0.753027,
+      "HUD": -1.221152,
+      "Education": 0.615415
+    }
+  },
+  {
+    "geoid": "05079",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -2.001178,
+    "poverty_rate": 9.336853,
+    "agencies": {
+      "HHS": -2.084469,
+      "USDA": -3.453964,
+      "SSA": -2.283494,
+      "HUD": -1.914384,
+      "Education": -0.981996
+    }
+  },
+  {
+    "geoid": "05081",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.151888,
+    "poverty_rate": 13.433827,
+    "agencies": {
+      "HHS": 0.114103,
+      "USDA": -1.521644,
+      "SSA": -1.521791,
+      "HUD": -1.197277,
+      "Education": -0.484545
+    }
+  },
+  {
+    "geoid": "05083",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.821117,
+    "poverty_rate": 14.747818,
+    "agencies": {
+      "HHS": -0.907313,
+      "USDA": -0.534463,
+      "SSA": -1.176623,
+      "HUD": -0.651162,
+      "Education": -0.220955
+    }
+  },
+  {
+    "geoid": "05085",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.553922,
+    "poverty_rate": 11.413334,
+    "agencies": {
+      "HHS": -0.287293,
+      "USDA": -2.15649,
+      "SSA": -1.753921,
+      "HUD": -1.185342,
+      "Education": -0.639207
+    }
+  },
+  {
+    "geoid": "05087",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.627647,
+    "poverty_rate": 15.284399,
+    "agencies": {
+      "HHS": -0.407357,
+      "USDA": -0.703452,
+      "SSA": -1.157896,
+      "HUD": 0.021884,
+      "Education": 0.243277
+    }
+  },
+  {
+    "geoid": "05089",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.797446,
+    "poverty_rate": 14.163996,
+    "agencies": {
+      "HHS": -0.29262,
+      "USDA": -0.997965,
+      "SSA": -1.293878,
+      "HUD": -0.407488,
+      "Education": 0.175089
+    }
+  },
+  {
+    "geoid": "05091",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.468773,
+    "poverty_rate": 17.053038,
+    "agencies": {
+      "HHS": 0.022547,
+      "USDA": -0.57916,
+      "SSA": -0.689341,
+      "HUD": -0.728021,
+      "Education": 0.040514
+    }
+  },
+  {
+    "geoid": "05093",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.224975,
+    "poverty_rate": 21.783367,
+    "agencies": {
+      "HHS": -0.096754,
+      "USDA": -0.461005,
+      "SSA": 0.094067,
+      "HUD": -0.087729,
+      "Education": 0.148231
+    }
+  },
+  {
+    "geoid": "05095",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.158114,
+    "poverty_rate": 21.943092,
+    "agencies": {
+      "HHS": 0.273207,
+      "USDA": -0.733226,
+      "SSA": -0.008517,
+      "HUD": -0.137737,
+      "Education": 1.081921
+    }
+  },
+  {
+    "geoid": "05097",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.54463,
+    "poverty_rate": 14.796884,
+    "agencies": {
+      "HHS": -0.127838,
+      "USDA": -0.448735,
+      "SSA": -1.131101,
+      "HUD": -0.011913,
+      "Education": -0.09482
+    }
+  },
+  {
+    "geoid": "05099",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.417391,
+    "poverty_rate": 21.987529,
+    "agencies": {
+      "HHS": 1.838163,
+      "USDA": 0.488311,
+      "SSA": 0.055868,
+      "HUD": 0.265002,
+      "Education": 1.086897
+    }
+  },
+  {
+    "geoid": "05101",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.101666,
+    "poverty_rate": 11.865597,
+    "agencies": {
+      "HHS": -1.069462,
+      "USDA": -1.904964,
+      "SSA": -1.957251,
+      "HUD": 0.002954,
+      "Education": -0.981187
+    }
+  },
+  {
+    "geoid": "05103",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.004175,
+    "poverty_rate": 18.799768,
+    "agencies": {
+      "HHS": 0.461743,
+      "USDA": 0.295641,
+      "SSA": -0.485307,
+      "HUD": -0.172481,
+      "Education": 0.728799
+    }
+  },
+  {
+    "geoid": "05105",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.937826,
+    "poverty_rate": 13.539917,
+    "agencies": {
+      "HHS": 0.2073,
+      "USDA": -1.116168,
+      "SSA": -1.377824,
+      "HUD": -0.29771,
+      "Education": 0.043659
+    }
+  },
+  {
+    "geoid": "05107",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 1.373436,
+    "poverty_rate": 28.864887,
+    "agencies": {
+      "HHS": 1.806218,
+      "USDA": 0.373121,
+      "SSA": 1.442792,
+      "HUD": 1.108603,
+      "Education": 1.091212
+    }
+  },
+  {
+    "geoid": "05109",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.74892,
+    "poverty_rate": 15.3612,
+    "agencies": {
+      "HHS": 0.552152,
+      "USDA": -0.896187,
+      "SSA": -1.192124,
+      "HUD": -0.696372,
+      "Education": -0.100366
+    }
+  },
+  {
+    "geoid": "05111",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.475476,
+    "poverty_rate": 18.405015,
+    "agencies": {
+      "HHS": -0.055332,
+      "USDA": -1.438923,
+      "SSA": -0.512692,
+      "HUD": -0.75125,
+      "Education": 0.765918
+    }
+  },
+  {
+    "geoid": "05113",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.039451,
+    "poverty_rate": 18.974998,
+    "agencies": {
+      "HHS": -0.414927,
+      "USDA": 0.684932,
+      "SSA": -0.418084,
+      "HUD": 0.059881,
+      "Education": -0.583501
+    }
+  },
+  {
+    "geoid": "05115",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.777628,
+    "poverty_rate": 15.355203,
+    "agencies": {
+      "HHS": -0.796766,
+      "USDA": -0.727789,
+      "SSA": -1.032664,
+      "HUD": -0.755723,
+      "Education": -1.446748
+    }
+  },
+  {
+    "geoid": "05117",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.698444,
+    "poverty_rate": 12.15233,
+    "agencies": {
+      "HHS": -0.312177,
+      "USDA": -3.190291,
+      "SSA": -1.992415,
+      "HUD": -1.811213,
+      "Education": -1.093574
+    }
+  },
+  {
+    "geoid": "05119",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.074186,
+    "poverty_rate": 15.337185,
+    "agencies": {
+      "HHS": -1.490606,
+      "USDA": -0.693981,
+      "SSA": -1.023827,
+      "HUD": -1.440248,
+      "Education": -2.122598
+    }
+  },
+  {
+    "geoid": "05121",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.698894,
+    "poverty_rate": 16.599196,
+    "agencies": {
+      "HHS": -1.080245,
+      "USDA": -1.555584,
+      "SSA": -0.801409,
+      "HUD": -0.797248,
+      "Education": -1.036041
+    }
+  },
+  {
+    "geoid": "05123",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.390182,
+    "poverty_rate": 18.851533,
+    "agencies": {
+      "HHS": 0.380811,
+      "USDA": -1.044754,
+      "SSA": -0.2299,
+      "HUD": -0.679289,
+      "Education": -0.411241
+    }
+  },
+  {
+    "geoid": "05125",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -2.16399,
+    "poverty_rate": 8.009623,
+    "agencies": {
+      "HHS": -1.554478,
+      "USDA": -1.220983,
+      "SSA": -2.38983,
+      "HUD": -2.062852,
+      "Education": -0.984227
+    }
+  },
+  {
+    "geoid": "05127",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.680839,
+    "poverty_rate": 16.390562,
+    "agencies": {
+      "HHS": -0.007067,
+      "USDA": -0.77235,
+      "SSA": -0.881353,
+      "HUD": -0.75665,
+      "Education": 0.287312
+    }
+  },
+  {
+    "geoid": "05129",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.354108,
+    "poverty_rate": 17.952405,
+    "agencies": {
+      "HHS": -0.805782,
+      "USDA": -0.93771,
+      "SSA": -0.486032,
+      "HUD": 1.170317,
+      "Education": 0.870297
+    }
+  },
+  {
+    "geoid": "05131",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.495178,
+    "poverty_rate": 17.549445,
+    "agencies": {
+      "HHS": -0.295732,
+      "USDA": 0.118499,
+      "SSA": -0.761599,
+      "HUD": -0.708905,
+      "Education": -0.850262
+    }
+  },
+  {
+    "geoid": "05133",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": 0.257027,
+    "poverty_rate": 20.168851,
+    "agencies": {
+      "HHS": 0.860872,
+      "USDA": 0.018787,
+      "SSA": -0.116061,
+      "HUD": 0.274541,
+      "Education": -0.417607
+    }
+  },
+  {
+    "geoid": "05135",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.701151,
+    "poverty_rate": 15.813692,
+    "agencies": {
+      "HHS": -0.563965,
+      "USDA": -1.112894,
+      "SSA": -1.096213,
+      "HUD": 0.050088,
+      "Education": 0.393008
+    }
+  },
+  {
+    "geoid": "05137",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.101753,
+    "poverty_rate": 17.059518,
+    "agencies": {
+      "HHS": 0.796488,
+      "USDA": -0.862171,
+      "SSA": -0.809013,
+      "HUD": 0.8628,
+      "Education": 0.53115
+    }
+  },
+  {
+    "geoid": "05139",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.366704,
+    "poverty_rate": 17.145492,
+    "agencies": {
+      "HHS": -0.968741,
+      "USDA": 0.523348,
+      "SSA": -0.75395,
+      "HUD": -0.364818,
+      "Education": -0.890962
+    }
+  },
+  {
+    "geoid": "05141",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.63977,
+    "poverty_rate": 14.432708,
+    "agencies": {
+      "HHS": -0.391549,
+      "USDA": -1.00867,
+      "SSA": -1.259252,
+      "HUD": 0.734685,
+      "Education": -0.172968
+    }
+  },
+  {
+    "geoid": "05143",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.589267,
+    "poverty_rate": 15.81755,
+    "agencies": {
+      "HHS": -0.444437,
+      "USDA": -0.796203,
+      "SSA": -1.007801,
+      "HUD": -0.636196,
+      "Education": -1.232643
+    }
+  },
+  {
+    "geoid": "05145",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -1.021483,
+    "poverty_rate": 13.810373,
+    "agencies": {
+      "HHS": -0.38467,
+      "USDA": -1.187088,
+      "SSA": -1.373002,
+      "HUD": -0.914488,
+      "Education": -1.667916
+    }
+  },
+  {
+    "geoid": "05147",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.387063,
+    "poverty_rate": 19.314122,
+    "agencies": {
+      "HHS": -1.205598,
+      "USDA": -1.490016,
+      "SSA": -0.315261,
+      "HUD": -0.630154,
+      "Education": 0.771005
+    }
+  },
+  {
+    "geoid": "05149",
+    "state": "arkansas",
+    "region": "Mississippi Delta",
+    "misalignment": -0.931009,
+    "poverty_rate": 14.083975,
+    "agencies": {
+      "HHS": -0.802853,
+      "USDA": -1.223002,
+      "SSA": -1.409985,
+      "HUD": -0.966771,
+      "Education": -0.178643
+    }
+  },
+  {
+    "geoid": "21001",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.625845,
+    "poverty_rate": 15.643248,
+    "agencies": {
+      "HHS": 0.244448,
+      "USDA": -0.871922,
+      "SSA": -0.979686,
+      "HUD": -0.559433,
+      "Education": -1.381194
+    }
+  },
+  {
+    "geoid": "21003",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.674958,
+    "poverty_rate": 15.695291,
+    "agencies": {
+      "HHS": 0.366107,
+      "USDA": -0.910887,
+      "SSA": -0.89647,
+      "HUD": -0.675625,
+      "Education": -0.192737
+    }
+  },
+  {
+    "geoid": "21005",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.154373,
+    "poverty_rate": 12.266994,
+    "agencies": {
+      "HHS": -0.036668,
+      "USDA": -0.364418,
+      "SSA": -1.508611,
+      "HUD": 0.377569,
+      "Education": -0.126456
+    }
+  },
+  {
+    "geoid": "21007",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.017897,
+    "poverty_rate": 13.011483,
+    "agencies": {
+      "HHS": 0.102233,
+      "USDA": -1.580341,
+      "SSA": -1.483019,
+      "HUD": -0.468684,
+      "Education": -0.060541
+    }
+  },
+  {
+    "geoid": "21009",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.067095,
+    "poverty_rate": 19.389338,
+    "agencies": {
+      "HHS": 0.891537,
+      "USDA": -0.009922,
+      "SSA": -0.110662,
+      "HUD": -0.179862,
+      "Education": 0.714897
+    }
+  },
+  {
+    "geoid": "21011",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.198249,
+    "poverty_rate": 20.405562,
+    "agencies": {
+      "HHS": 0.833777,
+      "USDA": 0.546436,
+      "SSA": -0.144998,
+      "HUD": 0.208665,
+      "Education": 1.250138
+    }
+  },
+  {
+    "geoid": "21013",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.785166,
+    "poverty_rate": 24.516126,
+    "agencies": {
+      "HHS": 0.601669,
+      "USDA": 1.73468,
+      "SSA": 0.563788,
+      "HUD": 0.464604,
+      "Education": 0.845096
+    }
+  },
+  {
+    "geoid": "21015",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -2.379877,
+    "poverty_rate": 7.148557,
+    "agencies": {
+      "HHS": -1.316337,
+      "USDA": -1.294477,
+      "SSA": -2.587619,
+      "HUD": -2.467345,
+      "Education": -2.506232
+    }
+  },
+  {
+    "geoid": "21017",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.331691,
+    "poverty_rate": 13.973547,
+    "agencies": {
+      "HHS": -0.618128,
+      "USDA": -1.039579,
+      "SSA": -1.334489,
+      "HUD": -1.671504,
+      "Education": 0.056823
+    }
+  },
+  {
+    "geoid": "21019",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.169645,
+    "poverty_rate": 14.78044,
+    "agencies": {
+      "HHS": -1.077694,
+      "USDA": 0.12849,
+      "SSA": -1.170587,
+      "HUD": -1.418745,
+      "Education": -1.317221
+    }
+  },
+  {
+    "geoid": "21021",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.616218,
+    "poverty_rate": 11.381542,
+    "agencies": {
+      "HHS": -0.462107,
+      "USDA": -0.54803,
+      "SSA": -1.795823,
+      "HUD": -1.68077,
+      "Education": -1.612296
+    }
+  },
+  {
+    "geoid": "21023",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.471565,
+    "poverty_rate": 16.947448,
+    "agencies": {
+      "HHS": 0.575188,
+      "USDA": -0.446775,
+      "SSA": -0.665302,
+      "HUD": -0.306255,
+      "Education": 0.395067
+    }
+  },
+  {
+    "geoid": "21025",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 1.415383,
+    "poverty_rate": 24.751328,
+    "agencies": {
+      "HHS": 1.269852,
+      "USDA": 1.03622,
+      "SSA": 0.742112,
+      "HUD": 1.887277,
+      "Education": 1.210011
+    }
+  },
+  {
+    "geoid": "21027",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.400294,
+    "poverty_rate": 15.820069,
+    "agencies": {
+      "HHS": -0.12959,
+      "USDA": -1.212641,
+      "SSA": -0.785421,
+      "HUD": -0.1061,
+      "Education": 0.443158
+    }
+  },
+  {
+    "geoid": "21029",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.585343,
+    "poverty_rate": 9.159833,
+    "agencies": {
+      "HHS": -1.451844,
+      "USDA": -1.129983,
+      "SSA": -2.152273,
+      "HUD": -0.806869,
+      "Education": -0.780854
+    }
+  },
+  {
+    "geoid": "21031",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.257164,
+    "poverty_rate": 17.900257,
+    "agencies": {
+      "HHS": 0.576552,
+      "USDA": -0.82209,
+      "SSA": -0.856515,
+      "HUD": -0.324179,
+      "Education": 0.536052
+    }
+  },
+  {
+    "geoid": "21033",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.660089,
+    "poverty_rate": 14.992113,
+    "agencies": {
+      "HHS": -0.978728,
+      "USDA": -1.283398,
+      "SSA": -1.277196,
+      "HUD": -0.543173,
+      "Education": 0.139849
+    }
+  },
+  {
+    "geoid": "21035",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.343186,
+    "poverty_rate": 16.042617,
+    "agencies": {
+      "HHS": -0.49635,
+      "USDA": -0.737997,
+      "SSA": -0.932468,
+      "HUD": 0.181678,
+      "Education": -1.413068
+    }
+  },
+  {
+    "geoid": "21037",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.658909,
+    "poverty_rate": 11.69292,
+    "agencies": {
+      "HHS": -0.977546,
+      "USDA": -0.144723,
+      "SSA": -1.738701,
+      "HUD": -1.930512,
+      "Education": -2.013902
+    }
+  },
+  {
+    "geoid": "21039",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.776163,
+    "poverty_rate": 15.244539,
+    "agencies": {
+      "HHS": 0.126432,
+      "USDA": -1.596305,
+      "SSA": -1.022924,
+      "HUD": -0.557089,
+      "Education": 0.406288
+    }
+  },
+  {
+    "geoid": "21041",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.636977,
+    "poverty_rate": 22.577702,
+    "agencies": {
+      "HHS": 0.24284,
+      "USDA": 0.560766,
+      "SSA": 0.172566,
+      "HUD": 0.531712,
+      "Education": 1.566785
+    }
+  },
+  {
+    "geoid": "21043",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.181671,
+    "poverty_rate": 17.864436,
+    "agencies": {
+      "HHS": -0.322857,
+      "USDA": 0.336693,
+      "SSA": -0.274166,
+      "HUD": 0.046671,
+      "Education": -0.005621
+    }
+  },
+  {
+    "geoid": "21045",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.411024,
+    "poverty_rate": 21.076656,
+    "agencies": {
+      "HHS": 0.701051,
+      "USDA": 0.445987,
+      "SSA": 0.051847,
+      "HUD": 0.568082,
+      "Education": 1.443919
+    }
+  },
+  {
+    "geoid": "21047",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.59446,
+    "poverty_rate": 16.755329,
+    "agencies": {
+      "HHS": -0.296286,
+      "USDA": -0.839779,
+      "SSA": -0.745621,
+      "HUD": -0.836686,
+      "Education": -0.881492
+    }
+  },
+  {
+    "geoid": "21049",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.914572,
+    "poverty_rate": 13.131427,
+    "agencies": {
+      "HHS": -0.142234,
+      "USDA": -0.371292,
+      "SSA": -1.433626,
+      "HUD": -0.853169,
+      "Education": -0.036043
+    }
+  },
+  {
+    "geoid": "21051",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 1.373363,
+    "poverty_rate": 25.600723,
+    "agencies": {
+      "HHS": 0.684729,
+      "USDA": 1.314704,
+      "SSA": 0.846164,
+      "HUD": 1.67588,
+      "Education": 2.16753
+    }
+  },
+  {
+    "geoid": "21053",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.099154,
+    "poverty_rate": 17.996185,
+    "agencies": {
+      "HHS": 0.489431,
+      "USDA": -0.310847,
+      "SSA": -0.56486,
+      "HUD": -0.0055,
+      "Education": 0.82077
+    }
+  },
+  {
+    "geoid": "21055",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.366591,
+    "poverty_rate": 14.859511,
+    "agencies": {
+      "HHS": 0.393407,
+      "USDA": -0.669875,
+      "SSA": -1.358082,
+      "HUD": 0.863926,
+      "Education": 0.066811
+    }
+  },
+  {
+    "geoid": "21057",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.016546,
+    "poverty_rate": 19.84406,
+    "agencies": {
+      "HHS": 0.083357,
+      "USDA": -0.232611,
+      "SSA": -0.093188,
+      "HUD": -0.165322,
+      "Education": 1.328638
+    }
+  },
+  {
+    "geoid": "21059",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.081549,
+    "poverty_rate": 14.06168,
+    "agencies": {
+      "HHS": -1.062381,
+      "USDA": -0.918859,
+      "SSA": -1.241202,
+      "HUD": -1.160897,
+      "Education": -1.286062
+    }
+  },
+  {
+    "geoid": "21061",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.602503,
+    "poverty_rate": 14.51505,
+    "agencies": {
+      "HHS": -0.438756,
+      "USDA": -0.666466,
+      "SSA": -1.193043,
+      "HUD": 0.744196,
+      "Education": -0.465113
+    }
+  },
+  {
+    "geoid": "21063",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.071116,
+    "poverty_rate": 17.263188,
+    "agencies": {
+      "HHS": -0.396044,
+      "USDA": -0.189322,
+      "SSA": -0.740925,
+      "HUD": 0.359863,
+      "Education": 0.607956
+    }
+  },
+  {
+    "geoid": "21065",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.689815,
+    "poverty_rate": 22.460854,
+    "agencies": {
+      "HHS": 1.301557,
+      "USDA": 1.00564,
+      "SSA": 0.242002,
+      "HUD": 0.658976,
+      "Education": 1.639989
+    }
+  },
+  {
+    "geoid": "21067",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.727118,
+    "poverty_rate": 15.439083,
+    "agencies": {
+      "HHS": -1.424724,
+      "USDA": -0.620976,
+      "SSA": -0.715599,
+      "HUD": -1.013363,
+      "Education": -1.027718
+    }
+  },
+  {
+    "geoid": "21069",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.105,
+    "poverty_rate": 17.528476,
+    "agencies": {
+      "HHS": 0.635726,
+      "USDA": -0.543861,
+      "SSA": -0.612911,
+      "HUD": 0.131703,
+      "Education": 0.785884
+    }
+  },
+  {
+    "geoid": "21071",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.422153,
+    "poverty_rate": 22.856301,
+    "agencies": {
+      "HHS": 0.254384,
+      "USDA": 1.206739,
+      "SSA": 0.363177,
+      "HUD": 0.174908,
+      "Education": 0.13459
+    }
+  },
+  {
+    "geoid": "21073",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -2.482281,
+    "poverty_rate": 11.558645,
+    "agencies": {
+      "HHS": -1.983836,
+      "USDA": -1.793043,
+      "SSA": -1.805305,
+      "HUD": -3.187056,
+      "Education": -3.6275
+    }
+  },
+  {
+    "geoid": "21075",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.290957,
+    "poverty_rate": 20.005774,
+    "agencies": {
+      "HHS": 1.440008,
+      "USDA": 0.732851,
+      "SSA": 0.469198,
+      "HUD": -0.090933,
+      "Education": 1.290944
+    }
+  },
+  {
+    "geoid": "21077",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.8594,
+    "poverty_rate": 13.512136,
+    "agencies": {
+      "HHS": -1.535122,
+      "USDA": -0.285766,
+      "SSA": -1.203435,
+      "HUD": 0.623731,
+      "Education": 0.108104
+    }
+  },
+  {
+    "geoid": "21079",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.76601,
+    "poverty_rate": 15.018232,
+    "agencies": {
+      "HHS": 0.415774,
+      "USDA": -0.523668,
+      "SSA": -1.280515,
+      "HUD": -0.631874,
+      "Education": 0.113667
+    }
+  },
+  {
+    "geoid": "21081",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.575588,
+    "poverty_rate": 15.25245,
+    "agencies": {
+      "HHS": -0.495997,
+      "USDA": -0.236163,
+      "SSA": -1.175672,
+      "HUD": -0.293406,
+      "Education": 0.21736
+    }
+  },
+  {
+    "geoid": "21083",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.58778,
+    "poverty_rate": 16.615951,
+    "agencies": {
+      "HHS": 0.697861,
+      "USDA": -0.995294,
+      "SSA": -0.675805,
+      "HUD": -0.717832,
+      "Education": 0.729206
+    }
+  },
+  {
+    "geoid": "21085",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.301909,
+    "poverty_rate": 20.263658,
+    "agencies": {
+      "HHS": 0.36523,
+      "USDA": 0.000507,
+      "SSA": -0.07199,
+      "HUD": 0.425475,
+      "Education": 1.331663
+    }
+  },
+  {
+    "geoid": "21087",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.553117,
+    "poverty_rate": 16.727562,
+    "agencies": {
+      "HHS": 0.582667,
+      "USDA": -0.26266,
+      "SSA": -0.723429,
+      "HUD": -0.638984,
+      "Education": 0.674408
+    }
+  },
+  {
+    "geoid": "21089",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.374025,
+    "poverty_rate": 13.432892,
+    "agencies": {
+      "HHS": -0.623004,
+      "USDA": -0.207798,
+      "SSA": -1.456968,
+      "HUD": -1.707089,
+      "Education": -0.042503
+    }
+  },
+  {
+    "geoid": "21091",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.314762,
+    "poverty_rate": 12.848175,
+    "agencies": {
+      "HHS": 0.104849,
+      "USDA": -1.338118,
+      "SSA": -1.501475,
+      "HUD": -0.903984,
+      "Education": -0.083353
+    }
+  },
+  {
+    "geoid": "21093",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.160165,
+    "poverty_rate": 11.988816,
+    "agencies": {
+      "HHS": -0.529561,
+      "USDA": -1.280357,
+      "SSA": -1.681395,
+      "HUD": -0.939291,
+      "Education": -1.790425
+    }
+  },
+  {
+    "geoid": "21095",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 1.171397,
+    "poverty_rate": 24.985018,
+    "agencies": {
+      "HHS": 1.578161,
+      "USDA": 1.467942,
+      "SSA": 0.839911,
+      "HUD": 1.284091,
+      "Education": 0.517445
+    }
+  },
+  {
+    "geoid": "21097",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.911082,
+    "poverty_rate": 15.484577,
+    "agencies": {
+      "HHS": 0.308075,
+      "USDA": -0.245486,
+      "SSA": -1.143232,
+      "HUD": -1.134333,
+      "Education": 0.251958
+    }
+  },
+  {
+    "geoid": "21099",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.058575,
+    "poverty_rate": 19.61022,
+    "agencies": {
+      "HHS": 0.34361,
+      "USDA": -0.453447,
+      "SSA": -0.268486,
+      "HUD": 0.228379,
+      "Education": 1.104812
+    }
+  },
+  {
+    "geoid": "21101",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.93357,
+    "poverty_rate": 15.630366,
+    "agencies": {
+      "HHS": 0.024608,
+      "USDA": -0.731463,
+      "SSA": -1.022405,
+      "HUD": -1.194255,
+      "Education": -0.836145
+    }
+  },
+  {
+    "geoid": "21103",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.629334,
+    "poverty_rate": 15.731296,
+    "agencies": {
+      "HHS": 0.615425,
+      "USDA": -0.785711,
+      "SSA": -0.930401,
+      "HUD": -0.504667,
+      "Education": 0.379921
+    }
+  },
+  {
+    "geoid": "21105",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.180835,
+    "poverty_rate": 13.156627,
+    "agencies": {
+      "HHS": 0.130827,
+      "USDA": -2.334541,
+      "SSA": -1.094674,
+      "HUD": -0.747771,
+      "Education": 0.051911
+    }
+  },
+  {
+    "geoid": "21107",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.827131,
+    "poverty_rate": 15.438114,
+    "agencies": {
+      "HHS": -0.675573,
+      "USDA": -0.790601,
+      "SSA": -0.891638,
+      "HUD": -0.891159,
+      "Education": -0.92205
+    }
+  },
+  {
+    "geoid": "21109",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 1.631465,
+    "poverty_rate": 23.327059,
+    "agencies": {
+      "HHS": 1.717266,
+      "USDA": 1.414751,
+      "SSA": 2.174268,
+      "HUD": 1.75045,
+      "Education": 1.757342
+    }
+  },
+  {
+    "geoid": "21111",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.836002,
+    "poverty_rate": 13.620841,
+    "agencies": {
+      "HHS": -2.874978,
+      "USDA": 0.278185,
+      "SSA": -1.381729,
+      "HUD": -1.790017,
+      "Education": -1.597827
+    }
+  },
+  {
+    "geoid": "21113",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.647641,
+    "poverty_rate": 14.000355,
+    "agencies": {
+      "HHS": -0.060344,
+      "USDA": -0.232382,
+      "SSA": -1.411736,
+      "HUD": -0.266508,
+      "Education": -1.264488
+    }
+  },
+  {
+    "geoid": "21115",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.257065,
+    "poverty_rate": 18.206913,
+    "agencies": {
+      "HHS": 0.227471,
+      "USDA": 0.254569,
+      "SSA": -0.63323,
+      "HUD": -0.33028,
+      "Education": 0.017878
+    }
+  },
+  {
+    "geoid": "21117",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.484563,
+    "poverty_rate": 12.086738,
+    "agencies": {
+      "HHS": -1.174393,
+      "USDA": -0.374341,
+      "SSA": -1.660134,
+      "HUD": -1.713429,
+      "Education": -1.546971
+    }
+  },
+  {
+    "geoid": "21119",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.64708,
+    "poverty_rate": 21.890776,
+    "agencies": {
+      "HHS": 1.022171,
+      "USDA": 0.5684,
+      "SSA": 0.259492,
+      "HUD": 1.042358,
+      "Education": 0.114065
+    }
+  },
+  {
+    "geoid": "21121",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.966068,
+    "poverty_rate": 26.720981,
+    "agencies": {
+      "HHS": 0.776396,
+      "USDA": 1.828532,
+      "SSA": 1.194524,
+      "HUD": 0.50044,
+      "Education": 1.130195
+    }
+  },
+  {
+    "geoid": "21123",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.74356,
+    "poverty_rate": 14.241593,
+    "agencies": {
+      "HHS": 0.217363,
+      "USDA": -0.662518,
+      "SSA": -1.199672,
+      "HUD": -0.749851,
+      "Education": 0.189316
+    }
+  },
+  {
+    "geoid": "21125",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.017675,
+    "poverty_rate": 19.206349,
+    "agencies": {
+      "HHS": 0.533846,
+      "USDA": 0.364827,
+      "SSA": -0.277967,
+      "HUD": 0.058827,
+      "Education": 0.532343
+    }
+  },
+  {
+    "geoid": "21127",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.002397,
+    "poverty_rate": 19.622057,
+    "agencies": {
+      "HHS": 1.127653,
+      "USDA": 0.351935,
+      "SSA": -0.104845,
+      "HUD": -0.036384,
+      "Education": 1.330242
+    }
+  },
+  {
+    "geoid": "21129",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.42229,
+    "poverty_rate": 22.27981,
+    "agencies": {
+      "HHS": 0.536926,
+      "USDA": 0.815466,
+      "SSA": 0.310174,
+      "HUD": 0.35939,
+      "Education": 1.722589
+    }
+  },
+  {
+    "geoid": "21131",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 1.00539,
+    "poverty_rate": 23.928006,
+    "agencies": {
+      "HHS": 0.5073,
+      "USDA": 2.14544,
+      "SSA": 0.837354,
+      "HUD": 2.070636,
+      "Education": 2.298984
+    }
+  },
+  {
+    "geoid": "21133",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.909585,
+    "poverty_rate": 23.025992,
+    "agencies": {
+      "HHS": -0.019298,
+      "USDA": 0.941465,
+      "SSA": 0.53896,
+      "HUD": 1.026047,
+      "Education": 1.340156
+    }
+  },
+  {
+    "geoid": "21135",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.54284,
+    "poverty_rate": 21.589183,
+    "agencies": {
+      "HHS": 0.583441,
+      "USDA": 0.643085,
+      "SSA": 0.042566,
+      "HUD": 0.640322,
+      "Education": 1.393604
+    }
+  },
+  {
+    "geoid": "21137",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.158028,
+    "poverty_rate": 18.662404,
+    "agencies": {
+      "HHS": 0.291234,
+      "USDA": -0.199664,
+      "SSA": -0.560103,
+      "HUD": 0.121454,
+      "Education": 0.837963
+    }
+  },
+  {
+    "geoid": "21139",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.135414,
+    "poverty_rate": 12.972358,
+    "agencies": {
+      "HHS": -0.246461,
+      "USDA": -1.661077,
+      "SSA": -1.420466,
+      "HUD": 0.528098,
+      "Education": 0.024204
+    }
+  },
+  {
+    "geoid": "21141",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.728573,
+    "poverty_rate": 15.216022,
+    "agencies": {
+      "HHS": 0.337114,
+      "USDA": -1.579636,
+      "SSA": -1.133705,
+      "HUD": -0.629732,
+      "Education": -0.675043
+    }
+  },
+  {
+    "geoid": "21143",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -2.114658,
+    "poverty_rate": 7.830975,
+    "agencies": {
+      "HHS": -1.349847,
+      "USDA": -1.724449,
+      "SSA": -2.5072,
+      "HUD": -2.0633,
+      "Education": -1.711637
+    }
+  },
+  {
+    "geoid": "21145",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.630744,
+    "poverty_rate": 13.800579,
+    "agencies": {
+      "HHS": -0.336723,
+      "USDA": -0.326389,
+      "SSA": -0.47811,
+      "HUD": -0.838618,
+      "Education": -0.654911
+    }
+  },
+  {
+    "geoid": "21147",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 2.494995,
+    "poverty_rate": 25.398827,
+    "agencies": {
+      "HHS": 1.843644,
+      "USDA": 1.853946,
+      "SSA": 2.869669,
+      "HUD": 2.606998,
+      "Education": 2.121586
+    }
+  },
+  {
+    "geoid": "21149",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.825431,
+    "poverty_rate": 13.224368,
+    "agencies": {
+      "HHS": -0.085375,
+      "USDA": -1.439062,
+      "SSA": -1.750967,
+      "HUD": -1.20136,
+      "Education": -0.323983
+    }
+  },
+  {
+    "geoid": "21151",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.791716,
+    "poverty_rate": 15.565016,
+    "agencies": {
+      "HHS": -0.222248,
+      "USDA": -0.206562,
+      "SSA": -1.053103,
+      "HUD": -0.853004,
+      "Education": -1.851716
+    }
+  },
+  {
+    "geoid": "21153",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.898681,
+    "poverty_rate": 22.484807,
+    "agencies": {
+      "HHS": 1.661095,
+      "USDA": 1.256519,
+      "SSA": 0.395795,
+      "HUD": 1.100561,
+      "Education": 1.843976
+    }
+  },
+  {
+    "geoid": "21155",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.428757,
+    "poverty_rate": 17.114943,
+    "agencies": {
+      "HHS": -0.494636,
+      "USDA": -0.44916,
+      "SSA": -0.504517,
+      "HUD": -0.553303,
+      "Education": 0.867903
+    }
+  },
+  {
+    "geoid": "21157",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.885369,
+    "poverty_rate": 9.140617,
+    "agencies": {
+      "HHS": -0.64283,
+      "USDA": -1.996057,
+      "SSA": -2.165415,
+      "HUD": -1.808907,
+      "Education": -0.883568
+    }
+  },
+  {
+    "geoid": "21159",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.211369,
+    "poverty_rate": 17.550391,
+    "agencies": {
+      "HHS": 0.169772,
+      "USDA": 0.217879,
+      "SSA": -0.927743,
+      "HUD": -0.222747,
+      "Education": 0.518736
+    }
+  },
+  {
+    "geoid": "21161",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.851152,
+    "poverty_rate": 15.684161,
+    "agencies": {
+      "HHS": -0.066299,
+      "USDA": -0.702207,
+      "SSA": -0.99919,
+      "HUD": -1.077281,
+      "Education": -1.506742
+    }
+  },
+  {
+    "geoid": "21163",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.071122,
+    "poverty_rate": 12.360484,
+    "agencies": {
+      "HHS": -0.133972,
+      "USDA": -1.798309,
+      "SSA": -1.695716,
+      "HUD": -0.166148,
+      "Education": -0.544904
+    }
+  },
+  {
+    "geoid": "21165",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.14873,
+    "poverty_rate": 20.05529,
+    "agencies": {
+      "HHS": 0.373762,
+      "USDA": 0.377376,
+      "SSA": -0.254069,
+      "HUD": 0.210292,
+      "Education": 1.177083
+    }
+  },
+  {
+    "geoid": "21167",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.151641,
+    "poverty_rate": 13.078811,
+    "agencies": {
+      "HHS": -0.037614,
+      "USDA": -1.274284,
+      "SSA": -1.671129,
+      "HUD": -0.405983,
+      "Education": -0.554487
+    }
+  },
+  {
+    "geoid": "21169",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.102722,
+    "poverty_rate": 19.425352,
+    "agencies": {
+      "HHS": 1.209064,
+      "USDA": 0.321824,
+      "SSA": -0.119779,
+      "HUD": 0.22475,
+      "Education": 1.28087
+    }
+  },
+  {
+    "geoid": "21171",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.511664,
+    "poverty_rate": 20.753733,
+    "agencies": {
+      "HHS": 1.326481,
+      "USDA": -0.012029,
+      "SSA": -0.070584,
+      "HUD": 0.58306,
+      "Education": 1.317141
+    }
+  },
+  {
+    "geoid": "21173",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.216729,
+    "poverty_rate": 17.816727,
+    "agencies": {
+      "HHS": -0.499023,
+      "USDA": 0.153713,
+      "SSA": -0.855274,
+      "HUD": -0.242329,
+      "Education": 0.528297
+    }
+  },
+  {
+    "geoid": "21175",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.904999,
+    "poverty_rate": 14.425511,
+    "agencies": {
+      "HHS": -1.147934,
+      "USDA": -0.997936,
+      "SSA": -1.165945,
+      "HUD": 0.802772,
+      "Education": 0.203792
+    }
+  },
+  {
+    "geoid": "21177",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.753547,
+    "poverty_rate": 14.100682,
+    "agencies": {
+      "HHS": -0.702045,
+      "USDA": -0.959805,
+      "SSA": -1.374765,
+      "HUD": -0.429736,
+      "Education": 0.039577
+    }
+  },
+  {
+    "geoid": "21179",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.630967,
+    "poverty_rate": 10.504886,
+    "agencies": {
+      "HHS": -0.814443,
+      "USDA": -1.590027,
+      "SSA": -2.242662,
+      "HUD": -1.56613,
+      "Education": -1.160462
+    }
+  },
+  {
+    "geoid": "21181",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.236882,
+    "poverty_rate": 19.483708,
+    "agencies": {
+      "HHS": 0.66673,
+      "USDA": 0.411029,
+      "SSA": -0.258704,
+      "HUD": 1.697768,
+      "Education": 1.127373
+    }
+  },
+  {
+    "geoid": "21183",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.374919,
+    "poverty_rate": 15.898145,
+    "agencies": {
+      "HHS": 0.393919,
+      "USDA": -1.157272,
+      "SSA": -1.122035,
+      "HUD": 0.048589,
+      "Education": 0.290588
+    }
+  },
+  {
+    "geoid": "21185",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -2.376899,
+    "poverty_rate": 4.687521,
+    "agencies": {
+      "HHS": -1.794033,
+      "USDA": -1.994692,
+      "SSA": -3.003843,
+      "HUD": -1.802212,
+      "Education": -1.681079
+    }
+  },
+  {
+    "geoid": "21187",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.653825,
+    "poverty_rate": 14.200105,
+    "agencies": {
+      "HHS": -0.337236,
+      "USDA": -0.867773,
+      "SSA": -1.201743,
+      "HUD": -0.27615,
+      "Education": 0.1855
+    }
+  },
+  {
+    "geoid": "21189",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.713987,
+    "poverty_rate": 23.147075,
+    "agencies": {
+      "HHS": 1.163615,
+      "USDA": 0.676667,
+      "SSA": 0.331508,
+      "HUD": 0.354134,
+      "Education": 1.548371
+    }
+  },
+  {
+    "geoid": "21191",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.584929,
+    "poverty_rate": 14.36633,
+    "agencies": {
+      "HHS": -0.087662,
+      "USDA": -0.620081,
+      "SSA": -1.056809,
+      "HUD": -0.337239,
+      "Education": 0.331114
+    }
+  },
+  {
+    "geoid": "21193",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.122883,
+    "poverty_rate": 19.84731,
+    "agencies": {
+      "HHS": -0.574177,
+      "USDA": 0.220733,
+      "SSA": -0.232572,
+      "HUD": 0.158294,
+      "Education": -0.488219
+    }
+  },
+  {
+    "geoid": "21195",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.194532,
+    "poverty_rate": 19.288651,
+    "agencies": {
+      "HHS": 0.14386,
+      "USDA": 0.872779,
+      "SSA": -0.250526,
+      "HUD": -0.324717,
+      "Education": -0.164977
+    }
+  },
+  {
+    "geoid": "21197",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.281,
+    "poverty_rate": 19.272519,
+    "agencies": {
+      "HHS": -0.199343,
+      "USDA": 0.203918,
+      "SSA": -0.48145,
+      "HUD": 0.901325,
+      "Education": 0.947428
+    }
+  },
+  {
+    "geoid": "21199",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.058589,
+    "poverty_rate": 19.782663,
+    "agencies": {
+      "HHS": 0.904198,
+      "USDA": 0.273776,
+      "SSA": -0.317133,
+      "HUD": 0.007275,
+      "Education": -0.582863
+    }
+  },
+  {
+    "geoid": "21201",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.376803,
+    "poverty_rate": 20.826685,
+    "agencies": {
+      "HHS": 1.614538,
+      "USDA": -0.380344,
+      "SSA": 0.147796,
+      "HUD": 2.028775,
+      "Education": 0.796013
+    }
+  },
+  {
+    "geoid": "21203",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.124444,
+    "poverty_rate": 18.252354,
+    "agencies": {
+      "HHS": -0.2373,
+      "USDA": -0.114537,
+      "SSA": -0.544611,
+      "HUD": 0.410421,
+      "Education": 0.849628
+    }
+  },
+  {
+    "geoid": "21205",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.066582,
+    "poverty_rate": 18.862907,
+    "agencies": {
+      "HHS": 0.463257,
+      "USDA": 0.359857,
+      "SSA": -0.241784,
+      "HUD": 0.089895,
+      "Education": -0.945191
+    }
+  },
+  {
+    "geoid": "21207",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.127007,
+    "poverty_rate": 19.908093,
+    "agencies": {
+      "HHS": 0.122751,
+      "USDA": 0.002528,
+      "SSA": -0.23345,
+      "HUD": -0.349036,
+      "Education": 0.392878
+    }
+  },
+  {
+    "geoid": "21209",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.809834,
+    "poverty_rate": 10.302927,
+    "agencies": {
+      "HHS": -0.477818,
+      "USDA": -1.076986,
+      "SSA": -1.884668,
+      "HUD": -2.00736,
+      "Education": -1.794593
+    }
+  },
+  {
+    "geoid": "21211",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.412327,
+    "poverty_rate": 10.018894,
+    "agencies": {
+      "HHS": -1.393374,
+      "USDA": -1.896059,
+      "SSA": -2.093985,
+      "HUD": -1.096822,
+      "Education": -1.328549
+    }
+  },
+  {
+    "geoid": "21213",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.637672,
+    "poverty_rate": 14.277962,
+    "agencies": {
+      "HHS": 0.348074,
+      "USDA": -1.278998,
+      "SSA": -1.419435,
+      "HUD": -0.3631,
+      "Education": -0.026081
+    }
+  },
+  {
+    "geoid": "21215",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.98064,
+    "poverty_rate": 7.717148,
+    "agencies": {
+      "HHS": -1.439425,
+      "USDA": -1.327146,
+      "SSA": -2.409307,
+      "HUD": -1.586541,
+      "Education": -1.054709
+    }
+  },
+  {
+    "geoid": "21217",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.657196,
+    "poverty_rate": 16.720244,
+    "agencies": {
+      "HHS": 0.505179,
+      "USDA": -1.053911,
+      "SSA": -0.974886,
+      "HUD": -0.868677,
+      "Education": -1.448243
+    }
+  },
+  {
+    "geoid": "21219",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.038238,
+    "poverty_rate": 17.603678,
+    "agencies": {
+      "HHS": 0.644787,
+      "USDA": -1.193683,
+      "SSA": -0.416983,
+      "HUD": -0.249961,
+      "Education": 0.945243
+    }
+  },
+  {
+    "geoid": "21221",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.051533,
+    "poverty_rate": 13.277615,
+    "agencies": {
+      "HHS": 0.008199,
+      "USDA": -1.693293,
+      "SSA": -1.430282,
+      "HUD": -0.830131,
+      "Education": -0.673689
+    }
+  },
+  {
+    "geoid": "21223",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.217632,
+    "poverty_rate": 14.094911,
+    "agencies": {
+      "HHS": 0.196888,
+      "USDA": -0.336149,
+      "SSA": 0.196832,
+      "HUD": 0.445154,
+      "Education": 0.076361
+    }
+  },
+  {
+    "geoid": "21225",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.131878,
+    "poverty_rate": 17.800394,
+    "agencies": {
+      "HHS": 0.955377,
+      "USDA": -0.903149,
+      "SSA": -0.851472,
+      "HUD": -0.074213,
+      "Education": 0.550492
+    }
+  },
+  {
+    "geoid": "21227",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.731829,
+    "poverty_rate": 15.676512,
+    "agencies": {
+      "HHS": -0.533337,
+      "USDA": -0.803754,
+      "SSA": -0.902646,
+      "HUD": -0.855329,
+      "Education": -1.347799
+    }
+  },
+  {
+    "geoid": "21229",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.053965,
+    "poverty_rate": 13.800534,
+    "agencies": {
+      "HHS": -0.036782,
+      "USDA": -1.394409,
+      "SSA": -1.367895,
+      "HUD": -1.248209,
+      "Education": 0.015579
+    }
+  },
+  {
+    "geoid": "21231",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.419401,
+    "poverty_rate": 19.301687,
+    "agencies": {
+      "HHS": 0.600001,
+      "USDA": 0.219582,
+      "SSA": -0.315911,
+      "HUD": 0.692908,
+      "Education": 1.088067
+    }
+  },
+  {
+    "geoid": "21233",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -0.565188,
+    "poverty_rate": 15.415817,
+    "agencies": {
+      "HHS": -0.919184,
+      "USDA": -1.343577,
+      "SSA": -0.92069,
+      "HUD": -0.539646,
+      "Education": 0.505325
+    }
+  },
+  {
+    "geoid": "21235",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 0.127631,
+    "poverty_rate": 19.745692,
+    "agencies": {
+      "HHS": 0.163726,
+      "USDA": 1.016855,
+      "SSA": -0.211508,
+      "HUD": 0.094373,
+      "Education": -0.635225
+    }
+  },
+  {
+    "geoid": "21237",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": 1.713994,
+    "poverty_rate": 28.055391,
+    "agencies": {
+      "HHS": 1.705527,
+      "USDA": 1.732599,
+      "SSA": 1.037951,
+      "HUD": 2.648853,
+      "Education": 2.495574
+    }
+  },
+  {
+    "geoid": "21239",
+    "state": "kentucky",
+    "region": "Western Appalachia",
+    "misalignment": -1.530855,
+    "poverty_rate": 10.811402,
+    "agencies": {
+      "HHS": -1.174161,
+      "USDA": -1.909386,
+      "SSA": -1.992496,
+      "HUD": -2.209312,
+      "Education": -2.031518
+    }
+  },
+  {
+    "geoid": "22001",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.008415,
+    "poverty_rate": 20.131735,
+    "agencies": {
+      "HHS": 0.301012,
+      "USDA": -0.424662,
+      "SSA": 0.118289,
+      "HUD": -0.240129,
+      "Education": 1.480899
+    }
+  },
+  {
+    "geoid": "22003",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.394499,
+    "poverty_rate": 11.539784,
+    "agencies": {
+      "HHS": -1.718131,
+      "USDA": -1.744875,
+      "SSA": -1.574306,
+      "HUD": -1.504063,
+      "Education": -0.241928
+    }
+  },
+  {
+    "geoid": "22005",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.180923,
+    "poverty_rate": 10.910162,
+    "agencies": {
+      "HHS": -0.814172,
+      "USDA": -0.613864,
+      "SSA": -1.546547,
+      "HUD": -1.111231,
+      "Education": -1.440915
+    }
+  },
+  {
+    "geoid": "22007",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.588139,
+    "poverty_rate": 14.346031,
+    "agencies": {
+      "HHS": -1.120741,
+      "USDA": -0.732652,
+      "SSA": -1.200599,
+      "HUD": 0.232626,
+      "Education": 0.187971
+    }
+  },
+  {
+    "geoid": "22009",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.009894,
+    "poverty_rate": 19.027537,
+    "agencies": {
+      "HHS": 0.076036,
+      "USDA": -0.718677,
+      "SSA": -0.119364,
+      "HUD": -0.235211,
+      "Education": 0.271494
+    }
+  },
+  {
+    "geoid": "22011",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.878607,
+    "poverty_rate": 14.205874,
+    "agencies": {
+      "HHS": 0.113478,
+      "USDA": -0.973984,
+      "SSA": -1.356812,
+      "HUD": -0.792489,
+      "Education": -0.086067
+    }
+  },
+  {
+    "geoid": "22013",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 1.261203,
+    "poverty_rate": 22.893298,
+    "agencies": {
+      "HHS": 1.632342,
+      "USDA": 0.853174,
+      "SSA": 1.770872,
+      "HUD": 1.285929,
+      "Education": 1.94115
+    }
+  },
+  {
+    "geoid": "22015",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.417465,
+    "poverty_rate": 14.779151,
+    "agencies": {
+      "HHS": -0.589592,
+      "USDA": -0.226286,
+      "SSA": -0.279024,
+      "HUD": -0.651002,
+      "Education": -1.051521
+    }
+  },
+  {
+    "geoid": "22017",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.081708,
+    "poverty_rate": 19.739766,
+    "agencies": {
+      "HHS": 0.348523,
+      "USDA": 0.360776,
+      "SSA": -0.070951,
+      "HUD": -0.401855,
+      "Education": -0.190006
+    }
+  },
+  {
+    "geoid": "22019",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.867127,
+    "poverty_rate": 15.565728,
+    "agencies": {
+      "HHS": -0.48666,
+      "USDA": -0.485115,
+      "SSA": -0.89004,
+      "HUD": -1.125191,
+      "Education": -0.966392
+    }
+  },
+  {
+    "geoid": "22021",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.308712,
+    "poverty_rate": 19.477615,
+    "agencies": {
+      "HHS": 0.487559,
+      "USDA": 0.312029,
+      "SSA": -0.067992,
+      "HUD": -0.622427,
+      "Education": 1.31384
+    }
+  },
+  {
+    "geoid": "22023",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -2.225334,
+    "poverty_rate": 8.086657,
+    "agencies": {
+      "HHS": -1.5089,
+      "USDA": -2.344243,
+      "SSA": -2.30851,
+      "HUD": -0.411643,
+      "Education": -0.956016
+    }
+  },
+  {
+    "geoid": "22025",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.760912,
+    "poverty_rate": 16.784566,
+    "agencies": {
+      "HHS": -1.256125,
+      "USDA": -1.635334,
+      "SSA": -0.602239,
+      "HUD": -0.70797,
+      "Education": 0.798883
+    }
+  },
+  {
+    "geoid": "22027",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.334597,
+    "poverty_rate": 20.962389,
+    "agencies": {
+      "HHS": 1.262195,
+      "USDA": 0.381005,
+      "SSA": 0.207275,
+      "HUD": 0.178427,
+      "Education": 1.568877
+    }
+  },
+  {
+    "geoid": "22029",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.708346,
+    "poverty_rate": 22.86355,
+    "agencies": {
+      "HHS": 1.457889,
+      "USDA": -0.126562,
+      "SSA": 0.392828,
+      "HUD": 0.664545,
+      "Education": 1.766476
+    }
+  },
+  {
+    "geoid": "22031",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.066776,
+    "poverty_rate": 20.459898,
+    "agencies": {
+      "HHS": 0.098899,
+      "USDA": 0.191325,
+      "SSA": -0.172524,
+      "HUD": -0.118369,
+      "Education": 1.21868
+    }
+  },
+  {
+    "geoid": "22033",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.965224,
+    "poverty_rate": 16.837507,
+    "agencies": {
+      "HHS": -0.934915,
+      "USDA": -0.515481,
+      "SSA": -0.67972,
+      "HUD": -1.736657,
+      "Education": -2.018898
+    }
+  },
+  {
+    "geoid": "22035",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.538878,
+    "poverty_rate": 24.218297,
+    "agencies": {
+      "HHS": 1.919127,
+      "USDA": -0.642955,
+      "SSA": 0.326557,
+      "HUD": 0.223854,
+      "Education": 1.62269
+    }
+  },
+  {
+    "geoid": "22037",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.235527,
+    "poverty_rate": 10.824427,
+    "agencies": {
+      "HHS": -2.624535,
+      "USDA": -1.772089,
+      "SSA": -1.918185,
+      "HUD": 0.322612,
+      "Education": -0.575245
+    }
+  },
+  {
+    "geoid": "22039",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.316365,
+    "poverty_rate": 22.174195,
+    "agencies": {
+      "HHS": 1.07785,
+      "USDA": -0.262963,
+      "SSA": 0.411817,
+      "HUD": 0.002602,
+      "Education": 1.784623
+    }
+  },
+  {
+    "geoid": "22041",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.7599,
+    "poverty_rate": 23.280649,
+    "agencies": {
+      "HHS": 0.914677,
+      "USDA": -0.410641,
+      "SSA": 0.390466,
+      "HUD": 0.847284,
+      "Education": 1.767565
+    }
+  },
+  {
+    "geoid": "22043",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.34862,
+    "poverty_rate": 11.906214,
+    "agencies": {
+      "HHS": -1.271162,
+      "USDA": -0.935617,
+      "SSA": -1.608315,
+      "HUD": -1.327053,
+      "Education": -0.282149
+    }
+  },
+  {
+    "geoid": "22045",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.010281,
+    "poverty_rate": 19.672193,
+    "agencies": {
+      "HHS": 0.332598,
+      "USDA": 0.266533,
+      "SSA": -0.036405,
+      "HUD": -0.065713,
+      "Education": 0.936068
+    }
+  },
+  {
+    "geoid": "22047",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.068929,
+    "poverty_rate": 13.521147,
+    "agencies": {
+      "HHS": -0.767228,
+      "USDA": -0.960991,
+      "SSA": -1.33641,
+      "HUD": -0.893609,
+      "Education": 0.015845
+    }
+  },
+  {
+    "geoid": "22049",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.190578,
+    "poverty_rate": 18.348412,
+    "agencies": {
+      "HHS": -0.478884,
+      "USDA": -0.041774,
+      "SSA": 0.091574,
+      "HUD": 0.122995,
+      "Education": 0.883249
+    }
+  },
+  {
+    "geoid": "22051",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.232964,
+    "poverty_rate": 14.487404,
+    "agencies": {
+      "HHS": -1.586164,
+      "USDA": 0.259283,
+      "SSA": -1.147493,
+      "HUD": -1.461193,
+      "Education": -0.364274
+    }
+  },
+  {
+    "geoid": "22053",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.624363,
+    "poverty_rate": 16.617116,
+    "agencies": {
+      "HHS": 0.787976,
+      "USDA": -1.403649,
+      "SSA": -0.847233,
+      "HUD": -0.75103,
+      "Education": 0.518016
+    }
+  },
+  {
+    "geoid": "22055",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.803839,
+    "poverty_rate": 15.587474,
+    "agencies": {
+      "HHS": -0.312657,
+      "USDA": 0.110591,
+      "SSA": -0.830942,
+      "HUD": -1.026561,
+      "Education": -1.282387
+    }
+  },
+  {
+    "geoid": "22057",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.993179,
+    "poverty_rate": 14.021693,
+    "agencies": {
+      "HHS": -0.749707,
+      "USDA": -0.389824,
+      "SSA": -1.135588,
+      "HUD": -1.056307,
+      "Education": -1.206135
+    }
+  },
+  {
+    "geoid": "22059",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.620718,
+    "poverty_rate": 14.673203,
+    "agencies": {
+      "HHS": -0.075719,
+      "USDA": -0.450169,
+      "SSA": -1.155088,
+      "HUD": -0.445049,
+      "Education": 0.205769
+    }
+  },
+  {
+    "geoid": "22061",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.859069,
+    "poverty_rate": 24.18672,
+    "agencies": {
+      "HHS": 1.158583,
+      "USDA": 1.152485,
+      "SSA": 0.73016,
+      "HUD": 0.660255,
+      "Education": -0.224364
+    }
+  },
+  {
+    "geoid": "22063",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.103897,
+    "poverty_rate": 11.887057,
+    "agencies": {
+      "HHS": -0.276477,
+      "USDA": -0.788981,
+      "SSA": -1.692729,
+      "HUD": -0.699911,
+      "Education": -0.663698
+    }
+  },
+  {
+    "geoid": "22065",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 1.998941,
+    "poverty_rate": 26.315579,
+    "agencies": {
+      "HHS": 1.7392,
+      "USDA": 1.15352,
+      "SSA": 2.496993,
+      "HUD": 2.164461,
+      "Education": 2.319727
+    }
+  },
+  {
+    "geoid": "22067",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 1.66317,
+    "poverty_rate": 23.331067,
+    "agencies": {
+      "HHS": 1.122389,
+      "USDA": 0.94948,
+      "SSA": 1.806768,
+      "HUD": 1.751727,
+      "Education": 1.948484
+    }
+  },
+  {
+    "geoid": "22069",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.858389,
+    "poverty_rate": 23.922768,
+    "agencies": {
+      "HHS": 1.233695,
+      "USDA": 0.692323,
+      "SSA": 0.962762,
+      "HUD": 0.58423,
+      "Education": 0.348224
+    }
+  },
+  {
+    "geoid": "22071",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.18525,
+    "poverty_rate": 21.105636,
+    "agencies": {
+      "HHS": -0.613953,
+      "USDA": 1.412294,
+      "SSA": 0.048401,
+      "HUD": -0.887515,
+      "Education": -0.459548
+    }
+  },
+  {
+    "geoid": "22073",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.004046,
+    "poverty_rate": 20.871852,
+    "agencies": {
+      "HHS": -0.933083,
+      "USDA": 0.301963,
+      "SSA": 0.116411,
+      "HUD": -0.3458,
+      "Education": -0.166071
+    }
+  },
+  {
+    "geoid": "22075",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.433802,
+    "poverty_rate": 15.533972,
+    "agencies": {
+      "HHS": -0.383869,
+      "USDA": 0.696121,
+      "SSA": -0.500902,
+      "HUD": -0.418037,
+      "Education": -0.730181
+    }
+  },
+  {
+    "geoid": "22077",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.605659,
+    "poverty_rate": 16.357622,
+    "agencies": {
+      "HHS": -0.741821,
+      "USDA": -1.481961,
+      "SSA": -0.789678,
+      "HUD": -0.257969,
+      "Education": 0.591956
+    }
+  },
+  {
+    "geoid": "22079",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.591226,
+    "poverty_rate": 16.997841,
+    "agencies": {
+      "HHS": -0.106784,
+      "USDA": -0.771397,
+      "SSA": -0.687227,
+      "HUD": -0.831365,
+      "Education": -0.90946
+    }
+  },
+  {
+    "geoid": "22081",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.173116,
+    "poverty_rate": 19.675605,
+    "agencies": {
+      "HHS": 0.399589,
+      "USDA": -0.705833,
+      "SSA": -0.052017,
+      "HUD": 0.02769,
+      "Education": 1.306202
+    }
+  },
+  {
+    "geoid": "22083",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.333887,
+    "poverty_rate": 21.308153,
+    "agencies": {
+      "HHS": 0.109566,
+      "USDA": -0.47873,
+      "SSA": 0.392574,
+      "HUD": 0.612861,
+      "Education": 1.761564
+    }
+  },
+  {
+    "geoid": "22085",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.155094,
+    "poverty_rate": 16.991523,
+    "agencies": {
+      "HHS": 0.005848,
+      "USDA": -0.339236,
+      "SSA": -0.668535,
+      "HUD": -1.294431,
+      "Education": 0.036392
+    }
+  },
+  {
+    "geoid": "22087",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.11779,
+    "poverty_rate": 19.34355,
+    "agencies": {
+      "HHS": 0.480027,
+      "USDA": 1.553816,
+      "SSA": 0.02225,
+      "HUD": -0.363239,
+      "Education": -0.224632
+    }
+  },
+  {
+    "geoid": "22089",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.642037,
+    "poverty_rate": 10.589881,
+    "agencies": {
+      "HHS": -1.803553,
+      "USDA": -1.037009,
+      "SSA": -1.928961,
+      "HUD": -1.667597,
+      "Education": -0.580219
+    }
+  },
+  {
+    "geoid": "22091",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.691015,
+    "poverty_rate": 20.793729,
+    "agencies": {
+      "HHS": -0.428889,
+      "USDA": 0.498652,
+      "SSA": 0.003129,
+      "HUD": 2.218057,
+      "Education": 1.411918
+    }
+  },
+  {
+    "geoid": "22093",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.15149,
+    "poverty_rate": 13.071895,
+    "agencies": {
+      "HHS": -0.748018,
+      "USDA": -0.488336,
+      "SSA": -1.593346,
+      "HUD": -1.336368,
+      "Education": -0.201207
+    }
+  },
+  {
+    "geoid": "22095",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.955821,
+    "poverty_rate": 15.028431,
+    "agencies": {
+      "HHS": -0.480924,
+      "USDA": -0.273357,
+      "SSA": -1.146968,
+      "HUD": -1.189027,
+      "Education": 0.223146
+    }
+  },
+  {
+    "geoid": "22097",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.574265,
+    "poverty_rate": 23.467052,
+    "agencies": {
+      "HHS": 1.131522,
+      "USDA": 0.054461,
+      "SSA": 0.501995,
+      "HUD": 0.389122,
+      "Education": 0.518636
+    }
+  },
+  {
+    "geoid": "22099",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.651678,
+    "poverty_rate": 15.990492,
+    "agencies": {
+      "HHS": -0.012428,
+      "USDA": -0.778476,
+      "SSA": -0.875329,
+      "HUD": -0.665316,
+      "Education": 0.495314
+    }
+  },
+  {
+    "geoid": "22101",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.285911,
+    "poverty_rate": 18.088566,
+    "agencies": {
+      "HHS": -0.825433,
+      "USDA": 0.094374,
+      "SSA": -0.551439,
+      "HUD": -0.400475,
+      "Education": 0.649383
+    }
+  },
+  {
+    "geoid": "22103",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.695295,
+    "poverty_rate": 10.403681,
+    "agencies": {
+      "HHS": -1.371031,
+      "USDA": -0.803617,
+      "SSA": -1.892589,
+      "HUD": -1.609561,
+      "Education": -1.720348
+    }
+  },
+  {
+    "geoid": "22105",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.166999,
+    "poverty_rate": 18.680972,
+    "agencies": {
+      "HHS": -0.092977,
+      "USDA": 0.028467,
+      "SSA": -0.374423,
+      "HUD": -0.203639,
+      "Education": -0.860602
+    }
+  },
+  {
+    "geoid": "22107",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 1.236813,
+    "poverty_rate": 28.656757,
+    "agencies": {
+      "HHS": 0.900478,
+      "USDA": 0.047865,
+      "SSA": 1.524902,
+      "HUD": 1.171473,
+      "Education": 2.92398
+    }
+  },
+  {
+    "geoid": "22109",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.529499,
+    "poverty_rate": 17.006775,
+    "agencies": {
+      "HHS": -0.230016,
+      "USDA": 0.254526,
+      "SSA": -0.676587,
+      "HUD": -0.655883,
+      "Education": -0.649928
+    }
+  },
+  {
+    "geoid": "22111",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.214894,
+    "poverty_rate": 19.198828,
+    "agencies": {
+      "HHS": 0.970221,
+      "USDA": 0.091451,
+      "SSA": -0.145627,
+      "HUD": 0.281211,
+      "Education": 0.966539
+    }
+  },
+  {
+    "geoid": "22113",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.570895,
+    "poverty_rate": 16.06787,
+    "agencies": {
+      "HHS": 0.493375,
+      "USDA": -1.273461,
+      "SSA": -0.795603,
+      "HUD": -0.598607,
+      "Education": 0.569285
+    }
+  },
+  {
+    "geoid": "22115",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.713639,
+    "poverty_rate": 14.726715,
+    "agencies": {
+      "HHS": -0.418482,
+      "USDA": -0.284166,
+      "SSA": -0.828499,
+      "HUD": -0.738958,
+      "Education": -1.077195
+    }
+  },
+  {
+    "geoid": "22117",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.223219,
+    "poverty_rate": 20.61206,
+    "agencies": {
+      "HHS": 0.721872,
+      "USDA": 0.713353,
+      "SSA": -0.024259,
+      "HUD": 0.175041,
+      "Education": 1.366822
+    }
+  },
+  {
+    "geoid": "22119",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.27827,
+    "poverty_rate": 21.130197,
+    "agencies": {
+      "HHS": 0.528386,
+      "USDA": 0.650872,
+      "SSA": 0.244678,
+      "HUD": 0.134753,
+      "Education": 0.206152
+    }
+  },
+  {
+    "geoid": "22121",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.260342,
+    "poverty_rate": 15.06209,
+    "agencies": {
+      "HHS": 0.044166,
+      "USDA": -0.524776,
+      "SSA": -0.62536,
+      "HUD": 0.204423,
+      "Education": 0.129224
+    }
+  },
+  {
+    "geoid": "22123",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": 0.433894,
+    "poverty_rate": 17.240738,
+    "agencies": {
+      "HHS": 0.754696,
+      "USDA": -0.164848,
+      "SSA": 0.688762,
+      "HUD": 0.340835,
+      "Education": 0.562132
+    }
+  },
+  {
+    "geoid": "22125",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -1.846368,
+    "poverty_rate": 7.97414,
+    "agencies": {
+      "HHS": -1.846542,
+      "USDA": -2.108117,
+      "SSA": -2.27258,
+      "HUD": -0.439677,
+      "Education": -1.028271
+    }
+  },
+  {
+    "geoid": "22127",
+    "state": "louisiana",
+    "region": "Mississippi Delta",
+    "misalignment": -0.745893,
+    "poverty_rate": 15.576444,
+    "agencies": {
+      "HHS": -1.119185,
+      "USDA": -1.188619,
+      "SSA": -1.106555,
+      "HUD": -0.863122,
+      "Education": 0.253833
+    }
+  },
+  {
+    "geoid": "28001",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.617191,
+    "poverty_rate": 22.94203,
+    "agencies": {
+      "HHS": 1.402528,
+      "USDA": 0.626893,
+      "SSA": 0.483819,
+      "HUD": 0.459574,
+      "Education": 1.895417
+    }
+  },
+  {
+    "geoid": "28003",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -1.15074,
+    "poverty_rate": 15.638605,
+    "agencies": {
+      "HHS": -0.677915,
+      "USDA": -0.972047,
+      "SSA": -1.16704,
+      "HUD": -1.728432,
+      "Education": -0.580995
+    }
+  },
+  {
+    "geoid": "28005",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.163891,
+    "poverty_rate": 20.976888,
+    "agencies": {
+      "HHS": 0.311221,
+      "USDA": 0.828785,
+      "SSA": 0.989612,
+      "HUD": 1.608157,
+      "Education": 1.506937
+    }
+  },
+  {
+    "geoid": "28007",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.450306,
+    "poverty_rate": 21.056532,
+    "agencies": {
+      "HHS": 1.569514,
+      "USDA": 0.338093,
+      "SSA": 0.025717,
+      "HUD": 0.533246,
+      "Education": 1.426836
+    }
+  },
+  {
+    "geoid": "28009",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.629912,
+    "poverty_rate": 15.974197,
+    "agencies": {
+      "HHS": -0.965792,
+      "USDA": -0.98003,
+      "SSA": -1.004433,
+      "HUD": 0.302621,
+      "Education": 0.406507
+    }
+  },
+  {
+    "geoid": "28011",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.710677,
+    "poverty_rate": 28.098147,
+    "agencies": {
+      "HHS": 2.4609,
+      "USDA": 1.957581,
+      "SSA": 2.771391,
+      "HUD": 2.728198,
+      "Education": 2.105518
+    }
+  },
+  {
+    "geoid": "28013",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.004618,
+    "poverty_rate": 19.234911,
+    "agencies": {
+      "HHS": 1.293365,
+      "USDA": -1.083089,
+      "SSA": -0.495071,
+      "HUD": 0.217778,
+      "Education": 0.927768
+    }
+  },
+  {
+    "geoid": "28015",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.727704,
+    "poverty_rate": 13.800186,
+    "agencies": {
+      "HHS": 0.027065,
+      "USDA": -1.859491,
+      "SSA": -1.134833,
+      "HUD": -0.018155,
+      "Education": -0.020082
+    }
+  },
+  {
+    "geoid": "28017",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.49996,
+    "poverty_rate": 20.279756,
+    "agencies": {
+      "HHS": 1.265006,
+      "USDA": -0.318212,
+      "SSA": -0.239692,
+      "HUD": 0.728048,
+      "Education": 1.049924
+    }
+  },
+  {
+    "geoid": "28019",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.521731,
+    "poverty_rate": 16.672829,
+    "agencies": {
+      "HHS": -1.269248,
+      "USDA": -0.543836,
+      "SSA": -0.817628,
+      "HUD": 1.244611,
+      "Education": 0.581022
+    }
+  },
+  {
+    "geoid": "28021",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.819367,
+    "poverty_rate": 26.987317,
+    "agencies": {
+      "HHS": 1.256136,
+      "USDA": 0.529349,
+      "SSA": 1.34701,
+      "HUD": 3.370437,
+      "Education": 0.43028
+    }
+  },
+  {
+    "geoid": "28023",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.206311,
+    "poverty_rate": 16.660283,
+    "agencies": {
+      "HHS": 0.395073,
+      "USDA": -0.004933,
+      "SSA": 0.103077,
+      "HUD": 0.631878,
+      "Education": 0.640647
+    }
+  },
+  {
+    "geoid": "28025",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.531202,
+    "poverty_rate": 21.420456,
+    "agencies": {
+      "HHS": 1.113577,
+      "USDA": 0.091082,
+      "SSA": -0.009764,
+      "HUD": 0.551747,
+      "Education": 1.40465
+    }
+  },
+  {
+    "geoid": "28027",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.823594,
+    "poverty_rate": 31.916358,
+    "agencies": {
+      "HHS": 2.612835,
+      "USDA": 1.658251,
+      "SSA": 3.024056,
+      "HUD": 2.679967,
+      "Education": 2.517571
+    }
+  },
+  {
+    "geoid": "28029",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.357363,
+    "poverty_rate": 20.140208,
+    "agencies": {
+      "HHS": 1.088605,
+      "USDA": 0.946848,
+      "SSA": 1.233951,
+      "HUD": 1.297183,
+      "Education": 0.431426
+    }
+  },
+  {
+    "geoid": "28031",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.769174,
+    "poverty_rate": 20.919913,
+    "agencies": {
+      "HHS": 0.36519,
+      "USDA": -0.297477,
+      "SSA": -0.109238,
+      "HUD": 2.076045,
+      "Education": 1.30026
+    }
+  },
+  {
+    "geoid": "28033",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.870611,
+    "poverty_rate": 9.439285,
+    "agencies": {
+      "HHS": -0.647241,
+      "USDA": -1.25435,
+      "SSA": -1.169792,
+      "HUD": -0.756851,
+      "Education": -0.73842
+    }
+  },
+  {
+    "geoid": "28035",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.903591,
+    "poverty_rate": 22.05879,
+    "agencies": {
+      "HHS": 1.079955,
+      "USDA": 1.815595,
+      "SSA": 1.651833,
+      "HUD": 1.551419,
+      "Education": 0.899326
+    }
+  },
+  {
+    "geoid": "28037",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.256529,
+    "poverty_rate": 16.291741,
+    "agencies": {
+      "HHS": -0.463929,
+      "USDA": 0.208597,
+      "SSA": 0.382885,
+      "HUD": 0.365473,
+      "Education": 0.606621
+    }
+  },
+  {
+    "geoid": "28039",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.246938,
+    "poverty_rate": 15.205318,
+    "agencies": {
+      "HHS": 0.150432,
+      "USDA": -0.002881,
+      "SSA": -0.099617,
+      "HUD": 0.963563,
+      "Education": 0.402583
+    }
+  },
+  {
+    "geoid": "28041",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -1.261833,
+    "poverty_rate": 9.071655,
+    "agencies": {
+      "HHS": -1.620265,
+      "USDA": -1.211856,
+      "SSA": -1.560951,
+      "HUD": -1.149171,
+      "Education": -0.812089
+    }
+  },
+  {
+    "geoid": "28043",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.162175,
+    "poverty_rate": 19.48857,
+    "agencies": {
+      "HHS": 0.640777,
+      "USDA": -0.367648,
+      "SSA": -0.225015,
+      "HUD": 0.139582,
+      "Education": 1.21553
+    }
+  },
+  {
+    "geoid": "28045",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.394526,
+    "poverty_rate": 14.529776,
+    "agencies": {
+      "HHS": 0.38556,
+      "USDA": -0.075639,
+      "SSA": -0.46432,
+      "HUD": -0.579905,
+      "Education": 0.033334
+    }
+  },
+  {
+    "geoid": "28047",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.760564,
+    "poverty_rate": 17.572575,
+    "agencies": {
+      "HHS": -0.602192,
+      "USDA": 0.747167,
+      "SSA": -0.615634,
+      "HUD": -1.305488,
+      "Education": 0.002776
+    }
+  },
+  {
+    "geoid": "28049",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.025873,
+    "poverty_rate": 20.289176,
+    "agencies": {
+      "HHS": -0.359836,
+      "USDA": 0.314736,
+      "SSA": 0.112912,
+      "HUD": -0.538759,
+      "Education": -1.547275
+    }
+  },
+  {
+    "geoid": "28051",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 3.117363,
+    "poverty_rate": 33.273201,
+    "agencies": {
+      "HHS": 2.58358,
+      "USDA": 2.347706,
+      "SSA": 3.162177,
+      "HUD": 3.175189,
+      "Education": 2.144476
+    }
+  },
+  {
+    "geoid": "28053",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.426918,
+    "poverty_rate": 32.092679,
+    "agencies": {
+      "HHS": 3.76061,
+      "USDA": 1.491963,
+      "SSA": 2.142024,
+      "HUD": 2.356668,
+      "Education": 3.262775
+    }
+  },
+  {
+    "geoid": "28055",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.714759,
+    "poverty_rate": 16.388353,
+    "agencies": {
+      "HHS": 0.738883,
+      "USDA": -1.729434,
+      "SSA": -0.91215,
+      "HUD": -0.864784,
+      "Education": 0.29461
+    }
+  },
+  {
+    "geoid": "28057",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.90104,
+    "poverty_rate": 11.770061,
+    "agencies": {
+      "HHS": -1.55271,
+      "USDA": -1.222142,
+      "SSA": -1.942534,
+      "HUD": 0.509775,
+      "Education": -2.672736
+    }
+  },
+  {
+    "geoid": "28059",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.228864,
+    "poverty_rate": 13.770356,
+    "agencies": {
+      "HHS": 0.067587,
+      "USDA": -0.108623,
+      "SSA": 0.22693,
+      "HUD": 0.171276,
+      "Education": 0.083224
+    }
+  },
+  {
+    "geoid": "28061",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.057779,
+    "poverty_rate": 17.898193,
+    "agencies": {
+      "HHS": 0.518985,
+      "USDA": -0.407381,
+      "SSA": -0.612373,
+      "HUD": 1.113122,
+      "Education": 0.816778
+    }
+  },
+  {
+    "geoid": "28063",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.992411,
+    "poverty_rate": 28.299603,
+    "agencies": {
+      "HHS": 2.347074,
+      "USDA": 2.603228,
+      "SSA": 2.94097,
+      "HUD": 2.801304,
+      "Education": 2.487242
+    }
+  },
+  {
+    "geoid": "28065",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.763393,
+    "poverty_rate": 22.032714,
+    "agencies": {
+      "HHS": -0.311871,
+      "USDA": 0.436603,
+      "SSA": -0.041094,
+      "HUD": 1.279956,
+      "Education": 0.912985
+    }
+  },
+  {
+    "geoid": "28067",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.040163,
+    "poverty_rate": 19.18475,
+    "agencies": {
+      "HHS": -0.385839,
+      "USDA": 0.569154,
+      "SSA": -0.324782,
+      "HUD": 0.067215,
+      "Education": -0.672729
+    }
+  },
+  {
+    "geoid": "28069",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.184572,
+    "poverty_rate": 20.316859,
+    "agencies": {
+      "HHS": 0.925081,
+      "USDA": 0.144662,
+      "SSA": -0.193797,
+      "HUD": 0.051883,
+      "Education": -0.987636
+    }
+  },
+  {
+    "geoid": "28071",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.132701,
+    "poverty_rate": 17.595583,
+    "agencies": {
+      "HHS": -0.025538,
+      "USDA": -0.148269,
+      "SSA": -0.029907,
+      "HUD": -0.090145,
+      "Education": -0.613116
+    }
+  },
+  {
+    "geoid": "28073",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.393594,
+    "poverty_rate": 15.920137,
+    "agencies": {
+      "HHS": -0.836393,
+      "USDA": -0.370298,
+      "SSA": -0.777147,
+      "HUD": -0.115854,
+      "Education": 0.132504
+    }
+  },
+  {
+    "geoid": "28075",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.143564,
+    "poverty_rate": 19.455728,
+    "agencies": {
+      "HHS": -0.619006,
+      "USDA": 0.788713,
+      "SSA": -0.188471,
+      "HUD": -0.428412,
+      "Education": -0.387727
+    }
+  },
+  {
+    "geoid": "28077",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.149142,
+    "poverty_rate": 17.956178,
+    "agencies": {
+      "HHS": 0.913771,
+      "USDA": -0.13278,
+      "SSA": -0.545821,
+      "HUD": 1.498443,
+      "Education": 0.904202
+    }
+  },
+  {
+    "geoid": "28079",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.486963,
+    "poverty_rate": 21.203478,
+    "agencies": {
+      "HHS": 1.471179,
+      "USDA": 0.541532,
+      "SSA": -0.057833,
+      "HUD": 0.735977,
+      "Education": 1.320686
+    }
+  },
+  {
+    "geoid": "28081",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.759257,
+    "poverty_rate": 14.639233,
+    "agencies": {
+      "HHS": -0.612677,
+      "USDA": -0.778803,
+      "SSA": -1.329579,
+      "HUD": -0.761654,
+      "Education": 0.067122
+    }
+  },
+  {
+    "geoid": "28083",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.844944,
+    "poverty_rate": 30.805841,
+    "agencies": {
+      "HHS": 2.469911,
+      "USDA": 1.207079,
+      "SSA": 1.725326,
+      "HUD": 1.442759,
+      "Education": 1.133307
+    }
+  },
+  {
+    "geoid": "28085",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.424505,
+    "poverty_rate": 19.41142,
+    "agencies": {
+      "HHS": 1.009359,
+      "USDA": 1.142477,
+      "SSA": 1.149511,
+      "HUD": 1.156314,
+      "Education": 0.984402
+    }
+  },
+  {
+    "geoid": "28087",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.562052,
+    "poverty_rate": 18.362662,
+    "agencies": {
+      "HHS": 0.730363,
+      "USDA": -0.050917,
+      "SSA": -0.61708,
+      "HUD": -1.046442,
+      "Education": -0.670381
+    }
+  },
+  {
+    "geoid": "28089",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -1.6213,
+    "poverty_rate": 10.80368,
+    "agencies": {
+      "HHS": -1.850073,
+      "USDA": -1.743015,
+      "SSA": -1.955275,
+      "HUD": -1.789661,
+      "Education": -2.70434
+    }
+  },
+  {
+    "geoid": "28091",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.969993,
+    "poverty_rate": 21.204901,
+    "agencies": {
+      "HHS": 0.587515,
+      "USDA": 0.879576,
+      "SSA": 0.506038,
+      "HUD": 0.962529,
+      "Education": 1.32367
+    }
+  },
+  {
+    "geoid": "28093",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.535708,
+    "poverty_rate": 15.559974,
+    "agencies": {
+      "HHS": -1.340346,
+      "USDA": -0.711802,
+      "SSA": -0.909304,
+      "HUD": -0.31465,
+      "Education": -1.134468
+    }
+  },
+  {
+    "geoid": "28095",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.574877,
+    "poverty_rate": 15.61066,
+    "agencies": {
+      "HHS": -0.43049,
+      "USDA": -1.118348,
+      "SSA": -1.13263,
+      "HUD": -0.628482,
+      "Education": -0.158113
+    }
+  },
+  {
+    "geoid": "28097",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.528072,
+    "poverty_rate": 22.600915,
+    "agencies": {
+      "HHS": 1.788364,
+      "USDA": 0.172326,
+      "SSA": 0.265078,
+      "HUD": 0.428675,
+      "Education": 1.705573
+    }
+  },
+  {
+    "geoid": "28099",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.683338,
+    "poverty_rate": 22.298079,
+    "agencies": {
+      "HHS": 0.69971,
+      "USDA": 0.377073,
+      "SSA": 0.434217,
+      "HUD": 0.745941,
+      "Education": 0.346792
+    }
+  },
+  {
+    "geoid": "28101",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.47305,
+    "poverty_rate": 19.870342,
+    "agencies": {
+      "HHS": 0.703566,
+      "USDA": -0.025981,
+      "SSA": -0.101539,
+      "HUD": -1.11216,
+      "Education": -0.648561
+    }
+  },
+  {
+    "geoid": "28103",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.726642,
+    "poverty_rate": 26.326826,
+    "agencies": {
+      "HHS": 1.47214,
+      "USDA": 0.926188,
+      "SSA": 1.076222,
+      "HUD": 1.948603,
+      "Education": 2.189573
+    }
+  },
+  {
+    "geoid": "28105",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.84215,
+    "poverty_rate": 22.413803,
+    "agencies": {
+      "HHS": 0.977965,
+      "USDA": -0.301002,
+      "SSA": 0.319854,
+      "HUD": 0.845561,
+      "Education": -0.440357
+    }
+  },
+  {
+    "geoid": "28107",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.039809,
+    "poverty_rate": 18.890438,
+    "agencies": {
+      "HHS": 0.81202,
+      "USDA": -0.599777,
+      "SSA": -0.450136,
+      "HUD": 0.224826,
+      "Education": 0.956831
+    }
+  },
+  {
+    "geoid": "28109",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.691258,
+    "poverty_rate": 14.689971,
+    "agencies": {
+      "HHS": 0.349056,
+      "USDA": 0.043253,
+      "SSA": 0.803613,
+      "HUD": 0.601504,
+      "Education": 0.05553
+    }
+  },
+  {
+    "geoid": "28111",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.173911,
+    "poverty_rate": 16.1417,
+    "agencies": {
+      "HHS": -0.149786,
+      "USDA": -0.602776,
+      "SSA": -0.849323,
+      "HUD": 1.347441,
+      "Education": 0.55663
+    }
+  },
+  {
+    "geoid": "28113",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.128972,
+    "poverty_rate": 26.158604,
+    "agencies": {
+      "HHS": 2.231766,
+      "USDA": 1.751283,
+      "SSA": 1.433727,
+      "HUD": 0.703704,
+      "Education": 1.046305
+    }
+  },
+  {
+    "geoid": "28115",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.379213,
+    "poverty_rate": 15.242711,
+    "agencies": {
+      "HHS": 0.432097,
+      "USDA": -0.322136,
+      "SSA": -0.058076,
+      "HUD": 0.350421,
+      "Education": -0.127667
+    }
+  },
+  {
+    "geoid": "28117",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.415289,
+    "poverty_rate": 16.483996,
+    "agencies": {
+      "HHS": 0.353959,
+      "USDA": -0.874974,
+      "SSA": -0.924044,
+      "HUD": -0.340084,
+      "Education": -1.572847
+    }
+  },
+  {
+    "geoid": "28119",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.42993,
+    "poverty_rate": 29.517316,
+    "agencies": {
+      "HHS": 3.161402,
+      "USDA": 1.176414,
+      "SSA": 2.084397,
+      "HUD": 2.469163,
+      "Education": 2.90518
+    }
+  },
+  {
+    "geoid": "28121",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -1.623564,
+    "poverty_rate": 8.414368,
+    "agencies": {
+      "HHS": -1.900402,
+      "USDA": -1.640326,
+      "SSA": -2.332797,
+      "HUD": -1.097806,
+      "Education": -1.331142
+    }
+  },
+  {
+    "geoid": "28123",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.019581,
+    "poverty_rate": 22.760585,
+    "agencies": {
+      "HHS": 1.784678,
+      "USDA": 1.429441,
+      "SSA": 2.460602,
+      "HUD": 2.063661,
+      "Education": 1.712519
+    }
+  },
+  {
+    "geoid": "28125",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.576184,
+    "poverty_rate": 24.602939,
+    "agencies": {
+      "HHS": 2.337713,
+      "USDA": 0.362486,
+      "SSA": 1.789722,
+      "HUD": 1.864293,
+      "Education": 1.976184
+    }
+  },
+  {
+    "geoid": "28127",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.50242,
+    "poverty_rate": 19.097199,
+    "agencies": {
+      "HHS": 0.727787,
+      "USDA": 0.405527,
+      "SSA": -0.250365,
+      "HUD": 0.859815,
+      "Education": 0.858703
+    }
+  },
+  {
+    "geoid": "28129",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.51893,
+    "poverty_rate": 15.399801,
+    "agencies": {
+      "HHS": 0.482539,
+      "USDA": -0.791986,
+      "SSA": -1.05669,
+      "HUD": 0.376815,
+      "Education": 0.321542
+    }
+  },
+  {
+    "geoid": "28131",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.246089,
+    "poverty_rate": 15.079259,
+    "agencies": {
+      "HHS": 0.08307,
+      "USDA": 0.136947,
+      "SSA": -0.117322,
+      "HUD": 0.540911,
+      "Education": -1.158088
+    }
+  },
+  {
+    "geoid": "28133",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.839081,
+    "poverty_rate": 22.466589,
+    "agencies": {
+      "HHS": 1.73782,
+      "USDA": 1.017625,
+      "SSA": 1.984935,
+      "HUD": 1.840953,
+      "Education": 1.562026
+    }
+  },
+  {
+    "geoid": "28135",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.228039,
+    "poverty_rate": 17.870659,
+    "agencies": {
+      "HHS": 0.113904,
+      "USDA": -1.441659,
+      "SSA": -0.174337,
+      "HUD": 0.136567,
+      "Education": 1.185973
+    }
+  },
+  {
+    "geoid": "28137",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.831596,
+    "poverty_rate": 14.198509,
+    "agencies": {
+      "HHS": -0.170836,
+      "USDA": -1.551043,
+      "SSA": -1.176886,
+      "HUD": -0.738331,
+      "Education": -1.970432
+    }
+  },
+  {
+    "geoid": "28139",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.204812,
+    "poverty_rate": 18.842342,
+    "agencies": {
+      "HHS": 1.078618,
+      "USDA": -0.647932,
+      "SSA": -0.544354,
+      "HUD": 0.620199,
+      "Education": -0.507481
+    }
+  },
+  {
+    "geoid": "28141",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.611602,
+    "poverty_rate": 15.6592,
+    "agencies": {
+      "HHS": 0.057083,
+      "USDA": -0.593095,
+      "SSA": -0.865708,
+      "HUD": -0.487796,
+      "Education": 0.572578
+    }
+  },
+  {
+    "geoid": "28143",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 3.164759,
+    "poverty_rate": 27.810274,
+    "agencies": {
+      "HHS": 2.652374,
+      "USDA": 2.212048,
+      "SSA": 3.58009,
+      "HUD": 3.201087,
+      "Education": 2.832007
+    }
+  },
+  {
+    "geoid": "28145",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.66751,
+    "poverty_rate": 14.01594,
+    "agencies": {
+      "HHS": 0.134941,
+      "USDA": -1.01213,
+      "SSA": -1.48141,
+      "HUD": -0.044282,
+      "Education": -0.074781
+    }
+  },
+  {
+    "geoid": "28147",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.1943,
+    "poverty_rate": 20.007388,
+    "agencies": {
+      "HHS": 0.944852,
+      "USDA": 0.59634,
+      "SSA": 0.314243,
+      "HUD": 2.080456,
+      "Education": 1.1193
+    }
+  },
+  {
+    "geoid": "28149",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.589059,
+    "poverty_rate": 18.830661,
+    "agencies": {
+      "HHS": 1.058034,
+      "USDA": 1.128866,
+      "SSA": 1.674697,
+      "HUD": 1.3533,
+      "Education": 0.926614
+    }
+  },
+  {
+    "geoid": "28151",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 2.366117,
+    "poverty_rate": 29.200239,
+    "agencies": {
+      "HHS": 2.071896,
+      "USDA": 2.068894,
+      "SSA": 2.545485,
+      "HUD": 2.057127,
+      "Education": 2.11938
+    }
+  },
+  {
+    "geoid": "28153",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.953327,
+    "poverty_rate": 20.319531,
+    "agencies": {
+      "HHS": 1.298038,
+      "USDA": 1.080406,
+      "SSA": 0.592208,
+      "HUD": 0.854705,
+      "Education": 1.095996
+    }
+  },
+  {
+    "geoid": "28155",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.158504,
+    "poverty_rate": 17.410487,
+    "agencies": {
+      "HHS": 0.625346,
+      "USDA": -1.083275,
+      "SSA": -0.712649,
+      "HUD": 1.537052,
+      "Education": 0.726244
+    }
+  },
+  {
+    "geoid": "28157",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 0.614455,
+    "poverty_rate": 20.403934,
+    "agencies": {
+      "HHS": 0.749521,
+      "USDA": 0.104088,
+      "SSA": 0.412317,
+      "HUD": 1.635273,
+      "Education": 1.201054
+    }
+  },
+  {
+    "geoid": "28159",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.151697,
+    "poverty_rate": 22.132315,
+    "agencies": {
+      "HHS": 1.638047,
+      "USDA": 0.836118,
+      "SSA": 0.974884,
+      "HUD": 0.843219,
+      "Education": 1.276332
+    }
+  },
+  {
+    "geoid": "28161",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": -0.445727,
+    "poverty_rate": 17.409885,
+    "agencies": {
+      "HHS": 0.175327,
+      "USDA": -0.623433,
+      "SSA": -0.702437,
+      "HUD": -0.521612,
+      "Education": -0.104282
+    }
+  },
+  {
+    "geoid": "28163",
+    "state": "mississippi",
+    "region": "Mississippi Delta",
+    "misalignment": 1.862414,
+    "poverty_rate": 22.004301,
+    "agencies": {
+      "HHS": 1.259717,
+      "USDA": 1.382318,
+      "SSA": 1.601379,
+      "HUD": 1.584093,
+      "Education": 1.461162
+    }
+  },
+  {
+    "geoid": "47001",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.937404,
+    "poverty_rate": 13.63062,
+    "agencies": {
+      "HHS": -0.994804,
+      "USDA": -0.296104,
+      "SSA": -1.109335,
+      "HUD": -0.931016,
+      "Education": -0.137288
+    }
+  },
+  {
+    "geoid": "47003",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.889539,
+    "poverty_rate": 14.361699,
+    "agencies": {
+      "HHS": -1.237485,
+      "USDA": -0.331708,
+      "SSA": -1.342965,
+      "HUD": -0.934022,
+      "Education": -1.053961
+    }
+  },
+  {
+    "geoid": "47005",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.372905,
+    "poverty_rate": 15.705241,
+    "agencies": {
+      "HHS": 0.329298,
+      "USDA": -0.687554,
+      "SSA": -1.070835,
+      "HUD": 0.60184,
+      "Education": -0.166365
+    }
+  },
+  {
+    "geoid": "47007",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.607854,
+    "poverty_rate": 15.910321,
+    "agencies": {
+      "HHS": 0.582661,
+      "USDA": -0.36592,
+      "SSA": -0.821236,
+      "HUD": -0.564041,
+      "Education": 0.54601
+    }
+  },
+  {
+    "geoid": "47009",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.805661,
+    "poverty_rate": 9.812623,
+    "agencies": {
+      "HHS": -1.142172,
+      "USDA": -0.802137,
+      "SSA": -2.241042,
+      "HUD": -1.725839,
+      "Education": -1.757112
+    }
+  },
+  {
+    "geoid": "47011",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.022152,
+    "poverty_rate": 14.211333,
+    "agencies": {
+      "HHS": -0.754878,
+      "USDA": -0.468066,
+      "SSA": -1.388982,
+      "HUD": -1.031897,
+      "Education": -1.471057
+    }
+  },
+  {
+    "geoid": "47013",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.777718,
+    "poverty_rate": 16.606034,
+    "agencies": {
+      "HHS": -0.309544,
+      "USDA": 0.19412,
+      "SSA": -0.870137,
+      "HUD": -1.135855,
+      "Education": -0.514995
+    }
+  },
+  {
+    "geoid": "47015",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.723959,
+    "poverty_rate": 14.234411,
+    "agencies": {
+      "HHS": 0.263418,
+      "USDA": -0.268865,
+      "SSA": -1.261189,
+      "HUD": -0.517275,
+      "Education": 0.141421
+    }
+  },
+  {
+    "geoid": "47017",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.943661,
+    "poverty_rate": 15.071971,
+    "agencies": {
+      "HHS": -0.140928,
+      "USDA": -1.413164,
+      "SSA": -1.158826,
+      "HUD": -0.88922,
+      "Education": -1.580723
+    }
+  },
+  {
+    "geoid": "47019",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.618851,
+    "poverty_rate": 16.942358,
+    "agencies": {
+      "HHS": -0.478023,
+      "USDA": 0.731935,
+      "SSA": -0.857192,
+      "HUD": -0.733666,
+      "Education": -0.745745
+    }
+  },
+  {
+    "geoid": "47021",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.620167,
+    "poverty_rate": 9.760434,
+    "agencies": {
+      "HHS": -0.659483,
+      "USDA": -1.146098,
+      "SSA": -2.088187,
+      "HUD": -0.097373,
+      "Education": -1.082742
+    }
+  },
+  {
+    "geoid": "47023",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.103158,
+    "poverty_rate": 13.857777,
+    "agencies": {
+      "HHS": -0.873693,
+      "USDA": -0.016878,
+      "SSA": -1.438416,
+      "HUD": -1.120866,
+      "Education": -1.609084
+    }
+  },
+  {
+    "geoid": "47025",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.3434,
+    "poverty_rate": 16.565048,
+    "agencies": {
+      "HHS": -1.643011,
+      "USDA": 0.037404,
+      "SSA": -0.855221,
+      "HUD": 0.60684,
+      "Education": -0.929061
+    }
+  },
+  {
+    "geoid": "47027",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 1.242732,
+    "poverty_rate": 19.050474,
+    "agencies": {
+      "HHS": 1.130189,
+      "USDA": 0.078455,
+      "SSA": 1.274277,
+      "HUD": 1.85241,
+      "Education": 1.011889
+    }
+  },
+  {
+    "geoid": "47029",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.03551,
+    "poverty_rate": 19.333791,
+    "agencies": {
+      "HHS": 0.046547,
+      "USDA": 0.698029,
+      "SSA": -0.503475,
+      "HUD": -0.071404,
+      "Education": 0.941303
+    }
+  },
+  {
+    "geoid": "47031",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.026408,
+    "poverty_rate": 14.416387,
+    "agencies": {
+      "HHS": -0.131513,
+      "USDA": -1.128184,
+      "SSA": -1.310573,
+      "HUD": -0.994307,
+      "Education": -0.441775
+    }
+  },
+  {
+    "geoid": "47033",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.576613,
+    "poverty_rate": 15.251999,
+    "agencies": {
+      "HHS": 0.525689,
+      "USDA": -1.610622,
+      "SSA": -1.08132,
+      "HUD": 0.147764,
+      "Education": -0.149425
+    }
+  },
+  {
+    "geoid": "47035",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.047614,
+    "poverty_rate": 11.034662,
+    "agencies": {
+      "HHS": -0.58248,
+      "USDA": -0.668406,
+      "SSA": -1.100736,
+      "HUD": -1.141746,
+      "Education": -1.030064
+    }
+  },
+  {
+    "geoid": "47037",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.011192,
+    "poverty_rate": 14.803304,
+    "agencies": {
+      "HHS": -2.216187,
+      "USDA": -0.094903,
+      "SSA": -0.576706,
+      "HUD": -1.245584,
+      "Education": -2.102179
+    }
+  },
+  {
+    "geoid": "47039",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.35088,
+    "poverty_rate": 16.487747,
+    "agencies": {
+      "HHS": 0.466728,
+      "USDA": 0.588803,
+      "SSA": -0.905322,
+      "HUD": -0.244353,
+      "Education": 0.555031
+    }
+  },
+  {
+    "geoid": "47041",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.53097,
+    "poverty_rate": 16.355321,
+    "agencies": {
+      "HHS": 0.605615,
+      "USDA": -0.318329,
+      "SSA": -0.86786,
+      "HUD": -0.564386,
+      "Education": -0.200181
+    }
+  },
+  {
+    "geoid": "47043",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.612236,
+    "poverty_rate": 11.751001,
+    "agencies": {
+      "HHS": -0.520601,
+      "USDA": -0.756708,
+      "SSA": -1.821893,
+      "HUD": -1.083554,
+      "Education": -1.614534
+    }
+  },
+  {
+    "geoid": "47045",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.586731,
+    "poverty_rate": 15.682959,
+    "agencies": {
+      "HHS": 0.283262,
+      "USDA": -1.035789,
+      "SSA": -0.578085,
+      "HUD": -0.807036,
+      "Education": -1.157178
+    }
+  },
+  {
+    "geoid": "47047",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.911876,
+    "poverty_rate": 10.9479,
+    "agencies": {
+      "HHS": -0.645489,
+      "USDA": -1.336755,
+      "SSA": -1.086742,
+      "HUD": -0.797874,
+      "Education": -0.558013
+    }
+  },
+  {
+    "geoid": "47049",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.272194,
+    "poverty_rate": 17.285239,
+    "agencies": {
+      "HHS": 0.928226,
+      "USDA": 0.010631,
+      "SSA": -0.452623,
+      "HUD": 0.682766,
+      "Education": 0.660991
+    }
+  },
+  {
+    "geoid": "47051",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.387202,
+    "poverty_rate": 12.093307,
+    "agencies": {
+      "HHS": -0.716477,
+      "USDA": -1.29293,
+      "SSA": -1.714609,
+      "HUD": -1.309702,
+      "Education": -1.414652
+    }
+  },
+  {
+    "geoid": "47053",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.24498,
+    "poverty_rate": 14.26454,
+    "agencies": {
+      "HHS": 0.155197,
+      "USDA": -0.566072,
+      "SSA": -0.161653,
+      "HUD": -0.345633,
+      "Education": -0.265478
+    }
+  },
+  {
+    "geoid": "47055",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.130507,
+    "poverty_rate": 12.451192,
+    "agencies": {
+      "HHS": -0.143084,
+      "USDA": -1.35077,
+      "SSA": -1.381959,
+      "HUD": -1.197609,
+      "Education": -1.508702
+    }
+  },
+  {
+    "geoid": "47057",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.277312,
+    "poverty_rate": 15.13639,
+    "agencies": {
+      "HHS": 0.411499,
+      "USDA": -0.464775,
+      "SSA": -1.194184,
+      "HUD": 0.722707,
+      "Education": 0.230392
+    }
+  },
+  {
+    "geoid": "47059",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.924547,
+    "poverty_rate": 14.018452,
+    "agencies": {
+      "HHS": -0.060456,
+      "USDA": -0.686495,
+      "SSA": -1.473724,
+      "HUD": -0.752097,
+      "Education": -6.073157
+    }
+  },
+  {
+    "geoid": "47061",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.042445,
+    "poverty_rate": 18.783287,
+    "agencies": {
+      "HHS": 1.050486,
+      "USDA": 0.188603,
+      "SSA": -0.660963,
+      "HUD": 0.50086,
+      "Education": 0.770617
+    }
+  },
+  {
+    "geoid": "47063",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.725959,
+    "poverty_rate": 16.282566,
+    "agencies": {
+      "HHS": -0.462404,
+      "USDA": -0.033606,
+      "SSA": -0.988631,
+      "HUD": -0.911936,
+      "Education": -1.255834
+    }
+  },
+  {
+    "geoid": "47065",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.716836,
+    "poverty_rate": 12.014579,
+    "agencies": {
+      "HHS": -2.265908,
+      "USDA": -0.148867,
+      "SSA": -1.728646,
+      "HUD": -1.867593,
+      "Education": -1.901516
+    }
+  },
+  {
+    "geoid": "47067",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.828631,
+    "poverty_rate": 22.243862,
+    "agencies": {
+      "HHS": 1.550049,
+      "USDA": 0.623968,
+      "SSA": 0.414036,
+      "HUD": 1.217462,
+      "Education": 1.799949
+    }
+  },
+  {
+    "geoid": "47069",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.024107,
+    "poverty_rate": 13.593575,
+    "agencies": {
+      "HHS": -0.236669,
+      "USDA": -0.673144,
+      "SSA": 0.551286,
+      "HUD": 0.167875,
+      "Education": -0.196797
+    }
+  },
+  {
+    "geoid": "47071",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.367184,
+    "poverty_rate": 16.447116,
+    "agencies": {
+      "HHS": -0.059489,
+      "USDA": -0.251192,
+      "SSA": 0.6331,
+      "HUD": 0.49193,
+      "Education": 0.07509
+    }
+  },
+  {
+    "geoid": "47073",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.598423,
+    "poverty_rate": 14.710046,
+    "agencies": {
+      "HHS": -0.530571,
+      "USDA": -0.575043,
+      "SSA": -1.194632,
+      "HUD": -0.325712,
+      "Education": 0.257788
+    }
+  },
+  {
+    "geoid": "47075",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.351422,
+    "poverty_rate": 17.908396,
+    "agencies": {
+      "HHS": 0.954168,
+      "USDA": -1.216107,
+      "SSA": -0.321394,
+      "HUD": -0.387264,
+      "Education": 0.694407
+    }
+  },
+  {
+    "geoid": "47077",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.515256,
+    "poverty_rate": 16.338256,
+    "agencies": {
+      "HHS": 0.563162,
+      "USDA": -0.900418,
+      "SSA": -0.940871,
+      "HUD": -0.444229,
+      "Education": -0.240097
+    }
+  },
+  {
+    "geoid": "47079",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.629285,
+    "poverty_rate": 15.784541,
+    "agencies": {
+      "HHS": 0.209153,
+      "USDA": 0.12371,
+      "SSA": 0.253824,
+      "HUD": 0.430787,
+      "Education": 0.130248
+    }
+  },
+  {
+    "geoid": "47081",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.998058,
+    "poverty_rate": 13.700567,
+    "agencies": {
+      "HHS": 0.087216,
+      "USDA": -1.043047,
+      "SSA": -1.496794,
+      "HUD": -1.145001,
+      "Education": -0.11586
+    }
+  },
+  {
+    "geoid": "47083",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.817827,
+    "poverty_rate": 13.732147,
+    "agencies": {
+      "HHS": -0.860018,
+      "USDA": -0.95278,
+      "SSA": -1.635842,
+      "HUD": -0.621148,
+      "Education": -0.224724
+    }
+  },
+  {
+    "geoid": "47085",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.063372,
+    "poverty_rate": 12.826769,
+    "agencies": {
+      "HHS": 0.06121,
+      "USDA": -0.832455,
+      "SSA": -1.597238,
+      "HUD": -0.824029,
+      "Education": -0.170822
+    }
+  },
+  {
+    "geoid": "47087",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.10641,
+    "poverty_rate": 16.247116,
+    "agencies": {
+      "HHS": 0.557756,
+      "USDA": -0.562001,
+      "SSA": -1.090728,
+      "HUD": 0.424776,
+      "Education": 0.333655
+    }
+  },
+  {
+    "geoid": "47089",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.306479,
+    "poverty_rate": 11.294639,
+    "agencies": {
+      "HHS": -0.623924,
+      "USDA": -0.909601,
+      "SSA": -1.952071,
+      "HUD": -1.002384,
+      "Education": -1.922654
+    }
+  },
+  {
+    "geoid": "47091",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.62606,
+    "poverty_rate": 15.798134,
+    "agencies": {
+      "HHS": 0.315383,
+      "USDA": -0.167516,
+      "SSA": -1.023194,
+      "HUD": -0.440584,
+      "Education": 0.405223
+    }
+  },
+  {
+    "geoid": "47093",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.565918,
+    "poverty_rate": 12.702891,
+    "agencies": {
+      "HHS": -1.369337,
+      "USDA": -1.218027,
+      "SSA": -1.55446,
+      "HUD": -1.982378,
+      "Education": -1.782448
+    }
+  },
+  {
+    "geoid": "47095",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.383417,
+    "poverty_rate": 12.621919,
+    "agencies": {
+      "HHS": -1.269592,
+      "USDA": -1.790642,
+      "SSA": -1.408287,
+      "HUD": -1.549624,
+      "Education": -0.094074
+    }
+  },
+  {
+    "geoid": "47097",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.080401,
+    "poverty_rate": 16.231535,
+    "agencies": {
+      "HHS": 0.7162,
+      "USDA": -0.416536,
+      "SSA": -0.149818,
+      "HUD": -0.091738,
+      "Education": -0.15241
+    }
+  },
+  {
+    "geoid": "47099",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.603524,
+    "poverty_rate": 15.639922,
+    "agencies": {
+      "HHS": 0.171751,
+      "USDA": -0.553445,
+      "SSA": -1.082267,
+      "HUD": -0.521166,
+      "Education": -0.311666
+    }
+  },
+  {
+    "geoid": "47101",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.900073,
+    "poverty_rate": 16.298546,
+    "agencies": {
+      "HHS": -0.52708,
+      "USDA": -0.141835,
+      "SSA": -0.831465,
+      "HUD": -0.998438,
+      "Education": -0.92942
+    }
+  },
+  {
+    "geoid": "47103",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.282563,
+    "poverty_rate": 12.609506,
+    "agencies": {
+      "HHS": -0.025491,
+      "USDA": -1.114018,
+      "SSA": -1.696772,
+      "HUD": -1.303704,
+      "Education": -0.882238
+    }
+  },
+  {
+    "geoid": "47105",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.706521,
+    "poverty_rate": 10.576984,
+    "agencies": {
+      "HHS": -0.432667,
+      "USDA": -0.921507,
+      "SSA": -2.076187,
+      "HUD": -1.592141,
+      "Education": -0.591448
+    }
+  },
+  {
+    "geoid": "47107",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.03972,
+    "poverty_rate": 14.437555,
+    "agencies": {
+      "HHS": -0.036528,
+      "USDA": -0.870994,
+      "SSA": -1.30716,
+      "HUD": -1.092532,
+      "Education": -1.228514
+    }
+  },
+  {
+    "geoid": "47109",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.174545,
+    "poverty_rate": 15.931851,
+    "agencies": {
+      "HHS": 0.541182,
+      "USDA": -0.49275,
+      "SSA": -0.501747,
+      "HUD": -0.153877,
+      "Education": 0.343557
+    }
+  },
+  {
+    "geoid": "47111",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.924338,
+    "poverty_rate": 15.931418,
+    "agencies": {
+      "HHS": 0.591483,
+      "USDA": 0.299911,
+      "SSA": 0.857053,
+      "HUD": 0.703977,
+      "Education": 0.437906
+    }
+  },
+  {
+    "geoid": "47113",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.811605,
+    "poverty_rate": 16.512962,
+    "agencies": {
+      "HHS": 0.244626,
+      "USDA": -0.363191,
+      "SSA": -0.795118,
+      "HUD": -1.141669,
+      "Education": -1.136222
+    }
+  },
+  {
+    "geoid": "47115",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.898808,
+    "poverty_rate": 14.730934,
+    "agencies": {
+      "HHS": -0.596647,
+      "USDA": -0.639561,
+      "SSA": -1.266269,
+      "HUD": -0.921819,
+      "Education": 0.055686
+    }
+  },
+  {
+    "geoid": "47117",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.035276,
+    "poverty_rate": 13.416248,
+    "agencies": {
+      "HHS": -0.076729,
+      "USDA": -0.854493,
+      "SSA": -1.381913,
+      "HUD": -0.958895,
+      "Education": 0.006044
+    }
+  },
+  {
+    "geoid": "47119",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.238217,
+    "poverty_rate": 10.840141,
+    "agencies": {
+      "HHS": -1.538718,
+      "USDA": -1.268101,
+      "SSA": -1.805209,
+      "HUD": -1.047961,
+      "Education": -1.887245
+    }
+  },
+  {
+    "geoid": "47121",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.867762,
+    "poverty_rate": 13.496075,
+    "agencies": {
+      "HHS": -0.084954,
+      "USDA": -0.763224,
+      "SSA": -1.506215,
+      "HUD": 0.693932,
+      "Education": -0.068987
+    }
+  },
+  {
+    "geoid": "47123",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.692167,
+    "poverty_rate": 14.610715,
+    "agencies": {
+      "HHS": -0.623026,
+      "USDA": -0.401366,
+      "SSA": -1.241849,
+      "HUD": -0.377472,
+      "Education": -0.489942
+    }
+  },
+  {
+    "geoid": "47125",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.109134,
+    "poverty_rate": 13.219408,
+    "agencies": {
+      "HHS": -0.398704,
+      "USDA": 0.024988,
+      "SSA": -0.315551,
+      "HUD": -0.087863,
+      "Education": -0.661726
+    }
+  },
+  {
+    "geoid": "47127",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -2.164084,
+    "poverty_rate": 7.338986,
+    "agencies": {
+      "HHS": -1.19178,
+      "USDA": -2.19404,
+      "SSA": -2.539682,
+      "HUD": -0.554588,
+      "Education": -3.35083
+    }
+  },
+  {
+    "geoid": "47129",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.350607,
+    "poverty_rate": 14.65751,
+    "agencies": {
+      "HHS": -0.901284,
+      "USDA": 0.026625,
+      "SSA": -1.122691,
+      "HUD": 0.113992,
+      "Education": 0.268063
+    }
+  },
+  {
+    "geoid": "47131",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.415169,
+    "poverty_rate": 16.727025,
+    "agencies": {
+      "HHS": 0.806454,
+      "USDA": -0.055569,
+      "SSA": 1.040282,
+      "HUD": 0.449826,
+      "Education": 0.632224
+    }
+  },
+  {
+    "geoid": "47133",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.235219,
+    "poverty_rate": 15.884927,
+    "agencies": {
+      "HHS": 0.484042,
+      "USDA": -0.213055,
+      "SSA": -0.072423,
+      "HUD": 0.341892,
+      "Education": -0.521701
+    }
+  },
+  {
+    "geoid": "47135",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.177217,
+    "poverty_rate": 19.498352,
+    "agencies": {
+      "HHS": 0.239769,
+      "USDA": 0.228503,
+      "SSA": -0.371302,
+      "HUD": 0.654446,
+      "Education": 1.05737
+    }
+  },
+  {
+    "geoid": "47137",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.607107,
+    "poverty_rate": 14.963757,
+    "agencies": {
+      "HHS": 0.476222,
+      "USDA": -0.961639,
+      "SSA": -0.627814,
+      "HUD": 0.31026,
+      "Education": -0.192344
+    }
+  },
+  {
+    "geoid": "47139",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.177961,
+    "poverty_rate": 12.253071,
+    "agencies": {
+      "HHS": -1.283208,
+      "USDA": -0.704693,
+      "SSA": -1.735265,
+      "HUD": -0.046069,
+      "Education": -0.310565
+    }
+  },
+  {
+    "geoid": "47141",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.864231,
+    "poverty_rate": 16.813896,
+    "agencies": {
+      "HHS": 0.080083,
+      "USDA": 0.617208,
+      "SSA": 0.868942,
+      "HUD": 0.698842,
+      "Education": 0.114222
+    }
+  },
+  {
+    "geoid": "47143",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.645651,
+    "poverty_rate": 16.58262,
+    "agencies": {
+      "HHS": 0.495266,
+      "USDA": 0.045244,
+      "SSA": -1.018325,
+      "HUD": -0.598562,
+      "Education": -0.879717
+    }
+  },
+  {
+    "geoid": "47145",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.500537,
+    "poverty_rate": 11.941739,
+    "agencies": {
+      "HHS": -1.45517,
+      "USDA": -1.290667,
+      "SSA": -1.843171,
+      "HUD": -1.587105,
+      "Education": -1.978794
+    }
+  },
+  {
+    "geoid": "47147",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.135512,
+    "poverty_rate": 10.568102,
+    "agencies": {
+      "HHS": -0.642119,
+      "USDA": -0.668717,
+      "SSA": 0.216585,
+      "HUD": -0.305484,
+      "Education": -0.531498
+    }
+  },
+  {
+    "geoid": "47149",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.500962,
+    "poverty_rate": 10.996682,
+    "agencies": {
+      "HHS": -1.150217,
+      "USDA": -0.898541,
+      "SSA": -1.823132,
+      "HUD": -1.477353,
+      "Education": -2.011558
+    }
+  },
+  {
+    "geoid": "47151",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.748354,
+    "poverty_rate": 20.859186,
+    "agencies": {
+      "HHS": 0.700749,
+      "USDA": 0.576982,
+      "SSA": -0.114007,
+      "HUD": 1.499176,
+      "Education": 0.144175
+    }
+  },
+  {
+    "geoid": "47153",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.074957,
+    "poverty_rate": 15.381429,
+    "agencies": {
+      "HHS": 0.155828,
+      "USDA": 0.060905,
+      "SSA": -0.918579,
+      "HUD": -1.313687,
+      "Education": 0.526666
+    }
+  },
+  {
+    "geoid": "47155",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.997129,
+    "poverty_rate": 12.734481,
+    "agencies": {
+      "HHS": -0.235582,
+      "USDA": -0.315505,
+      "SSA": -1.565311,
+      "HUD": -0.657835,
+      "Education": -0.157479
+    }
+  },
+  {
+    "geoid": "47157",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 1.525107,
+    "poverty_rate": 18.550999,
+    "agencies": {
+      "HHS": 0.872955,
+      "USDA": 1.393585,
+      "SSA": 1.651678,
+      "HUD": 1.132664,
+      "Education": 0.903595
+    }
+  },
+  {
+    "geoid": "47159",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": 0.559129,
+    "poverty_rate": 13.341604,
+    "agencies": {
+      "HHS": 0.161643,
+      "USDA": -0.153024,
+      "SSA": 0.728433,
+      "HUD": 0.405326,
+      "Education": -0.01965
+    }
+  },
+  {
+    "geoid": "47161",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.010081,
+    "poverty_rate": 12.635175,
+    "agencies": {
+      "HHS": -0.211813,
+      "USDA": -1.227538,
+      "SSA": -1.69132,
+      "HUD": -0.178407,
+      "Education": -1.227823
+    }
+  },
+  {
+    "geoid": "47163",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.324979,
+    "poverty_rate": 13.393131,
+    "agencies": {
+      "HHS": -0.516346,
+      "USDA": -0.41094,
+      "SSA": -1.481509,
+      "HUD": -1.480762,
+      "Education": -1.390335
+    }
+  },
+  {
+    "geoid": "47165",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.587999,
+    "poverty_rate": 8.94939,
+    "agencies": {
+      "HHS": -1.217186,
+      "USDA": -1.120545,
+      "SSA": -1.896931,
+      "HUD": -1.542137,
+      "Education": -2.070973
+    }
+  },
+  {
+    "geoid": "47167",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.681411,
+    "poverty_rate": 11.621337,
+    "agencies": {
+      "HHS": -0.546599,
+      "USDA": -0.953749,
+      "SSA": -0.498367,
+      "HUD": -0.744538,
+      "Education": -0.811773
+    }
+  },
+  {
+    "geoid": "47169",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.342886,
+    "poverty_rate": 10.276672,
+    "agencies": {
+      "HHS": -0.834596,
+      "USDA": -1.050025,
+      "SSA": -2.175059,
+      "HUD": -1.026968,
+      "Education": -2.233476
+    }
+  },
+  {
+    "geoid": "47171",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.558698,
+    "poverty_rate": 14.69811,
+    "agencies": {
+      "HHS": 0.391623,
+      "USDA": -0.006959,
+      "SSA": -1.304057,
+      "HUD": -0.420709,
+      "Education": -0.705841
+    }
+  },
+  {
+    "geoid": "47173",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.324294,
+    "poverty_rate": 16.111138,
+    "agencies": {
+      "HHS": 0.016265,
+      "USDA": -0.275841,
+      "SSA": -0.996748,
+      "HUD": 1.194375,
+      "Education": 0.41124
+    }
+  },
+  {
+    "geoid": "47175",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.983129,
+    "poverty_rate": 14.08843,
+    "agencies": {
+      "HHS": -0.511095,
+      "USDA": -0.868587,
+      "SSA": -1.3973,
+      "HUD": 0.007343,
+      "Education": 0.042952
+    }
+  },
+  {
+    "geoid": "47177",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.438088,
+    "poverty_rate": 17.462563,
+    "agencies": {
+      "HHS": 0.660594,
+      "USDA": -0.528442,
+      "SSA": -0.668752,
+      "HUD": -0.512398,
+      "Education": -0.240643
+    }
+  },
+  {
+    "geoid": "47179",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -1.233251,
+    "poverty_rate": 13.480063,
+    "agencies": {
+      "HHS": -1.349686,
+      "USDA": -0.405802,
+      "SSA": -1.434286,
+      "HUD": -1.393887,
+      "Education": -1.650771
+    }
+  },
+  {
+    "geoid": "47181",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.720593,
+    "poverty_rate": 12.974967,
+    "agencies": {
+      "HHS": -0.078729,
+      "USDA": -1.217683,
+      "SSA": -1.497439,
+      "HUD": -0.061451,
+      "Education": -0.108669
+    }
+  },
+  {
+    "geoid": "47183",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.537418,
+    "poverty_rate": 15.223266,
+    "agencies": {
+      "HHS": -0.526089,
+      "USDA": -1.183061,
+      "SSA": -0.721979,
+      "HUD": -0.551443,
+      "Education": -0.990172
+    }
+  },
+  {
+    "geoid": "47185",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -0.883714,
+    "poverty_rate": 14.408489,
+    "agencies": {
+      "HHS": 0.330121,
+      "USDA": -0.98561,
+      "SSA": -1.349046,
+      "HUD": -0.78178,
+      "Education": 0.086155
+    }
+  },
+  {
+    "geoid": "47187",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -2.536689,
+    "poverty_rate": 4.614997,
+    "agencies": {
+      "HHS": -3.116671,
+      "USDA": -2.067083,
+      "SSA": -3.026218,
+      "HUD": -2.32696,
+      "Education": -1.930604
+    }
+  },
+  {
+    "geoid": "47189",
+    "state": "tennessee",
+    "region": "Western Appalachia",
+    "misalignment": -2.006728,
+    "poverty_rate": 8.120786,
+    "agencies": {
+      "HHS": -1.601588,
+      "USDA": -1.34866,
+      "SSA": -2.427309,
+      "HUD": -1.743634,
+      "Education": -2.227283
+    }
+  },
+  {
+    "geoid": "51001",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.947565,
+    "poverty_rate": 15.595441,
+    "agencies": {
+      "HHS": -1.816977,
+      "USDA": -1.236922,
+      "SSA": -1.083087,
+      "HUD": -1.019645,
+      "Education": -0.71146
+    }
+  },
+  {
+    "geoid": "51003",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.780579,
+    "poverty_rate": 7.087496,
+    "agencies": {
+      "HHS": -2.040819,
+      "USDA": -1.508089,
+      "SSA": -2.607453,
+      "HUD": -1.536209,
+      "Education": -2.567156
+    }
+  },
+  {
+    "geoid": "51005",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.24682,
+    "poverty_rate": 13.157736,
+    "agencies": {
+      "HHS": -0.70117,
+      "USDA": -0.636345,
+      "SSA": -1.503527,
+      "HUD": -1.422435,
+      "Education": -1.591639
+    }
+  },
+  {
+    "geoid": "51007",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.354721,
+    "poverty_rate": 10.22157,
+    "agencies": {
+      "HHS": -0.851037,
+      "USDA": -1.876292,
+      "SSA": -1.972765,
+      "HUD": 0.16233,
+      "Education": -0.549245
+    }
+  },
+  {
+    "geoid": "51009",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.231353,
+    "poverty_rate": 10.519346,
+    "agencies": {
+      "HHS": -1.804669,
+      "USDA": -0.944467,
+      "SSA": -1.969889,
+      "HUD": -0.61224,
+      "Education": -1.596535
+    }
+  },
+  {
+    "geoid": "51011",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.833649,
+    "poverty_rate": 12.486432,
+    "agencies": {
+      "HHS": -0.08706,
+      "USDA": -0.581529,
+      "SSA": -1.682664,
+      "HUD": 0.428101,
+      "Education": -0.261235
+    }
+  },
+  {
+    "geoid": "51013",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.228428,
+    "poverty_rate": 7.274947,
+    "agencies": {
+      "HHS": -2.330037,
+      "USDA": -1.71621,
+      "SSA": -1.863682,
+      "HUD": -2.389277,
+      "Education": -1.953064
+    }
+  },
+  {
+    "geoid": "51015",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.017529,
+    "poverty_rate": 7.061669,
+    "agencies": {
+      "HHS": -2.024891,
+      "USDA": -2.301394,
+      "SSA": -2.606905,
+      "HUD": -0.735858,
+      "Education": -2.44119
+    }
+  },
+  {
+    "geoid": "51017",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.244032,
+    "poverty_rate": 11.652338,
+    "agencies": {
+      "HHS": -0.143453,
+      "USDA": -0.634589,
+      "SSA": -1.454588,
+      "HUD": -0.453691,
+      "Education": -0.652038
+    }
+  },
+  {
+    "geoid": "51019",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.820966,
+    "poverty_rate": 7.746155,
+    "agencies": {
+      "HHS": -1.468076,
+      "USDA": -1.98689,
+      "SSA": -2.513304,
+      "HUD": -1.252257,
+      "Education": -1.091918
+    }
+  },
+  {
+    "geoid": "51021",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.282669,
+    "poverty_rate": 6.660071,
+    "agencies": {
+      "HHS": -2.553256,
+      "USDA": -2.163831,
+      "SSA": -2.662818,
+      "HUD": -0.696147,
+      "Education": -1.230374
+    }
+  },
+  {
+    "geoid": "51023",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.441956,
+    "poverty_rate": 6.027441,
+    "agencies": {
+      "HHS": -1.228777,
+      "USDA": -1.940857,
+      "SSA": -2.815077,
+      "HUD": -0.814539,
+      "Education": -1.38911
+    }
+  },
+  {
+    "geoid": "51025",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.754514,
+    "poverty_rate": 13.496679,
+    "agencies": {
+      "HHS": -0.124313,
+      "USDA": -1.330951,
+      "SSA": -1.513092,
+      "HUD": -0.502953,
+      "Education": -2.055803
+    }
+  },
+  {
+    "geoid": "51027",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.201352,
+    "poverty_rate": 17.762661,
+    "agencies": {
+      "HHS": -0.424712,
+      "USDA": 0.174257,
+      "SSA": -0.592317,
+      "HUD": 1.443501,
+      "Education": 0.447973
+    }
+  },
+  {
+    "geoid": "51029",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.407486,
+    "poverty_rate": 11.693079,
+    "agencies": {
+      "HHS": -1.416225,
+      "USDA": -1.383482,
+      "SSA": -1.818712,
+      "HUD": -0.916143,
+      "Education": -0.450599
+    }
+  },
+  {
+    "geoid": "51031",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.401805,
+    "poverty_rate": 9.726429,
+    "agencies": {
+      "HHS": -0.980927,
+      "USDA": -1.485987,
+      "SSA": -2.177504,
+      "HUD": -0.033479,
+      "Education": -0.76902
+    }
+  },
+  {
+    "geoid": "51033",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.463469,
+    "poverty_rate": 9.772938,
+    "agencies": {
+      "HHS": -1.085391,
+      "USDA": -2.015471,
+      "SSA": -2.132568,
+      "HUD": -0.906942,
+      "Education": -0.762011
+    }
+  },
+  {
+    "geoid": "51035",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.753619,
+    "poverty_rate": 12.926406,
+    "agencies": {
+      "HHS": -0.82752,
+      "USDA": -0.87515,
+      "SSA": -1.578142,
+      "HUD": -0.228649,
+      "Education": -0.143479
+    }
+  },
+  {
+    "geoid": "51036",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.422047,
+    "poverty_rate": 10.58416,
+    "agencies": {
+      "HHS": -1.285904,
+      "USDA": -1.619665,
+      "SSA": -1.997614,
+      "HUD": -0.821147,
+      "Education": -0.923271
+    }
+  },
+  {
+    "geoid": "51037",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.188377,
+    "poverty_rate": 18.944178,
+    "agencies": {
+      "HHS": 0.744479,
+      "USDA": -0.174645,
+      "SSA": -0.34109,
+      "HUD": 1.839538,
+      "Education": 1.087673
+    }
+  },
+  {
+    "geoid": "51041",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.869564,
+    "poverty_rate": 6.680277,
+    "agencies": {
+      "HHS": -1.523147,
+      "USDA": -0.872871,
+      "SSA": -2.632372,
+      "HUD": -1.450291,
+      "Education": -2.468438
+    }
+  },
+  {
+    "geoid": "51043",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.203114,
+    "poverty_rate": 6.851528,
+    "agencies": {
+      "HHS": -1.071479,
+      "USDA": -1.442792,
+      "SSA": -2.693637,
+      "HUD": -0.657242,
+      "Education": -1.287674
+    }
+  },
+  {
+    "geoid": "51045",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.937048,
+    "poverty_rate": 9.419489,
+    "agencies": {
+      "HHS": -1.5872,
+      "USDA": -0.974996,
+      "SSA": -2.176142,
+      "HUD": -0.159643,
+      "Education": -1.680153
+    }
+  },
+  {
+    "geoid": "51047",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.773973,
+    "poverty_rate": 7.505128,
+    "agencies": {
+      "HHS": -1.843972,
+      "USDA": -1.894437,
+      "SSA": -2.492173,
+      "HUD": -0.65583,
+      "Education": -1.585632
+    }
+  },
+  {
+    "geoid": "51049",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.680595,
+    "poverty_rate": 11.453741,
+    "agencies": {
+      "HHS": -1.723118,
+      "USDA": -0.678535,
+      "SSA": -1.732846,
+      "HUD": -1.15256,
+      "Education": -0.33157
+    }
+  },
+  {
+    "geoid": "51051",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 1.221338,
+    "poverty_rate": 16.37795,
+    "agencies": {
+      "HHS": 0.057842,
+      "USDA": 0.648729,
+      "SSA": 1.057357,
+      "HUD": 1.390901,
+      "Education": 0.654548
+    }
+  },
+  {
+    "geoid": "51053",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.445996,
+    "poverty_rate": 10.733117,
+    "agencies": {
+      "HHS": -0.430471,
+      "USDA": -1.793523,
+      "SSA": -1.93356,
+      "HUD": 0.096786,
+      "Education": -1.883191
+    }
+  },
+  {
+    "geoid": "51057",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.189987,
+    "poverty_rate": 12.410874,
+    "agencies": {
+      "HHS": -1.119297,
+      "USDA": -1.92472,
+      "SSA": -1.517181,
+      "HUD": 0.484467,
+      "Education": -0.071923
+    }
+  },
+  {
+    "geoid": "51059",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.693686,
+    "poverty_rate": 5.911185,
+    "agencies": {
+      "HHS": -2.846112,
+      "USDA": -1.191712,
+      "SSA": -2.643599,
+      "HUD": -2.945696,
+      "Education": -3.170908
+    }
+  },
+  {
+    "geoid": "51061",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.288322,
+    "poverty_rate": 5.566987,
+    "agencies": {
+      "HHS": -1.923089,
+      "USDA": -2.146613,
+      "SSA": -2.804603,
+      "HUD": -1.370816,
+      "Education": -1.86259
+    }
+  },
+  {
+    "geoid": "51063",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.058573,
+    "poverty_rate": 8.819993,
+    "agencies": {
+      "HHS": -0.700433,
+      "USDA": -0.894641,
+      "SSA": -0.121831,
+      "HUD": -0.105425,
+      "Education": -0.869914
+    }
+  },
+  {
+    "geoid": "51065",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.59364,
+    "poverty_rate": 4.796786,
+    "agencies": {
+      "HHS": -1.461528,
+      "USDA": -1.523966,
+      "SSA": -3.021525,
+      "HUD": -1.047291,
+      "Education": -1.614776
+    }
+  },
+  {
+    "geoid": "51067",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.048921,
+    "poverty_rate": 11.498026,
+    "agencies": {
+      "HHS": -1.473654,
+      "USDA": -1.458994,
+      "SSA": -1.799228,
+      "HUD": -0.038406,
+      "Education": -1.550879
+    }
+  },
+  {
+    "geoid": "51069",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.231721,
+    "poverty_rate": 5.789765,
+    "agencies": {
+      "HHS": -1.428828,
+      "USDA": -1.397764,
+      "SSA": -2.778367,
+      "HUD": -0.992629,
+      "Education": -2.847922
+    }
+  },
+  {
+    "geoid": "51071",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.658057,
+    "poverty_rate": 8.896341,
+    "agencies": {
+      "HHS": -1.440426,
+      "USDA": -1.496222,
+      "SSA": -2.308348,
+      "HUD": -0.250456,
+      "Education": -0.8681
+    }
+  },
+  {
+    "geoid": "51073",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.414443,
+    "poverty_rate": 6.849514,
+    "agencies": {
+      "HHS": -1.255268,
+      "USDA": -2.300552,
+      "SSA": -2.600371,
+      "HUD": -0.81149,
+      "Education": -2.754349
+    }
+  },
+  {
+    "geoid": "51075",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.471505,
+    "poverty_rate": 3.832668,
+    "agencies": {
+      "HHS": -1.661314,
+      "USDA": -2.358621,
+      "SSA": -3.253093,
+      "HUD": -1.066305,
+      "Education": -3.856064
+    }
+  },
+  {
+    "geoid": "51077",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.525093,
+    "poverty_rate": 14.598173,
+    "agencies": {
+      "HHS": -0.149137,
+      "USDA": -0.254683,
+      "SSA": 0.619573,
+      "HUD": 0.730478,
+      "Education": 0.175502
+    }
+  },
+  {
+    "geoid": "51079",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.394456,
+    "poverty_rate": 8.96754,
+    "agencies": {
+      "HHS": -0.978455,
+      "USDA": -0.579826,
+      "SSA": -2.202111,
+      "HUD": -0.065812,
+      "Education": -0.825449
+    }
+  },
+  {
+    "geoid": "51081",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.15468,
+    "poverty_rate": 7.967968,
+    "agencies": {
+      "HHS": -0.85309,
+      "USDA": -2.402029,
+      "SSA": -2.402353,
+      "HUD": -0.721548,
+      "Education": -1.037882
+    }
+  },
+  {
+    "geoid": "51083",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.92466,
+    "poverty_rate": 13.691336,
+    "agencies": {
+      "HHS": -0.884182,
+      "USDA": -0.986442,
+      "SSA": -1.521377,
+      "HUD": -0.510578,
+      "Education": -0.371557
+    }
+  },
+  {
+    "geoid": "51085",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.400782,
+    "poverty_rate": 5.061504,
+    "agencies": {
+      "HHS": -2.012761,
+      "USDA": -1.931576,
+      "SSA": -2.974566,
+      "HUD": -1.842887,
+      "Education": -2.511203
+    }
+  },
+  {
+    "geoid": "51087",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.926247,
+    "poverty_rate": 9.107627,
+    "agencies": {
+      "HHS": -2.311085,
+      "USDA": -0.673453,
+      "SSA": -2.226006,
+      "HUD": -1.95378,
+      "Education": -2.716146
+    }
+  },
+  {
+    "geoid": "51089",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.781923,
+    "poverty_rate": 13.975685,
+    "agencies": {
+      "HHS": -0.606962,
+      "USDA": 0.538363,
+      "SSA": -1.361126,
+      "HUD": 0.573749,
+      "Education": -1.50284
+    }
+  },
+  {
+    "geoid": "51091",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.517897,
+    "poverty_rate": 8.524545,
+    "agencies": {
+      "HHS": -2.793518,
+      "USDA": -1.882618,
+      "SSA": -2.451627,
+      "HUD": -0.119773,
+      "Education": -1.558475
+    }
+  },
+  {
+    "geoid": "51093",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.692335,
+    "poverty_rate": 8.870897,
+    "agencies": {
+      "HHS": -0.690052,
+      "USDA": -2.304321,
+      "SSA": -2.293086,
+      "HUD": -1.093408,
+      "Education": -1.198493
+    }
+  },
+  {
+    "geoid": "51095",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.436333,
+    "poverty_rate": 6.296874,
+    "agencies": {
+      "HHS": -1.881663,
+      "USDA": -1.749389,
+      "SSA": -2.815553,
+      "HUD": -2.171286,
+      "Education": -1.360862
+    }
+  },
+  {
+    "geoid": "51097",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.193653,
+    "poverty_rate": 13.199141,
+    "agencies": {
+      "HHS": -0.310809,
+      "USDA": -1.246857,
+      "SSA": -1.355644,
+      "HUD": -0.240951,
+      "Education": 0.0703
+    }
+  },
+  {
+    "geoid": "51099",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.950579,
+    "poverty_rate": 5.717285,
+    "agencies": {
+      "HHS": -2.038818,
+      "USDA": -1.484556,
+      "SSA": -2.699327,
+      "HUD": -0.887417,
+      "Education": -1.977506
+    }
+  },
+  {
+    "geoid": "51101",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.545033,
+    "poverty_rate": 8.793889,
+    "agencies": {
+      "HHS": -1.766263,
+      "USDA": -1.312839,
+      "SSA": -2.362276,
+      "HUD": -1.265582,
+      "Education": -1.058502
+    }
+  },
+  {
+    "geoid": "51103",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.914761,
+    "poverty_rate": 8.560179,
+    "agencies": {
+      "HHS": -1.088497,
+      "USDA": -2.249287,
+      "SSA": -2.359088,
+      "HUD": -0.766735,
+      "Education": -0.846635
+    }
+  },
+  {
+    "geoid": "51105",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.236563,
+    "poverty_rate": 18.431399,
+    "agencies": {
+      "HHS": -0.799588,
+      "USDA": 0.050807,
+      "SSA": -0.128814,
+      "HUD": -0.382229,
+      "Education": 1.004699
+    }
+  },
+  {
+    "geoid": "51107",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.568313,
+    "poverty_rate": 3.956663,
+    "agencies": {
+      "HHS": -2.297471,
+      "USDA": -1.620167,
+      "SSA": -2.719539,
+      "HUD": -2.629516,
+      "Education": -1.923443
+    }
+  },
+  {
+    "geoid": "51109",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.655048,
+    "poverty_rate": 9.745892,
+    "agencies": {
+      "HHS": -0.716559,
+      "USDA": -1.574865,
+      "SSA": -2.040444,
+      "HUD": -1.24335,
+      "Education": -0.624102
+    }
+  },
+  {
+    "geoid": "51111",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.284244,
+    "poverty_rate": 12.074409,
+    "agencies": {
+      "HHS": -1.840363,
+      "USDA": -1.071504,
+      "SSA": -1.695533,
+      "HUD": 0.350792,
+      "Education": -0.285326
+    }
+  },
+  {
+    "geoid": "51113",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.649229,
+    "poverty_rate": 7.875448,
+    "agencies": {
+      "HHS": -1.691336,
+      "USDA": -1.790824,
+      "SSA": -2.546725,
+      "HUD": -0.287656,
+      "Education": -1.146382
+    }
+  },
+  {
+    "geoid": "51115",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.370381,
+    "poverty_rate": 6.969585,
+    "agencies": {
+      "HHS": -1.054949,
+      "USDA": -1.54116,
+      "SSA": -2.676609,
+      "HUD": -0.640711,
+      "Education": -1.202218
+    }
+  },
+  {
+    "geoid": "51117",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.921463,
+    "poverty_rate": 14.073902,
+    "agencies": {
+      "HHS": -0.009167,
+      "USDA": -1.042817,
+      "SSA": -1.302998,
+      "HUD": -0.35663,
+      "Education": 0.155091
+    }
+  },
+  {
+    "geoid": "51119",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.077507,
+    "poverty_rate": 7.325339,
+    "agencies": {
+      "HHS": -1.242378,
+      "USDA": -2.180764,
+      "SSA": -2.611015,
+      "HUD": -2.07622,
+      "Education": -1.12312
+    }
+  },
+  {
+    "geoid": "51121",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.617512,
+    "poverty_rate": 17.803114,
+    "agencies": {
+      "HHS": -0.160075,
+      "USDA": -3.90205,
+      "SSA": 0.695195,
+      "HUD": 0.395117,
+      "Education": 0.476625
+    }
+  },
+  {
+    "geoid": "51125",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.120487,
+    "poverty_rate": 11.184012,
+    "agencies": {
+      "HHS": -1.681274,
+      "USDA": -1.624356,
+      "SSA": -1.897408,
+      "HUD": 0.354697,
+      "Education": -0.421955
+    }
+  },
+  {
+    "geoid": "51127",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.88934,
+    "poverty_rate": 4.426362,
+    "agencies": {
+      "HHS": -2.086947,
+      "USDA": -3.073742,
+      "SSA": -3.072713,
+      "HUD": -1.782204,
+      "Education": -2.454709
+    }
+  },
+  {
+    "geoid": "51131",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.600313,
+    "poverty_rate": 15.427728,
+    "agencies": {
+      "HHS": -1.327598,
+      "USDA": -0.94371,
+      "SSA": -0.972563,
+      "HUD": -0.686836,
+      "Education": 0.191586
+    }
+  },
+  {
+    "geoid": "51133",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.073216,
+    "poverty_rate": 9.985867,
+    "agencies": {
+      "HHS": -0.472072,
+      "USDA": -2.222793,
+      "SSA": -2.084478,
+      "HUD": -0.057835,
+      "Education": -0.560831
+    }
+  },
+  {
+    "geoid": "51135",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.642639,
+    "poverty_rate": 13.792864,
+    "agencies": {
+      "HHS": 0.267896,
+      "USDA": -0.798166,
+      "SSA": -1.348434,
+      "HUD": 0.220451,
+      "Education": 0.034282
+    }
+  },
+  {
+    "geoid": "51137",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.3071,
+    "poverty_rate": 8.915334,
+    "agencies": {
+      "HHS": -1.00096,
+      "USDA": -1.704804,
+      "SSA": -1.333794,
+      "HUD": -0.88605,
+      "Education": -1.761431
+    }
+  },
+  {
+    "geoid": "51139",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.253965,
+    "poverty_rate": 11.953285,
+    "agencies": {
+      "HHS": -0.844245,
+      "USDA": -0.870758,
+      "SSA": -1.707504,
+      "HUD": 0.314495,
+      "Education": -0.287485
+    }
+  },
+  {
+    "geoid": "51141",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.277729,
+    "poverty_rate": 11.832375,
+    "agencies": {
+      "HHS": -0.473203,
+      "USDA": -1.266728,
+      "SSA": -1.853623,
+      "HUD": 0.307808,
+      "Education": -0.40895
+    }
+  },
+  {
+    "geoid": "51143",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.896182,
+    "poverty_rate": 12.640936,
+    "agencies": {
+      "HHS": -0.895818,
+      "USDA": -1.269035,
+      "SSA": -1.543379,
+      "HUD": 0.239557,
+      "Education": -0.110853
+    }
+  },
+  {
+    "geoid": "51145",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.794285,
+    "poverty_rate": 3.735649,
+    "agencies": {
+      "HHS": -1.67361,
+      "USDA": -1.998747,
+      "SSA": -3.206419,
+      "HUD": -1.431156,
+      "Education": -1.812023
+    }
+  },
+  {
+    "geoid": "51147",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.084972,
+    "poverty_rate": 12.277256,
+    "agencies": {
+      "HHS": -1.509617,
+      "USDA": -0.923716,
+      "SSA": -1.559249,
+      "HUD": -0.372306,
+      "Education": -1.86529
+    }
+  },
+  {
+    "geoid": "51149",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.575001,
+    "poverty_rate": 7.104586,
+    "agencies": {
+      "HHS": -1.350019,
+      "USDA": -1.063602,
+      "SSA": -2.524224,
+      "HUD": -0.390161,
+      "Education": -2.520621
+    }
+  },
+  {
+    "geoid": "51153",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.429472,
+    "poverty_rate": 6.662288,
+    "agencies": {
+      "HHS": -1.963319,
+      "USDA": -0.937921,
+      "SSA": -2.501345,
+      "HUD": -2.648712,
+      "Education": -1.748331
+    }
+  },
+  {
+    "geoid": "51155",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.437599,
+    "poverty_rate": 10.930858,
+    "agencies": {
+      "HHS": -0.650764,
+      "USDA": -1.148781,
+      "SSA": -1.858794,
+      "HUD": -0.452265,
+      "Education": -2.118633
+    }
+  },
+  {
+    "geoid": "51157",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.561555,
+    "poverty_rate": 6.93355,
+    "agencies": {
+      "HHS": -1.013841,
+      "USDA": -1.375121,
+      "SSA": -2.62536,
+      "HUD": -0.69236,
+      "Education": -1.182352
+    }
+  },
+  {
+    "geoid": "51159",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.250379,
+    "poverty_rate": 8.458186,
+    "agencies": {
+      "HHS": -2.385282,
+      "USDA": -3.012734,
+      "SSA": -2.332147,
+      "HUD": -0.35954,
+      "Education": -0.952786
+    }
+  },
+  {
+    "geoid": "51161",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.240981,
+    "poverty_rate": 6.39413,
+    "agencies": {
+      "HHS": -1.956101,
+      "USDA": -1.649792,
+      "SSA": -2.75468,
+      "HUD": -2.022505,
+      "Education": -2.204047
+    }
+  },
+  {
+    "geoid": "51163",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.400188,
+    "poverty_rate": 10.137521,
+    "agencies": {
+      "HHS": -2.182561,
+      "USDA": -1.758341,
+      "SSA": -2.106566,
+      "HUD": -0.332353,
+      "Education": -0.681079
+    }
+  },
+  {
+    "geoid": "51165",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.554015,
+    "poverty_rate": 8.444377,
+    "agencies": {
+      "HHS": -0.941427,
+      "USDA": -2.12383,
+      "SSA": -2.379172,
+      "HUD": -0.28419,
+      "Education": -2.063986
+    }
+  },
+  {
+    "geoid": "51167",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.823343,
+    "poverty_rate": 14.547306,
+    "agencies": {
+      "HHS": -0.814205,
+      "USDA": -0.242837,
+      "SSA": -1.208798,
+      "HUD": -0.766746,
+      "Education": 0.250556
+    }
+  },
+  {
+    "geoid": "51169",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.492596,
+    "poverty_rate": 13.400155,
+    "agencies": {
+      "HHS": 0.090299,
+      "USDA": -0.575301,
+      "SSA": 0.302119,
+      "HUD": 0.824643,
+      "Education": -0.105454
+    }
+  },
+  {
+    "geoid": "51171",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.176088,
+    "poverty_rate": 10.212717,
+    "agencies": {
+      "HHS": -0.820814,
+      "USDA": -1.362398,
+      "SSA": -1.988038,
+      "HUD": -0.221228,
+      "Education": -0.574712
+    }
+  },
+  {
+    "geoid": "51173",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.007943,
+    "poverty_rate": 14.674494,
+    "agencies": {
+      "HHS": -0.630656,
+      "USDA": -0.429856,
+      "SSA": -1.187317,
+      "HUD": -1.128156,
+      "Education": 0.252229
+    }
+  },
+  {
+    "geoid": "51175",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.031817,
+    "poverty_rate": 7.838692,
+    "agencies": {
+      "HHS": -1.574166,
+      "USDA": -3.278042,
+      "SSA": -2.604228,
+      "HUD": -0.39032,
+      "Education": -1.205779
+    }
+  },
+  {
+    "geoid": "51177",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.702711,
+    "poverty_rate": 7.315807,
+    "agencies": {
+      "HHS": -1.466621,
+      "USDA": -1.614513,
+      "SSA": -2.485966,
+      "HUD": -0.582359,
+      "Education": -1.670631
+    }
+  },
+  {
+    "geoid": "51179",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.3916,
+    "poverty_rate": 4.847031,
+    "agencies": {
+      "HHS": -2.111359,
+      "USDA": -1.379875,
+      "SSA": -2.851561,
+      "HUD": -1.908445,
+      "Education": -2.249392
+    }
+  },
+  {
+    "geoid": "51181",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.318626,
+    "poverty_rate": 11.645073,
+    "agencies": {
+      "HHS": -0.155954,
+      "USDA": -1.635328,
+      "SSA": -1.684555,
+      "HUD": 0.258283,
+      "Education": -0.251877
+    }
+  },
+  {
+    "geoid": "51183",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.147205,
+    "poverty_rate": 7.638575,
+    "agencies": {
+      "HHS": -2.075757,
+      "USDA": -3.072733,
+      "SSA": -2.385945,
+      "HUD": -1.80949,
+      "Education": -1.01949
+    }
+  },
+  {
+    "geoid": "51185",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.986363,
+    "poverty_rate": 13.293855,
+    "agencies": {
+      "HHS": -1.445217,
+      "USDA": -0.517963,
+      "SSA": -1.457736,
+      "HUD": 0.149075,
+      "Education": -1.826109
+    }
+  },
+  {
+    "geoid": "51187",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.559888,
+    "poverty_rate": 9.455763,
+    "agencies": {
+      "HHS": -0.956035,
+      "USDA": -1.012823,
+      "SSA": -2.040537,
+      "HUD": -1.051476,
+      "Education": -0.671151
+    }
+  },
+  {
+    "geoid": "51191",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.293419,
+    "poverty_rate": 10.608994,
+    "agencies": {
+      "HHS": -0.899386,
+      "USDA": -0.588364,
+      "SSA": -0.091683,
+      "HUD": -0.457805,
+      "Education": -0.700956
+    }
+  },
+  {
+    "geoid": "51193",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.655387,
+    "poverty_rate": 11.200794,
+    "agencies": {
+      "HHS": -0.301422,
+      "USDA": -1.642087,
+      "SSA": -1.742313,
+      "HUD": -1.614142,
+      "Education": -0.304078
+    }
+  },
+  {
+    "geoid": "51195",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.455046,
+    "poverty_rate": 15.12803,
+    "agencies": {
+      "HHS": -0.137138,
+      "USDA": -0.192784,
+      "SSA": -0.273297,
+      "HUD": -0.665229,
+      "Education": -0.461868
+    }
+  },
+  {
+    "geoid": "51197",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.199863,
+    "poverty_rate": 12.93727,
+    "agencies": {
+      "HHS": -0.469842,
+      "USDA": -1.284791,
+      "SSA": -1.482665,
+      "HUD": -1.170675,
+      "Education": -1.706205
+    }
+  },
+  {
+    "geoid": "51199",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.557435,
+    "poverty_rate": 4.748067,
+    "agencies": {
+      "HHS": -2.227832,
+      "USDA": -1.605348,
+      "SSA": -2.975795,
+      "HUD": -1.209192,
+      "Education": -3.251807
+    }
+  },
+  {
+    "geoid": "51510",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.190885,
+    "poverty_rate": 9.237175,
+    "agencies": {
+      "HHS": -1.653838,
+      "USDA": -1.016255,
+      "SSA": -1.923199,
+      "HUD": -2.844073,
+      "Education": -0.916583
+    }
+  },
+  {
+    "geoid": "51520",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.582591,
+    "poverty_rate": 17.005524,
+    "agencies": {
+      "HHS": 0.761006,
+      "USDA": 0.649786,
+      "SSA": -0.428687,
+      "HUD": -0.954432,
+      "Education": 0.388355
+    }
+  },
+  {
+    "geoid": "51530",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.227406,
+    "poverty_rate": 17.972902,
+    "agencies": {
+      "HHS": 0.919931,
+      "USDA": 1.076224,
+      "SSA": -0.698343,
+      "HUD": -0.249313,
+      "Education": -1.25443
+    }
+  },
+  {
+    "geoid": "51540",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.185396,
+    "poverty_rate": 19.707351,
+    "agencies": {
+      "HHS": -0.550463,
+      "USDA": 0.720992,
+      "SSA": -0.111674,
+      "HUD": -0.596665,
+      "Education": -0.87823
+    }
+  },
+  {
+    "geoid": "51550",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.248355,
+    "poverty_rate": 8.111433,
+    "agencies": {
+      "HHS": -0.95897,
+      "USDA": -1.480306,
+      "SSA": -2.334301,
+      "HUD": -2.496648,
+      "Education": -2.061377
+    }
+  },
+  {
+    "geoid": "51570",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.461284,
+    "poverty_rate": 10.176756,
+    "agencies": {
+      "HHS": -0.527071,
+      "USDA": 0.021004,
+      "SSA": -1.998347,
+      "HUD": -0.780687,
+      "Education": -0.584814
+    }
+  },
+  {
+    "geoid": "51580",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.798262,
+    "poverty_rate": 15.320508,
+    "agencies": {
+      "HHS": 0.55732,
+      "USDA": 0.15708,
+      "SSA": -1.320399,
+      "HUD": -0.66949,
+      "Education": 0.144214
+    }
+  },
+  {
+    "geoid": "51590",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.08885,
+    "poverty_rate": 19.244872,
+    "agencies": {
+      "HHS": 0.480943,
+      "USDA": 1.503387,
+      "SSA": 0.575811,
+      "HUD": -0.181985,
+      "Education": 0.229831
+    }
+  },
+  {
+    "geoid": "51595",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.493033,
+    "poverty_rate": 22.34447,
+    "agencies": {
+      "HHS": 0.610077,
+      "USDA": 0.134147,
+      "SSA": -0.031631,
+      "HUD": 0.40587,
+      "Education": 1.376429
+    }
+  },
+  {
+    "geoid": "51600",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.307782,
+    "poverty_rate": 8.171022,
+    "agencies": {
+      "HHS": -1.910778,
+      "USDA": -0.599778,
+      "SSA": -2.141896,
+      "HUD": -2.791528,
+      "Education": -1.046583
+    }
+  },
+  {
+    "geoid": "51610",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.896335,
+    "poverty_rate": 3.018106,
+    "agencies": {
+      "HHS": -2.470034,
+      "USDA": -1.663193,
+      "SSA": -3.263731,
+      "HUD": -1.785684,
+      "Education": -2.702203
+    }
+  },
+  {
+    "geoid": "51620",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.933755,
+    "poverty_rate": 16.912689,
+    "agencies": {
+      "HHS": -0.442041,
+      "USDA": 0.356366,
+      "SSA": -0.904889,
+      "HUD": -1.412326,
+      "Education": -1.114596
+    }
+  },
+  {
+    "geoid": "51630",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.046198,
+    "poverty_rate": 13.798477,
+    "agencies": {
+      "HHS": -1.089122,
+      "USDA": -0.268503,
+      "SSA": -1.210787,
+      "HUD": -1.184483,
+      "Education": -1.5216
+    }
+  },
+  {
+    "geoid": "51640",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.055333,
+    "poverty_rate": 19.912602,
+    "agencies": {
+      "HHS": 0.167648,
+      "USDA": 0.160582,
+      "SSA": -0.218696,
+      "HUD": -0.050811,
+      "Education": 1.227809
+    }
+  },
+  {
+    "geoid": "51650",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.511465,
+    "poverty_rate": 13.183904,
+    "agencies": {
+      "HHS": -0.199704,
+      "USDA": 0.296721,
+      "SSA": -1.390447,
+      "HUD": -1.975377,
+      "Education": -1.858162
+    }
+  },
+  {
+    "geoid": "51660",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.133066,
+    "poverty_rate": 20.656765,
+    "agencies": {
+      "HHS": 0.167076,
+      "USDA": 0.753774,
+      "SSA": 0.04717,
+      "HUD": -0.264432,
+      "Education": -0.526856
+    }
+  },
+  {
+    "geoid": "51670",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.222792,
+    "poverty_rate": 19.911869,
+    "agencies": {
+      "HHS": 0.437284,
+      "USDA": 1.809127,
+      "SSA": 0.103881,
+      "HUD": -0.733082,
+      "Education": 1.269909
+    }
+  },
+  {
+    "geoid": "51678",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.048024,
+    "poverty_rate": 7.487933,
+    "agencies": {
+      "HHS": -1.67426,
+      "USDA": -1.944591,
+      "SSA": -2.3528,
+      "HUD": -1.780072,
+      "Education": -2.954193
+    }
+  },
+  {
+    "geoid": "51680",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.011817,
+    "poverty_rate": 15.344073,
+    "agencies": {
+      "HHS": -1.681852,
+      "USDA": 0.672462,
+      "SSA": -1.156536,
+      "HUD": -1.29606,
+      "Education": -2.219174
+    }
+  },
+  {
+    "geoid": "51683",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.614778,
+    "poverty_rate": 8.273162,
+    "agencies": {
+      "HHS": -1.74389,
+      "USDA": -0.738555,
+      "SSA": -2.368219,
+      "HUD": -1.040747,
+      "Education": -1.121362
+    }
+  },
+  {
+    "geoid": "51685",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.249033,
+    "poverty_rate": 6.86952,
+    "agencies": {
+      "HHS": -1.030626,
+      "USDA": -0.663424,
+      "SSA": -2.340495,
+      "HUD": -0.709145,
+      "Education": -1.199137
+    }
+  },
+  {
+    "geoid": "51690",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.293917,
+    "poverty_rate": 20.933676,
+    "agencies": {
+      "HHS": -0.15327,
+      "USDA": 1.426416,
+      "SSA": 0.071129,
+      "HUD": 0.415221,
+      "Education": 1.546
+    }
+  },
+  {
+    "geoid": "51700",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.256061,
+    "poverty_rate": 14.148604,
+    "agencies": {
+      "HHS": -0.851715,
+      "USDA": 0.56931,
+      "SSA": -1.144545,
+      "HUD": -1.764253,
+      "Education": -1.047341
+    }
+  },
+  {
+    "geoid": "51710",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.920268,
+    "poverty_rate": 16.10639,
+    "agencies": {
+      "HHS": -1.061319,
+      "USDA": 0.71867,
+      "SSA": -0.809505,
+      "HUD": -1.460294,
+      "Education": -1.476696
+    }
+  },
+  {
+    "geoid": "51720",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.093976,
+    "poverty_rate": 22.107558,
+    "agencies": {
+      "HHS": 1.693181,
+      "USDA": 2.321299,
+      "SSA": 0.472811,
+      "HUD": -0.419944,
+      "Education": 1.951951
+    }
+  },
+  {
+    "geoid": "51730",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.064221,
+    "poverty_rate": 21.704235,
+    "agencies": {
+      "HHS": 1.327083,
+      "USDA": 0.153699,
+      "SSA": 0.068962,
+      "HUD": -0.393494,
+      "Education": -0.539723
+    }
+  },
+  {
+    "geoid": "51735",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.958553,
+    "poverty_rate": 4.465817,
+    "agencies": {
+      "HHS": -1.487843,
+      "USDA": -1.093374,
+      "SSA": -3.031396,
+      "HUD": -1.166361,
+      "Education": -2.430838
+    }
+  },
+  {
+    "geoid": "51740",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.009215,
+    "poverty_rate": 15.668924,
+    "agencies": {
+      "HHS": -0.232538,
+      "USDA": 0.822046,
+      "SSA": -0.920635,
+      "HUD": -1.52465,
+      "Education": -0.336536
+    }
+  },
+  {
+    "geoid": "51750",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.760715,
+    "poverty_rate": 23.111501,
+    "agencies": {
+      "HHS": 0.485107,
+      "USDA": 2.108062,
+      "SSA": 0.608918,
+      "HUD": 0.667571,
+      "Education": -0.201802
+    }
+  },
+  {
+    "geoid": "51760",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.657787,
+    "poverty_rate": 19.444329,
+    "agencies": {
+      "HHS": -1.157675,
+      "USDA": 1.261613,
+      "SSA": -0.274548,
+      "HUD": -1.351854,
+      "Education": -1.797694
+    }
+  },
+  {
+    "geoid": "51770",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.254386,
+    "poverty_rate": 18.553473,
+    "agencies": {
+      "HHS": -0.550643,
+      "USDA": 0.752534,
+      "SSA": -0.091563,
+      "HUD": -0.731653,
+      "Education": -0.326805
+    }
+  },
+  {
+    "geoid": "51775",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.458165,
+    "poverty_rate": 7.372005,
+    "agencies": {
+      "HHS": -1.094428,
+      "USDA": -0.567665,
+      "SSA": -2.512177,
+      "HUD": -0.609054,
+      "Education": -2.952285
+    }
+  },
+  {
+    "geoid": "51790",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.75813,
+    "poverty_rate": 11.282763,
+    "agencies": {
+      "HHS": -0.773557,
+      "USDA": -1.227367,
+      "SSA": -2.002162,
+      "HUD": -1.970659,
+      "Education": -2.193566
+    }
+  },
+  {
+    "geoid": "51800",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.967612,
+    "poverty_rate": 9.955784,
+    "agencies": {
+      "HHS": -0.507018,
+      "USDA": -1.529844,
+      "SSA": -2.043202,
+      "HUD": -2.289886,
+      "Education": -1.185176
+    }
+  },
+  {
+    "geoid": "51810",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.398143,
+    "poverty_rate": 7.464336,
+    "agencies": {
+      "HHS": -2.770862,
+      "USDA": -0.967076,
+      "SSA": -2.4334,
+      "HUD": -2.477011,
+      "Education": -2.823265
+    }
+  },
+  {
+    "geoid": "51820",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.075764,
+    "poverty_rate": 15.06433,
+    "agencies": {
+      "HHS": 0.490789,
+      "USDA": 0.454801,
+      "SSA": -1.156138,
+      "HUD": -1.37011,
+      "Education": 0.253259
+    }
+  },
+  {
+    "geoid": "51830",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.437807,
+    "poverty_rate": 9.833409,
+    "agencies": {
+      "HHS": -1.059008,
+      "USDA": -0.620233,
+      "SSA": -2.09987,
+      "HUD": -1.344339,
+      "Education": -2.553664
+    }
+  },
+  {
+    "geoid": "51840",
+    "state": "virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.652242,
+    "poverty_rate": 13.79866,
+    "agencies": {
+      "HHS": -1.631136,
+      "USDA": 0.381176,
+      "SSA": -1.206097,
+      "HUD": -0.484366,
+      "Education": -1.391692
+    }
+  },
+  {
+    "geoid": "54001",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.169946,
+    "poverty_rate": 16.89293,
+    "agencies": {
+      "HHS": -0.21238,
+      "USDA": -0.014366,
+      "SSA": -0.673364,
+      "HUD": 0.784745,
+      "Education": -0.822339
+    }
+  },
+  {
+    "geoid": "54003",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.997027,
+    "poverty_rate": 11.581638,
+    "agencies": {
+      "HHS": -1.017508,
+      "USDA": -0.752115,
+      "SSA": -1.20909,
+      "HUD": -1.122682,
+      "Education": -1.409089
+    }
+  },
+  {
+    "geoid": "54005",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.626258,
+    "poverty_rate": 16.498827,
+    "agencies": {
+      "HHS": -0.102928,
+      "USDA": 0.805692,
+      "SSA": -0.690326,
+      "HUD": -0.747032,
+      "Education": 0.337239
+    }
+  },
+  {
+    "geoid": "54007",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.569649,
+    "poverty_rate": 15.632573,
+    "agencies": {
+      "HHS": 0.213314,
+      "USDA": -0.133858,
+      "SSA": 0.850596,
+      "HUD": 0.764025,
+      "Education": 0.433553
+    }
+  },
+  {
+    "geoid": "54009",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.673865,
+    "poverty_rate": 9.854422,
+    "agencies": {
+      "HHS": -1.444111,
+      "USDA": -0.504324,
+      "SSA": -2.103737,
+      "HUD": -1.38937,
+      "Education": -2.033851
+    }
+  },
+  {
+    "geoid": "54011",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.628042,
+    "poverty_rate": 17.364742,
+    "agencies": {
+      "HHS": -0.679034,
+      "USDA": 0.215687,
+      "SSA": -0.603717,
+      "HUD": -0.777015,
+      "Education": -0.969234
+    }
+  },
+  {
+    "geoid": "54013",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.300973,
+    "poverty_rate": 17.937868,
+    "agencies": {
+      "HHS": -0.360325,
+      "USDA": -0.208134,
+      "SSA": 0.410503,
+      "HUD": 0.653629,
+      "Education": 1.216333
+    }
+  },
+  {
+    "geoid": "54015",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.496402,
+    "poverty_rate": 20.243904,
+    "agencies": {
+      "HHS": 0.656179,
+      "USDA": 0.379144,
+      "SSA": -0.118089,
+      "HUD": 2.010006,
+      "Education": 1.351186
+    }
+  },
+  {
+    "geoid": "54017",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.575786,
+    "poverty_rate": 9.909902,
+    "agencies": {
+      "HHS": -0.694381,
+      "USDA": -0.705246,
+      "SSA": -1.943169,
+      "HUD": -0.068169,
+      "Education": -0.642383
+    }
+  },
+  {
+    "geoid": "54019",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.483628,
+    "poverty_rate": 15.657945,
+    "agencies": {
+      "HHS": -1.025775,
+      "USDA": -0.222773,
+      "SSA": -0.927498,
+      "HUD": -0.486365,
+      "Education": -0.093324
+    }
+  },
+  {
+    "geoid": "54021",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.108219,
+    "poverty_rate": 10.855681,
+    "agencies": {
+      "HHS": -1.406074,
+      "USDA": -1.219304,
+      "SSA": -2.135617,
+      "HUD": 0.329811,
+      "Education": -2.818273
+    }
+  },
+  {
+    "geoid": "54023",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.350531,
+    "poverty_rate": 10.72486,
+    "agencies": {
+      "HHS": -0.540559,
+      "USDA": -1.572141,
+      "SSA": -2.050838,
+      "HUD": -1.226524,
+      "Education": -0.624529
+    }
+  },
+  {
+    "geoid": "54025",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.166253,
+    "poverty_rate": 14.810497,
+    "agencies": {
+      "HHS": -0.965727,
+      "USDA": 0.033348,
+      "SSA": 0.716424,
+      "HUD": 0.161079,
+      "Education": 0.300975
+    }
+  },
+  {
+    "geoid": "54027",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.907153,
+    "poverty_rate": 13.906868,
+    "agencies": {
+      "HHS": 0.267738,
+      "USDA": 0.312386,
+      "SSA": 0.76224,
+      "HUD": 0.5396,
+      "Education": 0.014157
+    }
+  },
+  {
+    "geoid": "54029",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.505964,
+    "poverty_rate": 12.031058,
+    "agencies": {
+      "HHS": -0.337294,
+      "USDA": -0.650794,
+      "SSA": -1.752835,
+      "HUD": -1.600197,
+      "Education": -0.778784
+    }
+  },
+  {
+    "geoid": "54031",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.666773,
+    "poverty_rate": 13.095658,
+    "agencies": {
+      "HHS": 0.05857,
+      "USDA": 0.221747,
+      "SSA": 0.454541,
+      "HUD": 0.552107,
+      "Education": -0.04908
+    }
+  },
+  {
+    "geoid": "54033",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.331686,
+    "poverty_rate": 12.881851,
+    "agencies": {
+      "HHS": -0.447101,
+      "USDA": -0.545162,
+      "SSA": -1.531325,
+      "HUD": -1.505983,
+      "Education": -1.477352
+    }
+  },
+  {
+    "geoid": "54035",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.230686,
+    "poverty_rate": 13.826236,
+    "agencies": {
+      "HHS": -0.646114,
+      "USDA": -0.387748,
+      "SSA": -1.282843,
+      "HUD": -1.40036,
+      "Education": -0.402262
+    }
+  },
+  {
+    "geoid": "54037",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.911739,
+    "poverty_rate": 9.143085,
+    "agencies": {
+      "HHS": -1.075445,
+      "USDA": -1.661951,
+      "SSA": -0.794493,
+      "HUD": -0.518434,
+      "Education": -1.309886
+    }
+  },
+  {
+    "geoid": "54039",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.523958,
+    "poverty_rate": 13.659622,
+    "agencies": {
+      "HHS": -1.478738,
+      "USDA": -0.865124,
+      "SSA": -1.299061,
+      "HUD": -2.080503,
+      "Education": -2.423324
+    }
+  },
+  {
+    "geoid": "54041",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.64559,
+    "poverty_rate": 15.7409,
+    "agencies": {
+      "HHS": 0.36619,
+      "USDA": -0.093345,
+      "SSA": -0.971542,
+      "HUD": -0.727751,
+      "Education": 0.45392
+    }
+  },
+  {
+    "geoid": "54043",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.215528,
+    "poverty_rate": 18.775612,
+    "agencies": {
+      "HHS": -0.53687,
+      "USDA": 0.295402,
+      "SSA": -0.5927,
+      "HUD": 0.745939,
+      "Education": 0.850148
+    }
+  },
+  {
+    "geoid": "54045",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.497013,
+    "poverty_rate": 17.36727,
+    "agencies": {
+      "HHS": -0.229823,
+      "USDA": 0.960332,
+      "SSA": -0.164911,
+      "HUD": -0.475439,
+      "Education": -0.518375
+    }
+  },
+  {
+    "geoid": "54047",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.846339,
+    "poverty_rate": 21.98215,
+    "agencies": {
+      "HHS": -0.016594,
+      "USDA": 0.867606,
+      "SSA": 0.017948,
+      "HUD": 1.868784,
+      "Education": 1.501782
+    }
+  },
+  {
+    "geoid": "54049",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.439505,
+    "poverty_rate": 13.175509,
+    "agencies": {
+      "HHS": -1.269729,
+      "USDA": -0.342433,
+      "SSA": -1.455212,
+      "HUD": -1.70847,
+      "Education": -1.58988
+    }
+  },
+  {
+    "geoid": "54051",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.242919,
+    "poverty_rate": 11.862285,
+    "agencies": {
+      "HHS": -1.139405,
+      "USDA": -0.793476,
+      "SSA": -1.625786,
+      "HUD": -1.264766,
+      "Education": -0.478779
+    }
+  },
+  {
+    "geoid": "54053",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.088305,
+    "poverty_rate": 13.43347,
+    "agencies": {
+      "HHS": -0.235067,
+      "USDA": -0.90184,
+      "SSA": -1.454099,
+      "HUD": -1.03739,
+      "Education": -0.023836
+    }
+  },
+  {
+    "geoid": "54055",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.746545,
+    "poverty_rate": 15.841005,
+    "agencies": {
+      "HHS": 0.314791,
+      "USDA": 0.444988,
+      "SSA": 1.157628,
+      "HUD": 0.610782,
+      "Education": 0.409545
+    }
+  },
+  {
+    "geoid": "54057",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.477465,
+    "poverty_rate": 11.927603,
+    "agencies": {
+      "HHS": -0.861628,
+      "USDA": -1.030073,
+      "SSA": -1.79429,
+      "HUD": -1.635854,
+      "Education": -0.811696
+    }
+  },
+  {
+    "geoid": "54059",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.582661,
+    "poverty_rate": 21.368075,
+    "agencies": {
+      "HHS": 0.204576,
+      "USDA": 0.745013,
+      "SSA": 0.226888,
+      "HUD": 0.104734,
+      "Education": 1.087552
+    }
+  },
+  {
+    "geoid": "54061",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.097366,
+    "poverty_rate": 16.682671,
+    "agencies": {
+      "HHS": -0.782261,
+      "USDA": -0.384242,
+      "SSA": -0.353155,
+      "HUD": -0.04865,
+      "Education": -1.017782
+    }
+  },
+  {
+    "geoid": "54063",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.689825,
+    "poverty_rate": 12.657841,
+    "agencies": {
+      "HHS": -1.540014,
+      "USDA": -1.17241,
+      "SSA": -1.628173,
+      "HUD": 0.675327,
+      "Education": -0.169967
+    }
+  },
+  {
+    "geoid": "54065",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.067627,
+    "poverty_rate": 7.616173,
+    "agencies": {
+      "HHS": -1.949158,
+      "USDA": -1.716683,
+      "SSA": -2.519079,
+      "HUD": -0.4941,
+      "Education": -1.090178
+    }
+  },
+  {
+    "geoid": "54067",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.425871,
+    "poverty_rate": 14.528995,
+    "agencies": {
+      "HHS": 0.329633,
+      "USDA": 0.067444,
+      "SSA": 0.674696,
+      "HUD": 0.513732,
+      "Education": 0.269804
+    }
+  },
+  {
+    "geoid": "54069",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.683812,
+    "poverty_rate": 11.80199,
+    "agencies": {
+      "HHS": -1.165546,
+      "USDA": -0.247275,
+      "SSA": -1.792556,
+      "HUD": -2.064358,
+      "Education": -1.970114
+    }
+  },
+  {
+    "geoid": "54071",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.242295,
+    "poverty_rate": 13.478937,
+    "agencies": {
+      "HHS": -1.248945,
+      "USDA": -1.034302,
+      "SSA": -0.91013,
+      "HUD": 0.137159,
+      "Education": -0.06202
+    }
+  },
+  {
+    "geoid": "54073",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -2.034986,
+    "poverty_rate": 8.702004,
+    "agencies": {
+      "HHS": -0.846326,
+      "USDA": -1.508182,
+      "SSA": -2.362032,
+      "HUD": -0.300068,
+      "Education": -0.954532
+    }
+  },
+  {
+    "geoid": "54075",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.536581,
+    "poverty_rate": 13.496209,
+    "agencies": {
+      "HHS": -0.5973,
+      "USDA": -0.128426,
+      "SSA": 0.20402,
+      "HUD": 0.845129,
+      "Education": 0.086999
+    }
+  },
+  {
+    "geoid": "54077",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.064684,
+    "poverty_rate": 10.984965,
+    "agencies": {
+      "HHS": -1.057958,
+      "USDA": -1.174511,
+      "SSA": -1.533242,
+      "HUD": -0.723034,
+      "Education": -0.437407
+    }
+  },
+  {
+    "geoid": "54079",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.639257,
+    "poverty_rate": 8.838319,
+    "agencies": {
+      "HHS": -1.816053,
+      "USDA": -1.235722,
+      "SSA": -2.225852,
+      "HUD": -1.169773,
+      "Education": -1.253392
+    }
+  },
+  {
+    "geoid": "54081",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.603427,
+    "poverty_rate": 15.105485,
+    "agencies": {
+      "HHS": -0.908453,
+      "USDA": 0.313627,
+      "SSA": -0.303182,
+      "HUD": -0.940518,
+      "Education": -0.387451
+    }
+  },
+  {
+    "geoid": "54083",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.545219,
+    "poverty_rate": 12.43593,
+    "agencies": {
+      "HHS": -1.049517,
+      "USDA": -1.086064,
+      "SSA": -1.550825,
+      "HUD": -1.844564,
+      "Education": -1.633833
+    }
+  },
+  {
+    "geoid": "54085",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.667298,
+    "poverty_rate": 14.761402,
+    "agencies": {
+      "HHS": -0.764192,
+      "USDA": -0.08675,
+      "SSA": -1.195135,
+      "HUD": -0.259717,
+      "Education": 0.251785
+    }
+  },
+  {
+    "geoid": "54087",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.398858,
+    "poverty_rate": 16.302294,
+    "agencies": {
+      "HHS": -0.352521,
+      "USDA": -0.329559,
+      "SSA": -0.933574,
+      "HUD": -0.231467,
+      "Education": 0.514076
+    }
+  },
+  {
+    "geoid": "54089",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.807657,
+    "poverty_rate": 14.141609,
+    "agencies": {
+      "HHS": 0.24758,
+      "USDA": -0.981114,
+      "SSA": -1.18025,
+      "HUD": -0.59451,
+      "Education": 0.220978
+    }
+  },
+  {
+    "geoid": "54091",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.97389,
+    "poverty_rate": 13.655536,
+    "agencies": {
+      "HHS": -1.021198,
+      "USDA": -0.248415,
+      "SSA": -1.349961,
+      "HUD": -1.300587,
+      "Education": 0.03069
+    }
+  },
+  {
+    "geoid": "54093",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.64396,
+    "poverty_rate": 9.714254,
+    "agencies": {
+      "HHS": -2.189955,
+      "USDA": -1.183472,
+      "SSA": -2.167375,
+      "HUD": -1.097322,
+      "Education": -0.739144
+    }
+  },
+  {
+    "geoid": "54095",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.911567,
+    "poverty_rate": 12.571986,
+    "agencies": {
+      "HHS": -1.620953,
+      "USDA": -1.390988,
+      "SSA": -1.739304,
+      "HUD": -0.702615,
+      "Education": -0.303647
+    }
+  },
+  {
+    "geoid": "54097",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.633644,
+    "poverty_rate": 15.309623,
+    "agencies": {
+      "HHS": -1.278179,
+      "USDA": -0.278257,
+      "SSA": -0.957143,
+      "HUD": -0.616627,
+      "Education": -1.093451
+    }
+  },
+  {
+    "geoid": "54099",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.292177,
+    "poverty_rate": 15.620941,
+    "agencies": {
+      "HHS": -0.751476,
+      "USDA": -0.21147,
+      "SSA": -1.023003,
+      "HUD": -0.621903,
+      "Education": 0.402072
+    }
+  },
+  {
+    "geoid": "54101",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": 0.154113,
+    "poverty_rate": 19.255399,
+    "agencies": {
+      "HHS": 0.218852,
+      "USDA": 0.545492,
+      "SSA": -0.09428,
+      "HUD": 0.057943,
+      "Education": 1.050141
+    }
+  },
+  {
+    "geoid": "54103",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.488204,
+    "poverty_rate": 15.738154,
+    "agencies": {
+      "HHS": 0.621839,
+      "USDA": 0.01789,
+      "SSA": -0.976014,
+      "HUD": -0.076678,
+      "Education": 0.472196
+    }
+  },
+  {
+    "geoid": "54105",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.721112,
+    "poverty_rate": 15.053319,
+    "agencies": {
+      "HHS": -1.130563,
+      "USDA": -0.370136,
+      "SSA": -0.927151,
+      "HUD": 0.292197,
+      "Education": 0.521504
+    }
+  },
+  {
+    "geoid": "54107",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -1.322723,
+    "poverty_rate": 13.61871,
+    "agencies": {
+      "HHS": -0.666942,
+      "USDA": -0.512683,
+      "SSA": -1.41971,
+      "HUD": -1.586888,
+      "Education": -1.259429
+    }
+  },
+  {
+    "geoid": "54109",
+    "state": "west virginia",
+    "region": "Western Appalachia",
+    "misalignment": -0.250408,
+    "poverty_rate": 16.657319,
+    "agencies": {
+      "HHS": -0.431821,
+      "USDA": 0.35636,
+      "SSA": -0.721091,
+      "HUD": -0.095046,
+      "Education": 0.752324
+    }
+  }
+]

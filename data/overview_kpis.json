@@ -1,0 +1,14 @@
+{
+  "n_states": 7,
+  "n_counties": 864,
+  "n_years": 10,
+  "n_transactions": "14M+",
+  "model_r2": 0.853602,
+  "avg_poverty_rate": 15.797492,
+  "delta_avg_poverty": 18.276659,
+  "appa_avg_poverty": 14.097247,
+  "total_obligations_trillions": 3.363214,
+  "covid_surge_pct": 255.563617,
+  "direct_payment_share": 84.175941,
+  "grants_share": 7.918698
+}

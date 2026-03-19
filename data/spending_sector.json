@@ -1,0 +1,30 @@
+{
+  "sectors": [
+    "Social Security",
+    "Health & Human Svcs",
+    "Education",
+    "Housing & Urban Dev",
+    "Agriculture (USDA)",
+    "Treasury",
+    "Labor"
+  ],
+  "appalachia": [
+    935.539866,
+    1498.042674,
+    95.714727,
+    54.946854,
+    11.223282,
+    32.0,
+    3.0
+  ],
+  "delta": [
+    516.144312,
+    53.198217,
+    91.523686,
+    58.090422,
+    20.596771,
+    16.9,
+    1.6
+  ],
+  "unit": "billions USD"
+}
