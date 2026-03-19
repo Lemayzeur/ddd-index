@@ -597,10 +597,8 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
         <div class="comp-row"><span class="comp-name">Appalachia avg</span><span class="comp-val" id="cmp-app"></span></div>
         <div class="comp-row"><span class="comp-name">Region avg (selected)</span><span class="comp-val" id="cmp-region"></span></div>
       </div>
-      <button class="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
+      <button class="predict-btn" id="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
       <div style="margin-top:1.5rem;font-size:0.72rem;color:rgba(255,255,255,0.3);line-height:1.6;font-family:var(--font-mono);">
-        <!-- NEW: updated disclaimer mentioning ONNX -->
-        Uses ONNX Gradient Boosting model when available, simulated weights as fallback. Future years apply −0.2–0.3% annual drift adjustment.
       </div>
     </div>
   </div>

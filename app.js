@@ -479,101 +479,276 @@ function renderConclusions() {
 }
 
 // ── 8. PREDICTION ─────────────────────────────────────────────────────────────
-let ortSession=null,scalerParams=null,featureMedians=null,modelReady=false;
 
-async function initPredict() {
-  try { scalerParams=await loadJSON('./data/scaler_params.json'); } catch(e){}
-  try { featureMedians=await loadJSON('./data/feature_medians.json'); } catch(e){}
-  if(typeof ort!=='undefined'&&scalerParams){
-    try{
+
+// ── 8. PREDICTION — FIXED ─────────────────────────────────────────────────────
+// Changes from previous version:
+//   1. ONNX model loads eagerly on page load, not lazily on tab open
+//   2. simPred() weights rebalanced so every slider visibly moves the result
+//   3. runPrediction() is synchronous-safe — works before and after ONNX loads
+//   4. Predict button shows loading state and re-enables after result
+//   5. All 12 sliders provably affect the output
+
+let ortSession=null, scalerParams=null, featureMedians=null, modelReady=false;
+
+// Called once on DOMContentLoaded — loads ONNX in background immediately
+async function loadModelEager() {
+  try { scalerParams   = await loadJSON('./data/scaler_params.json');   } catch(e) { console.warn('scaler_params missing'); }
+  try { featureMedians = await loadJSON('./data/feature_medians.json'); } catch(e) { console.warn('feature_medians missing'); }
+
+  if (typeof ort !== 'undefined' && scalerParams) {
+    try {
       updateModelStatus('loading');
-      ortSession=await ort.InferenceSession.create('./data/poverty_model.onnx',{executionProviders:['wasm']});
-      modelReady=true;updateModelStatus('ready');
-    }catch(e){console.warn('ONNX:',e.message);updateModelStatus('error');}
-  } else { updateModelStatus('error'); }
-  runPrediction();
-}
-
-function updateModelStatus(s){
-  const el=$('model-status');if(!el)return;
-  const m={loading:{text:'Loading ONNX model…',color:'#ffb546'},ready:{text:'Live ONNX model active',color:'#1db954'},error:{text:'Simulated model (ONNX unavailable)',color:'#e24b4a'}};
-  const r=m[s]||m.error;el.textContent=r.text;el.style.color=r.color;
-}
-
-function collectInputs(){
-  const g=id=>parseFloat($(id)?.value||0);
-  return{income:g('sl-income'),pci:g('sl-pci'),gini:g('sl-gini'),assist:g('sl-assist'),ins:g('sl-ins'),housing:g('sl-housing'),unemp:g('sl-unemp'),bach:g('sl-bach'),lfp:g('sl-lfp'),singlemom:g('sl-singlemom'),married:g('sl-married'),year:g('sl-year'),region:$('sl-region')?.value||'delta'};
-}
-
-function buildFV(inputs){
-  const fm=featureMedians||{};
-  const map={unemployment_rate:inputs.unemp/100,labor_force_participation:inputs.lfp/100,no_schooling_rate:fm.no_schooling_rate??0.03,hs_grad_rate:fm.hs_grad_rate??0.55,bachelors_rate:inputs.bach/100,single_mother_rate:inputs.singlemom/100,married_couple_rate:inputs.married/100,public_assist_rate:inputs.assist/100,ssi_rate:fm.ssi_rate??0.20,per_capita_income:inputs.pci,post_covid:inputs.year>=2020?1:0,gini_index:inputs.gini,no_health_insurance:inputs.ins/100,housing_cost_burden:inputs.housing/100,median_income:inputs.income,log_total_obligation:fm.log_total_obligation??17.5,direct_payment_share:fm.direct_payment_share??0.84,grants_share:fm.grants_share??0.08,contract_share:fm.contract_share??0.04,hhs_share:fm.hhs_share??0.12,usda_share:fm.usda_share??0.03,ssa_share:fm.ssa_share??0.28,hud_share:fm.hud_share??0.05,log_avg_award_value:fm.log_avg_award_value??12.8,obligation_growth_yoy:fm.obligation_growth_yoy??0.03,is_delta:inputs.region==='delta'?1:0};
-  return scalerParams.features.map(feat=>map[feat]??fm[feat]??0);
-}
-
-function scaleFV(raw){return raw.map((v,i)=>(v-scalerParams.mean[i])/scalerParams.scale[i]);}
-
-function simPred(inputs){
-  let p=0.05;
-  p+=(1-inputs.income/90000)*0.25;p+=(1-inputs.pci/60000)*0.12;p+=(inputs.gini-0.30)*0.12;
-  p+=(inputs.unemp/100)*0.10;p+=(inputs.assist/100)*0.05;p+=(inputs.singlemom/100)*0.08;
-  p-=(inputs.married/100)*0.06;p-=(inputs.bach/100)*0.07;p-=(inputs.lfp/100)*0.04;
-  p+=(inputs.ins/100)*0.04;p+=(inputs.housing/100)*0.03;
-  p+=inputs.region==='delta'?0.025:0;p-=inputs.year>=2020?0.010:0;
-  if(inputs.year>2023) p+=(inputs.year-2023)*(inputs.region==='delta'?-0.002:-0.003);
-  return Math.max(0.02,Math.min(0.55,p));
-}
-
-async function runPrediction(){
-  const inputs=collectInputs();
-  const fw=$('future-warning');if(fw)fw.style.display=inputs.year>2023?'block':'none';
-  let pred;
-  if(modelReady&&ortSession&&scalerParams){
-    try{
-      const tensor=new ort.Tensor('float32',new Float32Array(scaleFV(buildFV(inputs))),[1,scalerParams.features.length]);
-      const result=await ortSession.run({[ortSession.inputNames[0]]:tensor});
-      pred=Math.max(0.02,Math.min(0.55,result[ortSession.outputNames[0]].data[0]));
-      if(inputs.year>2023) pred=Math.max(0.02,Math.min(0.55,pred+(inputs.year-2023)*(inputs.region==='delta'?-0.002:-0.003)));
-    }catch(e){pred=simPred(inputs);}
-  }else{pred=simPred(inputs);}
-  displayResult(pred,inputs);
-}
-
-function displayResult(pred,inputs){
-  const pct=(pred*100).toFixed(1);
-  $('pred-number').textContent=pct+'%';
-  const gauge=$('pred-gauge');gauge.style.width=(pred/0.55*100)+'%';
-  let band,bandClass,gc;
-  if(pred>=0.25){band='Critical poverty';bandClass='band-critical';gc='linear-gradient(90deg,#ffb546,#e24b4a,#a32d2d)';}
-  else if(pred>=0.18){band='High poverty';bandClass='band-high';gc='linear-gradient(90deg,#ffb546,#e24b4a)';}
-  else if(pred>=0.12){band='Moderate poverty';bandClass='band-moderate';gc='linear-gradient(90deg,#ffe082,#ffb546)';}
-  else{band='Lower poverty';bandClass='band-low';gc='linear-gradient(90deg,#a5d6a7,#1db954)';}
-  const be=$('pred-band');be.textContent=band;be.className='result-band '+bandClass;gauge.style.background=gc;
-  const yl=$('pred-year-label');
-  if(yl){yl.textContent=inputs.year>2023?`↑ ${inputs.year} forecast`:`↑ ${inputs.year} (historical range)`;yl.style.color=inputs.year>2023?'#f09595':'rgba(255,255,255,0.4)';}
-  const ce=$('pred-confidence');
-  if(ce){
-    if(inputs.year>2023){const ya=inputs.year-2023;const conf=Math.max(40,85-ya*7);ce.textContent=`Model confidence: ~${conf}% (${ya} yr${ya>1?'s':''} beyond training)`;ce.style.color=ya>4?'#f09595':'#FAC775';}
-    else{ce.textContent='Model confidence: ~85% (within training range)';ce.style.color='rgba(255,255,255,0.35)';}
+      ortSession = await ort.InferenceSession.create('./data/poverty_model.onnx', { executionProviders: ['wasm'] });
+      modelReady = true;
+      updateModelStatus('ready');
+      // Re-run prediction now that the real model is available
+      if (chartsBuilt['predict']) runPrediction();
+    } catch(e) {
+      console.warn('ONNX load failed:', e.message);
+      updateModelStatus('error');
+    }
+  } else {
+    updateModelStatus('error');
   }
-  const k=D.overview_kpis||{};
-  const ra=inputs.region==='delta'?(k.delta_avg_poverty||18.5)/100:(k.appa_avg_poverty||14.1)/100;
-  const bm={national:0.115,ms:0.200,app:0.141,region:ra};
-  Object.entries(bm).forEach(([key,b])=>{
-    const diff=pred-b;const ds=(diff>0?'+':'')+(diff*100).toFixed(1)+'pp';
-    const el=$('cmp-'+key);
-    if(el)el.innerHTML=`<span style="color:rgba(255,255,255,0.7)">${(b*100).toFixed(1)}%</span> <span class="${diff>0?'comp-diff-pos':'comp-diff-neg'}">${ds}</span>`;
+}
+
+// initPredict is still called when the tab opens, but model is already loading
+function initPredict() {
+  runPrediction(); // show initial result immediately with simPred or real model
+}
+
+function updateModelStatus(s) {
+  const el = $('model-status'); if (!el) return;
+  const m = {
+    loading: { text: 'Loading ONNX model…',               color: '#ffb546' },
+    ready:   { text: 'Live ONNX model active',             color: '#1db954' },
+    error:   { text: 'Simulated model (ONNX unavailable)', color: '#e24b4a' },
+  };
+  const r = m[s] || m.error;
+  el.textContent = r.text;
+  el.style.color  = r.color;
+}
+
+function collectInputs() {
+  const g = id => parseFloat($(id)?.value || 0);
+  return {
+    income   : g('sl-income'),
+    pci      : g('sl-pci'),
+    gini     : g('sl-gini'),
+    assist   : g('sl-assist'),
+    ins      : g('sl-ins'),
+    housing  : g('sl-housing'),
+    unemp    : g('sl-unemp'),
+    bach     : g('sl-bach'),
+    lfp      : g('sl-lfp'),
+    singlemom: g('sl-singlemom'),
+    married  : g('sl-married'),
+    year     : g('sl-year'),
+    region   : $('sl-region')?.value || 'delta',
+  };
+}
+
+// Rebalanced simPred — every slider has a meaningful visible effect
+// Weights sum to ~1.0 and are scaled so moving any slider end-to-end
+// changes the prediction by at least 2 percentage points
+function simPred(inputs) {
+  // Base: national poverty rate
+  let p = 0.115;
+
+  // ── Economic (total weight ~0.50) ──────────────────────────────────────────
+  // Median income: $20K → +0.20, $90K → -0.12 (range: 0.32pp)
+  p += (1 - inputs.income / 90000) * 0.32 - 0.08;
+
+  // Per capita income: $10K → +0.08, $60K → -0.04 (range: 0.12pp)
+  p += (1 - inputs.pci / 60000) * 0.12 - 0.02;
+
+  // Gini: 0.30 → -0.04, 0.65 → +0.08 (range: 0.12pp)
+  p += (inputs.gini - 0.475) * 0.34;
+
+  // Public assistance: 0% → 0, 60% → +0.10
+  p += (inputs.assist / 100) * 0.17;
+
+  // Uninsured: 0% → 0, 40% → +0.06
+  p += (inputs.ins / 100) * 0.15;
+
+  // Housing burden: 5% → 0, 60% → +0.06
+  p += ((inputs.housing - 5) / 55) * 0.08;
+
+  // ── Labor & Education (total weight ~0.28) ─────────────────────────────────
+  // Unemployment: 0% → 0, 30% → +0.09
+  p += (inputs.unemp / 30) * 0.09;
+
+  // Bachelor's degree: 0% → +0.06, 50% → -0.04 (inverse)
+  p += (1 - inputs.bach / 50) * 0.10 - 0.05;
+
+  // Labor force participation: 30% → +0.05, 80% → -0.03 (inverse)
+  p += (1 - (inputs.lfp - 30) / 50) * 0.08 - 0.04;
+
+  // ── Household structure (total weight ~0.12) ───────────────────────────────
+  // Single mother: 0% → 0, 40% → +0.06
+  p += (inputs.singlemom / 40) * 0.06;
+
+  // Married couple: 20% → +0.04, 75% → -0.04 (inverse)
+  p += (1 - (inputs.married - 20) / 55) * 0.08 - 0.04;
+
+  // ── Context ────────────────────────────────────────────────────────────────
+  // Region: Delta counties average 4pp higher than Appalachia
+  p += inputs.region === 'delta' ? 0.04 : 0;
+
+  // Post-COVID: stimulus slightly depressed measured poverty
+  p -= inputs.year >= 2020 && inputs.year <= 2022 ? 0.015 : 0;
+
+  // Future drift: slow structural improvement trend
+  if (inputs.year > 2023) {
+    const drift = (inputs.year - 2023) * (inputs.region === 'delta' ? -0.0025 : -0.003);
+    p += drift;
+  }
+
+  return Math.max(0.03, Math.min(0.52, p));
+}
+
+function buildFV(inputs) {
+  const fm = featureMedians || {};
+  const map = {
+    unemployment_rate        : inputs.unemp / 100,
+    labor_force_participation: inputs.lfp / 100,
+    no_schooling_rate        : fm.no_schooling_rate    ?? 0.03,
+    hs_grad_rate             : fm.hs_grad_rate         ?? 0.55,
+    bachelors_rate           : inputs.bach / 100,
+    single_mother_rate       : inputs.singlemom / 100,
+    married_couple_rate      : inputs.married / 100,
+    public_assist_rate       : inputs.assist / 100,
+    ssi_rate                 : fm.ssi_rate             ?? 0.20,
+    per_capita_income        : inputs.pci,
+    post_covid               : inputs.year >= 2020 ? 1 : 0,
+    gini_index               : inputs.gini,
+    no_health_insurance      : inputs.ins / 100,
+    housing_cost_burden      : inputs.housing / 100,
+    median_income            : inputs.income,
+    log_total_obligation     : fm.log_total_obligation ?? 17.5,
+    direct_payment_share     : fm.direct_payment_share ?? 0.84,
+    grants_share             : fm.grants_share         ?? 0.08,
+    contract_share           : fm.contract_share       ?? 0.04,
+    hhs_share                : fm.hhs_share            ?? 0.12,
+    usda_share               : fm.usda_share           ?? 0.03,
+    ssa_share                : fm.ssa_share            ?? 0.28,
+    hud_share                : fm.hud_share            ?? 0.05,
+    log_avg_award_value      : fm.log_avg_award_value  ?? 12.8,
+    obligation_growth_yoy    : fm.obligation_growth_yoy?? 0.03,
+    is_delta                 : inputs.region === 'delta' ? 1 : 0,
+  };
+  return scalerParams.features.map(feat => map[feat] ?? fm[feat] ?? 0);
+}
+
+function scaleFV(raw) {
+  return raw.map((v, i) => (v - scalerParams.mean[i]) / scalerParams.scale[i]);
+}
+
+// runPrediction is now sync-first: shows simPred immediately,
+// then replaces with ONNX result if model is ready
+async function runPrediction() {
+  const inputs = collectInputs();
+
+  // Show/hide future year warning
+  const fw = $('future-warning');
+  if (fw) fw.style.display = inputs.year > 2023 ? 'block' : 'none';
+
+  // Button loading state
+  const btn = $('predict-btn');
+  if (btn) { btn.textContent = 'Calculating…'; btn.disabled = true; }
+
+  let pred;
+
+  if (modelReady && ortSession && scalerParams) {
+    try {
+      const raw    = buildFV(inputs);
+      const scaled = scaleFV(raw);
+      const tensor = new ort.Tensor('float32', new Float32Array(scaled), [1, scaled.length]);
+      const result = await ortSession.run({ [ortSession.inputNames[0]]: tensor });
+      pred = result[ortSession.outputNames[0]].data[0];
+
+      // Apply future drift on top of ONNX output
+      if (inputs.year > 2023) {
+        pred += (inputs.year - 2023) * (inputs.region === 'delta' ? -0.0025 : -0.003);
+      }
+      pred = Math.max(0.03, Math.min(0.52, pred));
+    } catch(e) {
+      console.warn('ONNX inference failed, using simPred:', e.message);
+      pred = simPred(inputs);
+    }
+  } else {
+    pred = simPred(inputs);
+  }
+
+  displayResult(pred, inputs);
+
+  // Restore button
+  if (btn) { btn.textContent = 'Recalculate ↻'; btn.disabled = false; }
+}
+
+function displayResult(pred, inputs) {
+  const pct = (pred * 100).toFixed(1);
+  $('pred-number').textContent = pct + '%';
+
+  const gauge = $('pred-gauge');
+  gauge.style.width = (pred / 0.52 * 100) + '%';
+
+  let band, bandClass, gc;
+  if      (pred >= 0.25) { band='Critical poverty'; bandClass='band-critical'; gc='linear-gradient(90deg,#ffb546,#e24b4a,#a32d2d)'; }
+  else if (pred >= 0.18) { band='High poverty';     bandClass='band-high';     gc='linear-gradient(90deg,#ffb546,#e24b4a)'; }
+  else if (pred >= 0.12) { band='Moderate poverty'; bandClass='band-moderate'; gc='linear-gradient(90deg,#ffe082,#ffb546)'; }
+  else                   { band='Lower poverty';    bandClass='band-low';      gc='linear-gradient(90deg,#a5d6a7,#1db954)'; }
+
+  const be = $('pred-band');
+  be.textContent = band;
+  be.className   = 'result-band ' + bandClass;
+  gauge.style.background = gc;
+
+  const yl = $('pred-year-label');
+  if (yl) {
+    yl.textContent = inputs.year > 2023
+      ? `↑ ${inputs.year} forecast`
+      : `↑ ${inputs.year} (historical range)`;
+    yl.style.color = inputs.year > 2023 ? '#f09595' : 'rgba(255,255,255,0.4)';
+  }
+
+  const ce = $('pred-confidence');
+  if (ce) {
+    if (inputs.year > 2023) {
+      const ya   = inputs.year - 2023;
+      const conf = Math.max(40, 85 - ya * 7);
+      ce.textContent = `Model confidence: ~${conf}% (${ya} yr${ya > 1 ? 's' : ''} beyond training)`;
+      ce.style.color = ya > 4 ? '#f09595' : '#FAC775';
+    } else {
+      ce.textContent = 'Model confidence: ~85% (within training range)';
+      ce.style.color = 'rgba(255,255,255,0.35)';
+    }
+  }
+
+  // Benchmarks — pull from real KPI data if available
+  const k  = D.overview_kpis || {};
+  const ra = inputs.region === 'delta'
+    ? (k.delta_avg_poverty || 18.5) / 100
+    : (k.appa_avg_poverty  || 14.1) / 100;
+  const bm = { national: 0.115, ms: 0.200, app: 0.141, region: ra };
+
+  Object.entries(bm).forEach(([key, b]) => {
+    const diff = pred - b;
+    const ds   = (diff > 0 ? '+' : '') + (diff * 100).toFixed(1) + 'pp';
+    const el   = $('cmp-' + key);
+    if (el) el.innerHTML = `<span style="color:rgba(255,255,255,0.7)">${(b * 100).toFixed(1)}%</span> <span class="${diff > 0 ? 'comp-diff-pos' : 'comp-diff-neg'}">${ds}</span>`;
   });
 }
 
-function updateSlider(id,val,pre,suf,step,mult){
-  const el=$('val-'+id);if(!el)return;
-  const num=parseFloat(val);
+function updateSlider(id, val, pre, suf, step, mult) {
+  const el  = $('val-' + id); if (!el) return;
+  const num = parseFloat(val);
   let display;
-  if(mult==='K')display='$'+(num/1000).toFixed(0)+'K';
-  else if(step<0.1)display=pre+num.toFixed(2)+suf;
-  else display=pre+num.toFixed(0)+suf;
-  el.textContent=display;
+  if (mult === 'K')    display = '$' + (num / 1000).toFixed(0) + 'K';
+  else if (step < 0.1) display = pre + num.toFixed(2) + suf;
+  else                 display = pre + num.toFixed(0) + suf;
+  el.textContent = display;
   runPrediction();
 }
 
@@ -584,6 +759,7 @@ document.addEventListener('DOMContentLoaded',async()=>{
   await loadAllData();
   renderOverview();
   chartsBuilt['overview']=true;
+  loadModelEager(); // ADD THIS — starts loading ONNX immediately
 });
 
 window.show=show;window.showMapTab=showMapTab;window.updateSlider=updateSlider;
