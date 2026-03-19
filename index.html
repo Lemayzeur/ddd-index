@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Poverty & Policy Atlas | Central Appalachia & Mississippi Delta 2014–2023</title>
+<title>Poverty & Policy Atlas | Western Appalachia & Mississippi Delta 2014–2023</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -215,7 +215,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <div class="header-inner">
     <div class="eyebrow">Poverty &amp; Policy Atlas — University of Missouri-Columbia</div>
     <h1>Dollars, Decisions, and Disparities</h1>
-    <p class="header-sub">A decade of federal spending, poverty dynamics, and fiscal misalignment across 624 counties in Central Appalachia and the Mississippi Delta.</p>
+    <p class="header-sub">A decade of federal spending, poverty dynamics, and fiscal misalignment across 624 counties in Western Appalachia and the Mississippi Delta.</p>
     <div class="kpi-row">
       <div class="kpi"><span class="kpi-val">7</span><span class="kpi-lab">Target States</span></div>
       <div class="kpi"><span class="kpi-val">624</span><span class="kpi-lab">Counties</span></div>
@@ -231,12 +231,13 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
     <button class="nav-btn active" onclick="show('overview',this)">Overview</button>
     <button class="nav-btn" onclick="show('spending',this)">Spending</button>
     <button class="nav-btn" onclick="show('misalignment',this)">Misalignment</button>
+    <!-- NEW: Maps tab added to nav -->
     <button class="nav-btn" onclick="show('maps',this)">Maps</button>
+    <!-- NEW: Clusters tab added to nav -->
     <button class="nav-btn" onclick="show('clusters',this)">Clusters</button>
     <button class="nav-btn" onclick="show('models',this)">Models</button>
     <button class="nav-btn" onclick="show('predict',this)">Predict</button>
     <button class="nav-btn" onclick="show('conclusions',this)">Conclusions</button>
-    <button class="nav-btn" onclick="show('team',this)">Team</button>
   </div>
 </nav>
 
@@ -278,10 +279,10 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   </div>
   <div class="chart-block">
     <div class="chart-block-title" id="spendChartTitle">Total Assistance by Region ($B) — 2014–2023</div>
-    <div class="chart-block-sub" id="spendChartSub">Central Appalachia peaked at $533B in 2020. Mississippi Delta at $144B in 2021.</div>
+    <div class="chart-block-sub" id="spendChartSub">Western Appalachia peaked at $533B in 2020. Mississippi Delta at $144B in 2021.</div>
     <div class="chart-wrap"><canvas id="spendChart" height="380"></canvas></div>
     <div class="legend-row" id="spendLegend">
-      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Central Appalachia</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Western Appalachia</div>
       <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Mississippi Delta</div>
     </div>
   </div>
@@ -307,7 +308,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
     <div class="chart-wrap"><canvas id="misalignTimeChart" height="320"></canvas></div>
     <div class="legend-row">
       <div class="legend-item"><div class="legend-dot" style="background:#0c7bff"></div>Mississippi Delta</div>
-      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Central Appalachia</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ffb546"></div>Western Appalachia</div>
     </div>
   </div>
   <div class="chart-block">
@@ -357,12 +358,12 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 1 — Poverty map -->
   <div id="map-poverty" class="map-panel active">
     <div class="map-image-wrap">
-      <img src="images/poverty_choropleth.png" alt="Poverty distribution map"
-           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>poverty_choropleth.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
+      <!-- delete the commented <img> tag, replace with this -->
+      <div id="leaflet-poverty" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
       <div class="map-image-caption">
         <strong>Average county poverty rate 2015–2022.</strong>
-        Dark red = above 25% poverty. The Mississippi Delta corridor (MS, LA, AR) shows the highest concentration.
-        Dashed pink border = Central Appalachia. Dashed green = Mississippi Delta.
+        Dark red = above 25% poverty. The Mississippi Delta corridor shows the highest concentration.
+        Click any county for details.
       </div>
     </div>
     <div class="map-insight-row">
@@ -376,12 +377,11 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 2 — Spending map -->
   <div id="map-spending" class="map-panel">
     <div class="map-image-wrap">
-      <img src="images/sector_spending_map.png" alt="Federal spending map"
-           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>sector_spending_map.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
+      <div id="leaflet-spending" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
       <div class="map-image-caption">
-        <strong>Average annual federal obligation per county — quintile bands (each = 20% of counties).</strong>
-        Dark crimson = highest spending quintile. Dark navy = lowest.
-        Color bands are computed from actual dollar quintiles so the full ramp always renders.
+        <strong>Average annual federal obligation per county — quintile bands.</strong>
+        Dark navy = highest spending. Dark crimson = lowest.
+        Click any county for details.
       </div>
     </div>
     <div class="map-insight-row">
@@ -395,13 +395,11 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <!-- NEW: Panel 3 — Misalignment map -->
   <div id="map-misalign" class="map-panel">
     <div class="map-image-wrap">
-      <img src="images/misalignment_map_callouts.png" alt="Misalignment map"
-           onerror="this.parentElement.style.minHeight='400px';this.style.display='none';this.parentElement.innerHTML+='<div style=\'padding:3rem;text-align:center;color:var(--muted);font-family:var(--font-mono);font-size:0.8rem;\'>Place <strong>misalignment_map_callouts.png</strong> in an <strong>images/</strong> folder next to index.html</div>'">
+      <div id="leaflet-misalign" style="width:100%;height:520px;border-radius:12px 12px 0 0;"></div>
       <div class="map-image-caption">
-        <strong>Spending misalignment score = Poverty Z − Spending Z.</strong>
-        Red = underfunded (poverty rank exceeds spending rank).
-        Blue = overfunded (spending exceeds need).
-        White = aligned. Callout boxes show the three extreme cases.
+        <strong>Misalignment score = Poverty Z − Spending Z.</strong>
+        Red = underfunded. Blue = overfunded. White = aligned.
+        Click any county for details.
       </div>
     </div>
     <div class="map-insight-row">
@@ -410,13 +408,6 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
       <div class="map-insight" style="border-top:3px solid var(--app-blue);"><div class="map-insight-label">Most overfunded</div><div class="map-insight-val" style="color:var(--app-blue);">−2.96</div><div class="map-insight-note">GEOID 51735 · VA · 4.5% poverty</div></div>
       <div class="map-insight"><div class="map-insight-label">Delta overall score</div><div class="map-insight-val">+0.65</div><div class="map-insight-note">Consistently underfunded 2014–2023</div></div>
     </div>
-  </div>
-
-  <!-- NEW: instruction callout for image files -->
-  <div class="callout" style="margin-top:2rem;">
-    <strong>To display your maps:</strong> Export the three PNG files from your Python notebook and place them in an
-    <code>images/</code> folder next to <code>index.html</code>.
-    Expected names: <code>poverty_choropleth.png</code> · <code>sector_spending_map.png</code> · <code>misalignment_map_callouts.png</code>.
   </div>
 </section>
 <!-- END NEW MAPS SECTION -->
@@ -596,7 +587,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
       <div class="slider-group"><div class="slider-header"><span class="slider-label">Single Mother Rate</span><span class="slider-val" id="val-singlemom">18%</span></div><input type="range" id="sl-singlemom" min="0" max="40" step="1" value="18" oninput="updateSlider('singlemom',this.value,'','%',1,'')"><div class="slider-range"><span>0%</span><span>40%</span></div></div>
       <div class="slider-group"><div class="slider-header"><span class="slider-label">Married Couple Rate</span><span class="slider-val" id="val-married">46%</span></div><input type="range" id="sl-married" min="20" max="75" step="1" value="46" oninput="updateSlider('married',this.value,'','%',1,'')"><div class="slider-range"><span>20%</span><span>75%</span></div></div>
       <div class="sliders-section-title">Context</div>
-      <div class="slider-group"><div class="slider-header"><span class="slider-label">Region</span></div><select class="region-select" id="sl-region" onchange="runPrediction()"><option value="delta">Mississippi Delta</option><option value="appalachia">Central Appalachia</option></select></div>
+      <div class="slider-group"><div class="slider-header"><span class="slider-label">Region</span></div><select class="region-select" id="sl-region" onchange="runPrediction()"><option value="delta">Mississippi Delta</option><option value="appalachia">Western Appalachia</option></select></div>
       <!-- NEW: year extended to 2030 + forecast warning badge -->
       <div class="slider-group">
         <div class="slider-header"><span class="slider-label">Year</span><span class="slider-val" id="val-year">2023</span></div>
@@ -630,10 +621,8 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
         <div class="comp-row"><span class="comp-name">Appalachia avg</span><span class="comp-val" id="cmp-app"></span></div>
         <div class="comp-row"><span class="comp-name">Region avg (selected)</span><span class="comp-val" id="cmp-region"></span></div>
       </div>
-      <button class="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
+      <button class="predict-btn" id="predict-btn" onclick="runPrediction()">Recalculate ↻</button>
       <div style="margin-top:1.5rem;font-size:0.72rem;color:rgba(255,255,255,0.3);line-height:1.6;font-family:var(--font-mono);">
-        <!-- NEW: updated disclaimer mentioning ONNX -->
-        Uses ONNX Gradient Boosting model when available, simulated weights as fallback. Future years apply −0.2–0.3% annual drift adjustment.
       </div>
     </div>
   </div>
@@ -694,7 +683,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
     </div>
 
     <div class="member-card">
-      <div class="member-avatar-placeholder">Nomi<br>here</div>
+      <div class="member-avatar-placeholder">Nom<br>here</div>
       <div class="member-name">Nomuundalai Baterdene</div>
       <div class="member-role">Policy analysis<br>&amp; findings</div>
     </div>
@@ -706,13 +695,13 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
     </div> -->
 
     <div class="member-card">
-      <div class="member-avatar-placeholder">Lub<br>here</div>
+      <div class="member-avatar-placeholder">Photo<br>here</div>
       <div class="member-name">Lub Lorry Lamysere</div>
       <div class="member-role">Geospatial analysis / Dashboard<br>&amp; visualization</div>
     </div>
 
     <div class="member-card">
-      <div class="member-avatar-placeholder">Suyog<br>here</div>
+      <div class="member-avatar-placeholder">Photo<br>here</div>
       <div class="member-name">Suyog Pawar</div>
       <div class="member-role">Machine learning<br>&amp; modeling</div>
     </div>
@@ -737,7 +726,7 @@ footer{background:var(--ink);color:white;padding:4rem 2rem;margin-top:5rem;}
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Poverty &amp; Policy Atlas</div>
-      <p class="footer-desc">A data science case study examining federal spending patterns and poverty dynamics across Central Appalachia and the Mississippi Delta, 2014–2023. Built with USASpending.gov data and Census ACS.</p>
+      <p class="footer-desc">A data science case study examining federal spending patterns and poverty dynamics across Western Appalachia and the Mississippi Delta, 2014–2023. Built with USASpending.gov data and Census ACS.</p>
     </div>
     <div>
       <div class="footer-head">Data Sources</div>
